@@ -1,2 +1,0 @@
-# noerhavefrisoer
-nørhave frisør 
