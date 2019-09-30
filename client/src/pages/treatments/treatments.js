@@ -1,5 +1,9 @@
 import React from "react";
 
+// TODO
+// make cards open on desktop, not on mobile
+// Herre / damer / børn
+
 const Treatment = () => {
   return (
     <section className="container">

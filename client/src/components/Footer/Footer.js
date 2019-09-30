@@ -4,7 +4,10 @@ const Footer = () => {
   return (
     <footer>
       <section>
-        Footer
+        <div>ikons</div>
+        <div>footer menu</div>
+        <div>åbenstider</div>
+        <div>kontakts</div>
       </section>
     </footer>
   );
