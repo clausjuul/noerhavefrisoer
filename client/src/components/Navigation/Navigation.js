@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 // import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 
 import './Navigation.scss';
@@ -43,12 +43,19 @@ const Navigation = () => {
   return (
     <nav className="nav">
       <ul className="nav__logo">
-        <li>NØRHAVE</li>
+        <li>
+          <Link to="/">NØRHAVE</Link>
+        </li>
       </ul>
       <ul className="navbar">
-          {NavData.map(({to, label, exact}) => (
-            <NavLinkItem key={`link-${label}`} to={to} label={label} exact={exact} />
-          ))}
+        {NavData.map(({ to, label, exact }) => (
+          <NavLinkItem
+            key={`link-${label}`}
+            to={to}
+            label={label}
+            exact={exact}
+          />
+        ))}
       </ul>
     </nav>
   );

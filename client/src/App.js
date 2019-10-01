@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import Routes from './routes';
 import Hero from './components/Hero/Hero';
 import Topbar from './components/Topbar/Topbar';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -14,7 +15,10 @@ const App = () => {
         <Hero />
         {/* <NavigationRS /> */}
       </header>
-      <Routes />
+      <main className="container">
+        <Routes />
+      </main>
+      <Footer />
     </>
   );
 }

@@ -1,12 +1,12 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
 
 import './Topbar.scss';
 
 const Topbar = () => {
   return (
     <section className="topbar">
-      <span>topbar tekst</span>
+      <span>+45 4265 5687</span>
+      <span>Maria@noerhavefrisoer.dk</span>
     </section>
   );
 };

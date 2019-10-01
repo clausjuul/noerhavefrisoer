@@ -1,8 +1,21 @@
 @import '../../scss/init';
 
 .hero {
+  display: flex;
+  // flex-flow: column wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 40vh;
   width: 100%;
   background: grey;
-  @include spacing(2rem, 2rem);
+  @include spacing(1rem, 1rem);
+
+  &__title {
+    margin: 0;
+  }
+
+  &__sub-title {
+    margin: 0;
+  }
 }
