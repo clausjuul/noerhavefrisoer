@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 // import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 
+import { MenuIcon } from '../Icons/Icons';
 import './Navigation.scss';
 
 // TODO topbar med nr email mere?
@@ -41,23 +42,35 @@ const NavLinkItem = ({ to, label, exact }) => {
 const Navigation = () => {
 
   return (
-    <nav className="nav">
-      <ul className="nav__logo">
-        <li>
-          <Link to="/">NØRHAVE</Link>
-        </li>
-      </ul>
-      <ul className="navbar">
-        {NavData.map(({ to, label, exact }) => (
-          <NavLinkItem
-            key={`link-${label}`}
-            to={to}
-            label={label}
-            exact={exact}
-          />
-        ))}
-      </ul>
-    </nav>
+    <div className="nav-wrapper">
+      <nav className="nav">
+        <ul className="nav__logo">
+          <li>
+            <Link to="/">
+              <h1>
+                NØRHAVE
+                <span>frisør</span>
+              </h1>
+            </Link>
+          </li>
+        </ul>
+        <ul className="navbar">
+          {NavData.map(({ to, label, exact }) => (
+            <NavLinkItem
+              key={`link-${label}`}
+              to={to}
+              label={label}
+              exact={exact}
+            />
+          ))}
+        </ul>
+        <ul className="mobile-menu">
+          <li>
+            <MenuIcon />
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 export default Navigation

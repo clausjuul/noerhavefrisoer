@@ -1,82 +1,118 @@
 @import '../../scss/init';
 
+.footer-wrapper {
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include spacing(2rem, 2rem);
+}
 .footer {
-  background: #f1f1f1;
   display: flex;
   justify-content: space-between;
   position: relative;
-  @include spacing(2rem, 2rem);
+  width: 100%;
+  max-width: $max-width;
+  color: $font-color-dark;
+
+  @include media('<tablet') {
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__title {
     grid-column: 1 / -1;
   }
 
   &__small {
-    font-size: 60%;
+    font-size: 80%;
   }
 
   &__opening-hours, &__contacts {
     width: calc(50% - 4.75rem);
-    display: flex;
-    align-items: flex-start;
-    // justify-content: center;
+
+    @include media('<tablet') {
+      width: unset;
+    }
   }
 
-  &__opening-hours ul {
+  &__opening-hours {
     display: grid;
     grid-template-columns: auto 1fr;
-    // grid-gap: 0.5rem;
-    grid-row-gap: 0.15rem;
-    grid-column-gap: 3rem;
+    column-gap: 1.5rem;
+    row-gap: 0.15rem;
+    grid-row-gap: 0.25rem;
+    grid-column-gap: 1.5rem;
+    order: 1;
+
+    @include media('<tablet') {
+      order: 3;
+    }
 
     li h3 {
       grid-column: 1 / -1;
     }
     
-    span {
-      align-self: center;
+    // span {
+    //   align-self: center;
+    // }
+
+    .full {
+      grid-column: 1 / -1;
     }
   }
 
   &__social {
     padding: 0 1.5rem;
+    order: 2;
+
+    @include media('<tablet') {
+      order: 1;
+    }
 
     &--icon {
-        width: 3rem;
-        height: 3rem;
-        display: inline-block;
-      padding: 0.25rem;
-      background: rgba(0, 0, 0, 0.2);
+      width: 3rem;
+      height: 3rem;
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.05);
+      // background: $color-primary;
       border-radius: 1rem;
+      padding: 0.25rem;
 
       svg {
         display: inline-block;
-        // width: 3rem;
-        // height: 3rem;
         width: 100%;
         height: 100%;
-        padding: 0.4rem;
-        fill: #f1f1f1;
+        fill: $font-color-dark;
+        padding: 0.25rem;
       }
 
       &:not(:last-of-type) {
         margin-right: 0.5rem;
+        @include media('<tablet') {
+        margin-right: 2rem;
+        }
       }
     }
   }
 
   &__contacts {
-    // align-self: right;
-    // justify-self: flex-end;
     display: flex;
-    justify-content: flex-end;
-    ul {
-      display: flex;
-      flex-direction: column;
-      text-align: right;
-      
-      li {
-        padding-bottom: 0.15rem;
+    flex-direction: column;
+    text-align: right;
+    order: 3;
+
+    @include media('<tablet') {
+      text-align: center;
+      order: 2;
+      margin: 2rem 0;
+    }
+    
+    li {
+      padding-bottom: 0.25rem;
+
+      &:first-of-type {
+        font-weight: 600;
       }
     }
   }

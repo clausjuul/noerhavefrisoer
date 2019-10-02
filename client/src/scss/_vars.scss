@@ -1,35 +1,40 @@
 @import './vendor/include-media';
 
+$max-width: 1000px;
+
 $rem-size: calc(14px + 0.7vmin);
 $line-height: 1.35;
 $background: #ebebeb;
 
 // COLORS //
+$color-rosa: #F2DCD1;
 $color-red: #ff0000;
 $color-grey: #d1d1d1;
 $color-white: #fff;
 $color-black: #000;
 
-// #373535
-$font-color-darker: rgba(3, 0, 0, 0.78);
-// #7d7c7c
-$font-color-dark: rgba(0, 0, 0, 0.5);
-// #b4b4b4
-$font-color-dark-light: rgba(0, 0, 0, 0.38);
+$color-primary: $color-rosa;
 
-$font-color-lighter: rgba(255, 253, 253, 0.78);
+// #373535
+$font-color-darkest: rgba(3, 0, 0, 0.94);
 // #7d7c7c
-$font-color-light: rgba(255, 255, 255, 0.5);
+$font-color-darker: rgba(0, 0, 0, 0.8);
 // #b4b4b4
-$font-color-light-dark: rgba(255, 255, 255, 0.38);
+$font-color-dark: rgba(0, 0, 0, 0.72);
+
+$font-color-lightest: rgba(255, 253, 253, 0.94);
+// #7d7c7c
+$font-color-lighter: rgba(255, 255, 255, 0.8);
+// #b4b4b4
+$font-color-light: rgba(255, 255, 255, 0.72);
   
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 
 $smallSpacing: 1rem;
-$spacing: 10vw;
-$largeSpacing: 15vw;
+$spacing: 3rem;
+$largeSpacing: 10vw;
 
 $nav-height: 5rem;
 $nav-background: $color-black;
@@ -39,10 +44,9 @@ $font: 'Open Sans', sans-serif;
 $font-heading: 'Open Sans', sans-serif;
 
 
-
 $breakpoints: (
 'phone': 480px,
-'tablet': 768px,
+'tablet': 800px,
 'desktop': 1124px,
 );
 

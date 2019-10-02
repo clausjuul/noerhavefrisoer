@@ -2,6 +2,9 @@
 
 @mixin spacing ($top:0, $bottom:0) {
   padding: $top $smallSpacing $bottom;
+  // max-width: 1000px;
+  // justify-self: center;
+  // align-self: center;
 
   @include media('>=tablet') {
     padding: $top $spacing $bottom;
