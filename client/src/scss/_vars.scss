@@ -2,9 +2,9 @@
 
 $max-width: 1000px;
 
-$rem-size: calc(14px + 0.7vmin);
+// $rem-size: calc(14px + 0.7vmin);
+$rem-size: calc(12px + 0.5vmin);
 $line-height: 1.35;
-$background: #ebebeb;
 
 // COLORS //
 $color-rosa: #F2DCD1;
@@ -15,17 +15,12 @@ $color-black: #000;
 
 $color-primary: $color-rosa;
 
-// #373535
 $font-color-darkest: rgba(3, 0, 0, 0.94);
-// #7d7c7c
 $font-color-darker: rgba(0, 0, 0, 0.8);
-// #b4b4b4
 $font-color-dark: rgba(0, 0, 0, 0.72);
 
 $font-color-lightest: rgba(255, 253, 253, 0.94);
-// #7d7c7c
 $font-color-lighter: rgba(255, 255, 255, 0.8);
-// #b4b4b4
 $font-color-light: rgba(255, 255, 255, 0.72);
   
 $font-weight-light: 300;
@@ -42,6 +37,10 @@ $nav-font-size: 0.8rem;
 
 $font: 'Open Sans', sans-serif;
 $font-heading: 'Open Sans', sans-serif;
+
+$background: #ffffff;
+$background-footer: #f3f3f3;
+$font-color-footer: $font-color-dark;
 
 
 $breakpoints: (

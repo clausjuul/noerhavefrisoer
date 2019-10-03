@@ -11,9 +11,9 @@ const getDefaultTimeline = (node, delay) => {
       autoAlpha: 0,
       delay,
       // scaleX: 0.97,
-      y: 5,
+      // y: 5,
       ease: Power1.easeInOut,
-      clearProps: "opacity, visibility, display"
+      clearProps: "opacity, visibility, display, transform"
     });
     // .from(
     //   document.getElementById("footer"),
@@ -96,7 +96,7 @@ export const exit = node => {
     .to(node, 0.25, {
       autoAlpha: 0,
       // scaleX: 0.97,
-      y: 5,
+      // y: 5,
       ease: Power1.easeIn,
       clearProps: "opacity"
     });

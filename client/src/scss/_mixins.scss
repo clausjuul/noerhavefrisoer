@@ -15,6 +15,8 @@
   }
 }
 
+
+
 @mixin makeGrid3($gap-column: 1rem, $gap-row: 1rem) {
   display: grid;
   grid-template-columns: 1fr;
@@ -45,56 +47,33 @@
   }
 }
 
-%withSidebar {
-  display: grid;
-  grid-template-columns: 2.7fr 1fr;
-
-  .content__title {
-    grid-column: 1 / -1;
-    font-size: 1.5rem;
-    color: $font-color-darker;
-    font-weight: $font-weight-light;
-    margin-top: 0;
-  }
-  
-  .content__sub-title {
-    grid-column: 1 / -1;
-    font-size: 1rem;
-    color: $font-color-dark;
-    font-weight: $font-weight-normal;
-    margin-top: 0;
-  }
-
-  .content__paragraph {
-    grid-column: 1 / -1;
-    font-size: 0.7rem;
-    color: $font-color-dark;
-    font-weight: $font-weight-normal;
-    margin-top: 0;
-  }
-
-  .sidebar {
-    border-left: 1px solid $color-grey;
-    padding-left: 1rem;
-    margin-left: 1rem;
-
-    &__title {
-      font-size: 0.8;
-      font-weight: $font-weight-normal;
-      color: $font-color-darker;
-      margin-top: 0;
-    }
-
-    &__list {
-      font-size: 0.7rem;
-      color: $font-color-darker;
-
-      li {
-        padding: 0.5rem 0;
-      }
-    }
-  }
+%withSpacingParent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // @include spacing();
 }
+
+@mixin withSpacingParent ($top:0, $bottom:0) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // @include spacing($top, $bottom);
+}
+
+@mixin withSpacing ($top:0, $bottom:0) {
+  width: 100%;
+  max-width: $max-width;
+  align-self: center;
+  // @include spacing($top, $bottom);
+}
+
+%withSpacing {
+  width: 100%;
+  max-width: $max-width;
+  align-self: center;
+}
+
 
 // Brand colors.
 $color-brand: (gt: #5979C5,

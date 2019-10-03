@@ -25,7 +25,7 @@ const NavData = [
   },
   {
     to: "/om-mig",
-    label: "Om mig",
+    label: "Om salonen",
     exact: false
   },
 ]
@@ -39,6 +39,7 @@ const NavLinkItem = ({ to, label, exact }) => {
     </li>
   )
 }
+
 const Navigation = () => {
 
   return (

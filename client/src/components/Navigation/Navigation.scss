@@ -15,6 +15,7 @@
   max-width: $max-width;
   justify-self: center;
   align-self: center;
+  position: relative;
 
   &__logo li a {
     display: inline-block;
@@ -47,12 +48,35 @@
     &__item {
       
       a {
-        color: $font-color-dark;
-        font-size: 1rem;
-        font-weight: 600;
         display: inline-block;
+        position: relative;
+        color: $font-color-dark;
+        font-size: 0.9rem;
+        font-weight: 600;
         padding: 0.5rem 1rem;
         text-decoration: none;
+        transition: 200ms;
+
+        &:hover {
+          color: $color-primary;
+          // color: black;
+        }
+      }
+
+      .active {
+        // background: $color-primary;
+        // color: white;
+        border-radius: 0.5rem;
+
+        &::after {
+          content: '';
+          width: calc(100% - 1.5rem);
+          height: 2px;
+          position: absolute;
+          bottom: 0.25rem;
+          left: 0.75rem;
+          background: $color-primary;
+        }
       }
     }
   }

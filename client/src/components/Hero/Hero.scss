@@ -72,14 +72,6 @@
     text-shadow: 0 1px 0.2rem rgba(0, 0, 0, 0.35),
     0 1px 0.4rem rgba(0, 0, 0, 0.35),
     0 1px 0.9rem rgba(0, 0, 0, 0.35);
-
-    // Dreamy
-    // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-    // 0 2px 4px rgba(0, 0, 0, 0.07),
-    // 0 4px 8px rgba(0, 0, 0, 0.07),
-    // 0 8px 16px rgba(0, 0, 0, 0.07),
-    // 0 16px 32px rgba(0, 0, 0, 0.07),
-    // 0 32px 64px rgba(0, 0, 0, 0.07);
     // Dreamy w/ rem
     box-shadow: 0 0.04rem 0.08rem rgba(0, 0, 0, 0.07),
     0 0.08rem 0.16rem rgba(0, 0, 0, 0.07),
@@ -87,6 +79,13 @@
     0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
     0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
     0 1.28rem 2.4rem rgba(0, 0, 0, 0.07);
+
+    transition: background-color 350ms;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transition: background-color 150ms;
+    }
 
     // nice
       // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),

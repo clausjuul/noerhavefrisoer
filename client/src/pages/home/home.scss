@@ -1,18 +1,11 @@
 @import '../../scss/init';
 
 .home {
-  width: 100%;
-  // max-width: $max-width;
-  // align-self: center;
-  display: flex;
-  flex-direction: column;
-
+  @include withSpacingParent();
+  
   .highlights {
-    max-width: $max-width;
-    align-self: center;
-    // @include makeGrid3();
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
+    @include withSpacing();
+
 
     &__title {
       grid-column: 1 / -1;
@@ -39,8 +32,8 @@
   }
 
   .instagram-feed {
-    max-width: $max-width;
-    align-self: center;
+    @include withSpacing();
+
     @include makeGrid4();
 
     h3 {

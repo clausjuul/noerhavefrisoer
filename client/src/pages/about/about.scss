@@ -1,10 +1,12 @@
 @import '../../scss/init';
-.about {
-  // max-width: $max-width;
-  width: 100%;
-  // align-self: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 
+.about {
+  @include withSpacingParent();
+
+  .profile {
+    @include withSpacing();
+
+
+    margin-top: 2.5rem;    
+  }
 }

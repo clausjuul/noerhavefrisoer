@@ -1,22 +1,22 @@
 @import '../../scss/init';
 
 .footer-wrapper {
-  background: #f3f3f3;
+  background: $background-footer;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin-top: 3rem;
   @include spacing(2rem, 2rem);
-  // opacity: 0;
 }
+
 .footer {
   display: flex;
   justify-content: space-between;
   position: relative;
   width: 100%;
   max-width: $max-width;
-  color: $font-color-dark;
+  color: $font-color-footer;
 
   @include media('<tablet') {
     flex-direction: column;

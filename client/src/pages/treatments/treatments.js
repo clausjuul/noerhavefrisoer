@@ -5,7 +5,8 @@ import Footer from "../../components/Footer/Footer";
 import treatmentData from './treatmentData';
 import './treatments.scss';
 import { ChevronIcon } from "../../components/Icons/Icons";
-import HeroIn from "../../components/Hero/HeroIn";
+import HeroIn from "../../components/Hero/Hero";
+// import HeroIn from "../../components/Hero/HeroIn";
 
 // TODO
 // make cards open on desktop, not on mobile

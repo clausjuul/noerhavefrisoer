@@ -1,11 +1,7 @@
 @import '../../scss/init';
 
 .treatments {
-  width: 100%;
-  // max-width: $max-width;
-  // align-self: center;
-  display: flex;
-  flex-direction: column;
+  @include withSpacingParent();
 
   .hr {
     display: block;
@@ -19,15 +15,10 @@
 }
 
 .treatment__title {
-  max-width: $max-width;
-  align-self: center;
+  @include withSpacing();
   display: flex;
   align-items: flex-start;
-  width: 100%;
-  // justify-content: center;
   flex-wrap: wrap;
-  // flex-direction: column;
-  // padding-bottom: 1rem;
   cursor: pointer;
 
   &:first-of-type {

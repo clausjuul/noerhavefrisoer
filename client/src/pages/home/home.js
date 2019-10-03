@@ -1,7 +1,8 @@
 import React from "react";
 
 import Footer from '../../components/Footer/Footer';
-import HeroIn from '../../components/Hero/HeroIn';
+import HeroIn from '../../components/Hero/Hero';
+// import HeroIn from '../../components/Hero/HeroIn';
 import Image from './image.jpg';
 import './home.scss';
 // insta som slide sideværs galleri på mobil

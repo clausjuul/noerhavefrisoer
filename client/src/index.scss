@@ -12,15 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   // background: #fafafa;
-  background: #ffffff;
+  background: $background;
   // background: rgba(0, 0, 0, 0.141);
 }
 
 #root {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100vw;
+  min-height: 100vh;
 
   header {
     display: flex;
@@ -72,10 +72,24 @@ figure {
 
 .page-title {
   text-align: center;
+  align-self: center;
   color: $font-color-dark;
   font-size: calc(1.5rem + 2vmin);
   font-weight: 600;
   margin-bottom: 0.5rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: calc(100% + 2rem);
+    height: 5px;
+    position: absolute;
+    border-radius: 5px;
+    bottom: 0.3rem;
+    left: -1rem;
+    background: $color-primary;
+    z-index: -1;
+  }
 }
 
 .page-sub-title {
@@ -92,12 +106,19 @@ figure {
   font-weight: 400;
 }
 
+.section-title {
+  text-align: center;
+  color: $font-color-dark;
+}
+
 .hr {
   display: block;
   margin: 2rem 0;
   height: 1px;
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
+  max-width: $max-width;
+  align-self: center;
 }
 
 .bold {
