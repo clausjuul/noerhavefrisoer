@@ -1,8 +1,11 @@
 @import '../../scss/init';
 
 .booking {
-  max-width: $max-width;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  // max-width: $max-width;
+  // align-self: center;
 
   a {
     display: block;
@@ -10,8 +13,10 @@
   }
 
   &__iframe {
+    max-width: $max-width;
+    align-self: center;
     display: block;
-    height: 100%;
+    height: auto;
     width: 100%;
     min-height: 80vh;
     border: none;

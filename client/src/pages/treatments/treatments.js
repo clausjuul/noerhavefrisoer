@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Tween } from "react-gsap";
 
+import Footer from "../../components/Footer/Footer";
 import treatmentData from './treatmentData';
 import './treatments.scss';
 import { ChevronIcon } from "../../components/Icons/Icons";
+import HeroIn from "../../components/Hero/HeroIn";
 
 // TODO
 // make cards open on desktop, not on mobile
@@ -58,12 +60,16 @@ const Treatment = (props) => {
 
 const Treatments = () => {
   return (
-    <section className="treatments">
-      <h1 className="page-title">Behandlinger</h1>
-      {Object.values(treatmentData).map((value, i) => (
-        <Treatment treatment={value} key={`treatment-${i}`} />
-      ))}
-    </section>
+    <>
+      <section className="treatments">
+        <HeroIn height={'40vh'} />
+        <h1 className="page-title">Behandlinger</h1>
+        {Object.values(treatmentData).map((value, i) => (
+          <Treatment treatment={value} key={`treatment-${i}`} />
+        ))}
+      <Footer />
+      </section>
+    </>
   );
 };
 export default Treatments;

@@ -6,11 +6,11 @@
   // justify-self: center;
   // align-self: center;
 
-  @include media('>=tablet') {
+  @include media('>phone') {
     padding: $top $spacing $bottom;
   }
 
-  @include media('>desktop') {
+  @include media('>=tablet') {
       padding: $top $largeSpacing $bottom;
   }
 }
@@ -20,11 +20,11 @@
   grid-template-columns: 1fr;
   grid-gap: $gap-column $gap-row;
 
-  @include media('>=tablet') {
+  @include media('>phone') {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  @include media('>=desktop') {
+  @include media('>=tablet') {
     grid-gap: calc(#{$gap-column} * 2) calc(#{$gap-row} * 2);
   }
 }
@@ -33,12 +33,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: $gap-column $gap-row;
-  
-  @include media('>=tablet') {
+
+  @include media('>phone') {
     grid-template-columns: 1fr 1fr;
+    grid-gap: $gap-column $gap-row;
   }
-  
-  @include media('>=desktop') {
+
+  @include media('>=tablet') {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: calc(#{$gap-column} * 2) calc(#{$gap-row} * 2);
   }

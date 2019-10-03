@@ -2,11 +2,15 @@
 
 .treatments {
   width: 100%;
-  max-width: $max-width;
-  align-self: center;
+  // max-width: $max-width;
+  // align-self: center;
+  display: flex;
+  flex-direction: column;
 
   .hr {
     display: block;
+    max-width: $max-width;
+    align-self: center;
     margin: 1rem 0 2rem 0;
     height: 1px;
     width: 100%;
@@ -15,8 +19,11 @@
 }
 
 .treatment__title {
+  max-width: $max-width;
+  align-self: center;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
   // justify-content: center;
   flex-wrap: wrap;
   // flex-direction: column;
@@ -54,6 +61,9 @@
 }
 
 .treatment {
+  max-width: $max-width;
+  align-self: center;
+  width: 100%;
   // margin-bottom: 2rem;
   // padding: 1rem;
   margin-top: 1rem;

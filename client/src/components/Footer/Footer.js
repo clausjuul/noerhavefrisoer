@@ -1,12 +1,100 @@
-import React from "react";
+import React
+// , { useEffect, useState, useRef } 
+from "react";
+// import { Transition } from "react-transition-group";
+// import { TimelineMax as Timeline, TweenMax, Power1 } from "gsap";
 
 import { FacebookIcon, InstagramIcon } from '../Icons/Icons';
 import './Footer.scss';
+// import { Tween } from "react-gsap";
+
+
+// const animation = (node, reverse) => {
+//   const timeline = new Timeline({ paused: true });
+
+//   timeline.fromTo(node, 0.4, {
+//     // display: "none",
+//     opacity: 0,
+//     scaleX: 0.97,
+//     y: '-2rem',
+//     ease: Power1.easeInOut,
+//     clearProps: "opacity, visibility, display"
+//   });
+
+//   reverse ? timeline.reverse() : timeline.play();
+
+//   // return timeline;
+// };
 
 const Footer = () => {
+  // const { location, show } = props;
+  // const footerRef = useRef(null)
+  // const [show, setShow] = useState(true);
+
+  // const timeline = new Timeline({ paused: true });
+
+
+  // useEffect(() => {
+  //   if(footerRef && footerRef.current) {
+  //     setShow(false)
+
+  //     setInterval(() => {
+  //       setShow(true);
+  //     }, 800);
+  //   }
+  //   // return () => {
+  //   //   cleanup
+  //   // };
+  // }, [location, footerRef]);
+
+  // useEffect(() => {
+  //   if(footerRef && footerRef.current) {
+  //     timeline.fromTo(
+  //       footerRef.current,
+  //       0.4,
+  //       {
+  //         opacity: 0
+  //       },
+  //       {
+  //         opacity: 1
+  //       }
+  //     );
+  //   }
+  // }, [footerRef])
+
+  // useEffect(() => {
+  //   show ? timeline.play() : timeline.reverse()
+  // }, [show])
+
+  // useEffect(() => {
+  //   setShow(false)
+  //   // timeline.reverse();
+  //   setTimeout(() => {
+  //     setShow(true)
+  //     // timeline.play();
+  //   }, 900);
+  // }, [location])
+
   return (
-    <div className="footer-wrapper">
-      <footer className="footer">
+    // <Transition
+    //   // key={key}
+    //   appear={true}
+    //   in={show}
+    //   onEnter={node => {TweenMax.to(node, 0.4, {opacity: 1})}}
+    //   onExit={node => {TweenMax.to(node, 0.4, { opacity: 0 })}}
+    //   // onEnter={node => animation(node, false)}
+    //   // onExit={node => animation(node, true)}
+    //   timeout={{ enter: 1000, exit: 1000 }}
+    // >
+    // <Tween
+    //   to={{ opacity: 1 }}
+    //   from={{ opacity: 0 }}
+    //   duration={show ? 0.4 : 0.8}
+    //   ease="Power2.easeInOut"
+    //   playState={show ? "play" : "reverse"}
+    // >
+      <div className="footer-wrapper" id="footer">
+        <footer className="footer">
           <ul className="footer__opening-hours">
             {/* <section className="footer__opening-hours">
           <ul> */}
@@ -39,32 +127,38 @@ const Footer = () => {
             <li>lukket</li> */}
           </ul>
 
-        <div className="footer__social">
-          <span className="footer__social--icon">
-            <FacebookIcon />
-          </span>
-          <span className="footer__social--icon">
-            <InstagramIcon />
-          </span>
-        </div>
+          <div className="footer__social">
+            <span className="footer__social--icon">
+              <FacebookIcon />
+            </span>
+            <span className="footer__social--icon">
+              <InstagramIcon />
+            </span>
+          </div>
 
-        <ul className="footer__contacts">
-          {/* <section className="footer__contacts">
+          <ul className="footer__contacts">
+            {/* <section className="footer__contacts">
           <ul> */}
 
-          {/* <li className="footer__title">
+            {/* <li className="footer__title">
             <h3>Kontakt</h3>
           </li> */}
-          <li>Maria Louise Nørhave</li>
-          <li>Gl. hobrovej 59</li>
-          <li>8920 Randers NV</li>
-          <li>Cvr. 40697156</li>
-          <br></br>
-          <li>+45 4265 5687</li>
-          <li>Maria@noerhavefrisoer.dk</li>
-        </ul>
-      </footer>
-    </div>
+            <li className="bold">Maria Louise Nørhave</li>
+            <li>Gl. hobrovej 59</li>
+            <li>8920 Randers NV</li>
+            <li>Cvr. 40697156</li>
+            <br></br>
+            <li className="bold">+45 4265 5687</li>
+            <li className="bold">Maria@noerhavefrisoer.dk</li>
+          </ul>
+        </footer>
+      </div>
+    // </Tween>
+    // </Transition>
   );
 };
+
+// const FooterPortal = () => (
+//   ReactDom.createPortal(<Footer />, document.body)
+// )
 export default Footer;

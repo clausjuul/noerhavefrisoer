@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  margin-top: 3rem;
   @include spacing(2rem, 2rem);
+  // opacity: 0;
 }
 .footer {
   display: flex;
@@ -53,10 +56,6 @@
       grid-column: 1 / -1;
     }
     
-    // span {
-    //   align-self: center;
-    // }
-
     .full {
       grid-column: 1 / -1;
     }
@@ -110,10 +109,6 @@
     
     li {
       padding-bottom: 0.25rem;
-
-      &:first-of-type {
-        font-weight: 600;
-      }
     }
   }
 }

@@ -33,7 +33,7 @@ main {
   flex-direction: column;
   align-items: center;
   flex-grow: 100;
-  @include spacing(2rem, 3rem);
+  // @include spacing(2rem, 3rem);
   // @include spacing();
 }
 
@@ -98,4 +98,8 @@ figure {
   height: 1px;
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
+}
+
+.bold {
+  font-weight: 600;
 }
