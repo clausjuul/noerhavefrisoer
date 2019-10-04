@@ -63,7 +63,7 @@ const Treatments = () => {
   return (
     <>
       <section className="treatments">
-        <HeroIn height={'40vh'} />
+        <HeroIn />
         <h1 className="page-title">Behandlinger</h1>
         {Object.values(treatmentData).map((value, i) => (
           <Treatment treatment={value} key={`treatment-${i}`} />

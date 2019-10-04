@@ -86,6 +86,8 @@ const Hero = (props) => {
       <section
         className="hero"
         style={{
+          // background: "grey",
+          opacity: '0.5',
           backgroundImage: `url(${image || HeroImage})`,
           height: height || "30vh"
         }}

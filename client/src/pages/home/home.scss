@@ -5,6 +5,9 @@
   
   .highlights {
     @include withSpacing();
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
 
 
     &__title {
@@ -17,6 +20,29 @@
       text-align: center;
       margin-bottom: 0.25rem;
       color: $font-color-dark;
+    }
+
+    .test-img {
+      align-self: center;
+      justify-self: center;
+      
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      object-fit: contain;
+      border-radius: 1rem;
+      box-shadow: 0 0.04rem 0.08rem rgba(0, 0, 0, 0.07),
+      0 0.08rem 0.16rem rgba(0, 0, 0, 0.07),
+      0 0.16rem 0.32rem rgba(0, 0, 0, 0.07),
+      0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
+      0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
+      0 1.28rem 2.4rem rgba(0, 0, 0, 0.07);
+    }
+
+    .testbox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
     }
 
     // &__content {

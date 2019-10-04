@@ -132,6 +132,7 @@ const Footer = () => {
               <FacebookIcon />
             </span>
             <span className="footer__social--icon">
+            https://www.instagram.com/noerhave_frisoer/
               <InstagramIcon />
             </span>
           </div>

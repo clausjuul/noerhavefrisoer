@@ -36,7 +36,7 @@ const Booking = () => {
   return (
     <>
       <section className="booking">
-        <HeroIn height={"20vh"} />
+        <HeroIn />
         <h1 className="page-title">Booking</h1>
         <h3 className="page-content">
           Har du svært ved at finde en tid, skal du være velkommen
