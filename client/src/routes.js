@@ -7,13 +7,13 @@ import Home from './pages/home/home';
 import About from './pages/about/about';
 import Booking from './pages/booking/booking';
 import Treatments from './pages/treatments/treatments';
+import Test from './test';
 
-const Routes = (props) => {
-
+const Routes = () => {
   return (
     <Route
-      render={(props) => {
-        const { pathname, key } = props.location;
+      render={({ location, history }) => {
+        const { pathname, key } = location;
 
         return (
           <TransitionGroup component={"main"}>
@@ -24,13 +24,14 @@ const Routes = (props) => {
               onExit={node => exit(node)}
               timeout={{ enter: 750, exit: 650 }}
             >
-              <Switch location={props.location}>
-              {/* <Switch> */}
+              <Switch location={location}>
+                {/* <Switch> */}
                 <Route exact path="/" component={Home} />
                 <Route exact path="/behandlinger" component={Treatments} />
                 <Route exact path="/booking" component={Booking} />
                 <Route exact path="/om-mig" component={About} />
-                <Route render={() => props.history.push("/")} />
+                <Route exact path="/test" component={Test} />
+                <Route render={() => history.push("/")} />
               </Switch>
             </Transition>
           </TransitionGroup>

@@ -12,7 +12,6 @@ import './home.scss';
 //TODO 
 // en række ned med et billede ind imellem
 // Lave et eller andet lignede på om salonen
-// lave facebook link
 // behandlinger chevron pill dims skal alignes
 const Home = () => {
   return (
@@ -35,7 +34,7 @@ const Home = () => {
           <img className="test-img" style={{ opacity: '0.8'}} src={Image} alt="test-test" />
         </article>
 
-        <article className="highlights">
+        {/* <article className="highlights">
 
           <div className="testbox">
           <h3 className="highlights__title">Hos mig får du</h3>
@@ -58,7 +57,7 @@ const Home = () => {
           <img className="test-img" src={Image} alt="test-test" />
           <img className="test-img" src={Image} alt="test-test" />
           <img className="test-img" src={Image} alt="test-test" />
-        </section>
+        </section> */}
       <Footer />
       </section>
     </>

@@ -28,6 +28,11 @@ const NavData = [
     label: "Om salonen",
     exact: false
   },
+  {
+    to: "/test",
+    label: "test",
+    exact: false
+  },
 ]
 
 const NavLinkItem = ({ to, label, exact }) => {

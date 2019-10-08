@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React
+// , { useState, useEffect, useRef }
+ from "react";
 import { Link } from 'react-router-dom';
 
 import Footer from "../../components/Footer/Footer";
@@ -43,7 +45,7 @@ const Booking = () => {
           <br></br>
           til at ringe, skrive eller kigge forbi salonen
         </h3>
-        <Link to="om-mig">
+        <Link className="booking__link" to="om-mig">
           Kontaktoplysningerne finder du <u>her</u>
         </Link>
         <iframe

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from 'react-router-dom';
 import { Transition } from "react-transition-group";
 // import { TweenMax as Tween, Power2 } from "gsap";
@@ -47,25 +47,12 @@ const Hero = (props) => {
   const { image, height } = props;
   // const { location } = props;
 
-  const [show, setShow] = useState(true)
+  const [show] = useState(true)
   // const [isLarge, setIsLarge] = useState(false)
 
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
   const ctaRef = useRef(null)
-
-  // useEffect(() => {
-  //   console.log('large: ', isLarge)
-  //   // if(location && location.pathname) {
-  //     if (location.pathname.length >= 2) {
-  //       // isLarge !== true &&
-  //       setIsLarge(true)
-  //     } else {
-  //       // isLarge !== false && 
-  //       setIsLarge(false)
-  //     }
-  //   // }
-  // }, [location])
 
   return (
     <Transition
@@ -87,7 +74,7 @@ const Hero = (props) => {
         className="hero"
         style={{
           // background: "grey",
-          opacity: '0.5',
+          // opacity: '0.5',
           backgroundImage: `url(${image || HeroImage})`,
           height: height || "30vh"
         }}

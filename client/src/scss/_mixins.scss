@@ -1,20 +1,20 @@
 @import './vendor/include-media';
 
 @mixin spacing ($top:0, $bottom:0) {
-  padding: $top $smallSpacing $bottom;
+  padding: $top $spacing $bottom;
+  // padding: $top $smallSpacing $bottom;
   // max-width: 1000px;
   // justify-self: center;
   // align-self: center;
 
-  @include media('>phone') {
-    padding: $top $spacing $bottom;
-  }
+  // @include media('>phone') {
+  //   padding: $top $spacing $bottom;
+  // }
 
-  @include media('>=tablet') {
-      padding: $top $largeSpacing $bottom;
-  }
+  // @include media('>=tablet') {
+  //     padding: $top $largeSpacing $bottom;
+  // }
 }
-
 
 
 @mixin makeGrid3($gap-column: 1rem, $gap-row: 1rem) {
@@ -65,7 +65,7 @@
   width: 100%;
   max-width: $max-width;
   align-self: center;
-  // @include spacing($top, $bottom);
+  @include spacing($top, $bottom);
 }
 
 %withSpacing {

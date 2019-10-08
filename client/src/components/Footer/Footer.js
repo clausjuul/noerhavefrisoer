@@ -93,67 +93,76 @@ const Footer = () => {
     //   ease="Power2.easeInOut"
     //   playState={show ? "play" : "reverse"}
     // >
-      <div className="footer-wrapper" id="footer">
-        <footer className="footer">
-          <ul className="footer__opening-hours">
-            {/* <section className="footer__opening-hours">
+    <div className="footer-wrapper" id="footer">
+      <footer className="footer">
+        <ul className="footer__opening-hours">
+          {/* <section className="footer__opening-hours">
           <ul> */}
-            {/* <li className="footer__title">
+          {/* <li className="footer__title">
             <h3>Åbningstider</h3>
           </li> */}
-            {/* <li>Mandag</li>
+          {/* <li>Mandag</li>
             <li>lukket</li> */}
-            <li>Tirsdag</li>
-            <li>08:00 - 17:00</li>
-            <li>Onsdag</li>
-            <li>08:00 - 17:00</li>
-            <li>Torsdag</li>
-            <li>12:00 - 20:00</li>
-            <li>Fredag</li>
-            <li>08:00 - 17:00</li>
-            <li>
-              Lørdag
-              <div className="footer__small">i ulige uger</div>
-            </li>
-            <li>08:00 - 13:00</li>
-            {/* <li className="full">eller efter aftale</li> */}
-            {/* <li>08:00 - 13:00 eller efter aftale</li> */}
-            {/* <li>
+          <li>Tirsdag</li>
+          <li>08:00 - 17:00</li>
+          <li>Onsdag</li>
+          <li>08:00 - 17:00</li>
+          <li>Torsdag</li>
+          <li>12:00 - 20:00</li>
+          <li>Fredag</li>
+          <li>08:00 - 17:00</li>
+          <li>
+            Lørdag
+            <div className="footer__small">i ulige uger</div>
+          </li>
+          <li>08:00 - 13:00</li>
+          {/* <li className="full">eller efter aftale</li> */}
+          {/* <li>08:00 - 13:00 eller efter aftale</li> */}
+          {/* <li>
               Lørdag
               <div className="footer__small">(lige uger)</div>
             </li>
             <li>lukket</li>
             <li>Søndag</li>
             <li>lukket</li> */}
-          </ul>
+        </ul>
 
-          <div className="footer__social">
-            <span className="footer__social--icon">
-              <FacebookIcon />
-            </span>
-            <span className="footer__social--icon">
-            https://www.instagram.com/noerhave_frisoer/
-              <InstagramIcon />
-            </span>
-          </div>
+        <div className="footer__social">
+          <a
+            href="https://www.facebook.com/noerhave_frisoer-104218320987789/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__social--icon"
+          >
+            <FacebookIcon />
+          </a>
+          <a
+            href="https://www.instagram.com/noerhave_frisoer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__social--icon"
+          >
+            <InstagramIcon />
+          </a>
+        </div>
 
-          <ul className="footer__contacts">
-            {/* <section className="footer__contacts">
+        <ul className="footer__contacts">
+          {/* <section className="footer__contacts">
           <ul> */}
 
-            {/* <li className="footer__title">
+          {/* <li className="footer__title">
             <h3>Kontakt</h3>
           </li> */}
-            <li className="bold">Maria Louise Nørhave</li>
-            <li>Gl. hobrovej 59</li>
-            <li>8920 Randers NV</li>
-            <li>Cvr. 40697156</li>
-            <br></br>
-            <li className="bold">+45 4265 5687</li>
-            <li className="bold">Maria@noerhavefrisoer.dk</li>
-          </ul>
-        </footer>
-      </div>
+          <li className="bold">Maria Louise Nørhave</li>
+          <li>Gl. hobrovej 59</li>
+          <li>8920 Randers NV</li>
+          <li>Cvr. 40697156</li>
+          <br></br>
+          <li className="bold">+45 4265 5687</li>
+          <li className="bold">Maria@noerhavefrisoer.dk</li>
+        </ul>
+      </footer>
+    </div>
     // </Tween>
     // </Transition>
   );

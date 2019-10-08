@@ -3,7 +3,7 @@
 .booking {
   @include withSpacingParent();
 
-  a {
+  &__link {
     display: block;
     text-align: center;
   }

@@ -5,19 +5,22 @@
 
   .hr {
     display: block;
-    max-width: $max-width;
     align-self: center;
-    margin: 1rem 0 2rem 0;
     height: 1px;
-    width: 100%;
+    max-width: $max-width;
+    width: calc(100% - 1.5rem);
+    margin: 1rem 0 2rem 0;
+    // margin: 1rem $spacing 2rem $spacing;
     background: rgba(0, 0, 0, 0.1);
+    // @include withSpacing();
   }
 }
 
 .treatment__title {
   @include withSpacing();
   display: flex;
-  align-items: flex-start;
+  // align-items: flex-start;
+  // justify-content: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
 
@@ -43,6 +46,7 @@
   }
 
   svg {
+    // align-self: center;
     width: 0.75rem;
     margin-right: 1rem;
     margin-left: 0.5rem;
@@ -74,7 +78,7 @@
     row-gap: 0.25rem;
 
     @include media('<phone') {
-      padding: 0.5rem 0;
+      // padding: 0.5rem 0;
     }
 
     &:last-of-type {
@@ -84,7 +88,7 @@
 
   &__name {
     font-weight: 600;
-    color: $font-color-darker;
+    color: $font-color-dark;
   }
   
   &__price {
@@ -105,7 +109,7 @@
       color: inherit;
       font-size: inherit;
       position: absolute;
-      left: 0;
+      left: 0.15rem;
     }
   }
 }
