@@ -10,19 +10,26 @@ const About = () => {
     <section className="about">
       <HeroIn />
       <h1 className="page-title">Om salonen</h1>
+
+      <div className="hr" />
+
       <article className="profile">
-        <h3 className="section-title">
-          Hvem er jeg?
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ad quam! Unde quos iste dolor reprehenderit sapiente, 
-          perspiciatis nobis ad? Voluptates sed nulla repellat ea autem aliquam nemo repudiandae alias.
+        <h3 className="section-title">Hvem er jeg?</h3>
+        <p className="section-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ad
+          quam! Unde quos iste dolor reprehenderit sapiente, perspiciatis nobis
+          ad? Voluptates sed nulla repellat ea autem aliquam nemo repudiandae
+          alias.
         </p>
       </article>
       <article className="salonen">
-        <h3 className="section-title">
-          Værd at vide om salonen
-        </h3>
+        <h3 className="section-title">Værd at vide om salonen</h3>
+        <p className="section-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ad
+          quam! Unde quos iste dolor reprehenderit sapiente, perspiciatis nobis
+          ad? Voluptates sed nulla repellat ea autem aliquam nemo repudiandae
+          alias.
+        </p>
       </article>
       <Footer />
     </section>

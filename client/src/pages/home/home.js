@@ -38,7 +38,6 @@ const Home = () => {
           <figure>
             <img
               className="test-img"
-              // style={{ opacity: "0.8" }}
               src={Image}
               alt="test-test"
             />
@@ -46,7 +45,6 @@ const Home = () => {
           <figure>
             <img
               className="test-img"
-              // style={{ opacity: "0.8" }}
               src={Image1}
               alt="test-test"
             />
@@ -54,7 +52,6 @@ const Home = () => {
           <figure>
             <img
               className="test-img"
-              // style={{ opacity: "0.8" }}
               src={Image}
               alt="test-test"
             />

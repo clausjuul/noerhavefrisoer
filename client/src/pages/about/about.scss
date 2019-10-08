@@ -3,9 +3,10 @@
 .about {
   @include withSpacingParent();
 
-  .profile {
+  .profile, .salonen {
     @include withSpacing();
-
+    display: flex;
+    flex-direction: column;
 
     margin-top: 2.5rem;    
   }

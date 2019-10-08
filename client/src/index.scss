@@ -88,7 +88,7 @@ figure {
     &::after {
       content: '';
       width: calc(100% + 2rem);
-      height: 0.25rem;
+      height: 0.2rem;
       position: absolute;
       border-radius: 0.25rem;
       bottom: 0.3rem;
@@ -118,6 +118,7 @@ figure {
   position: relative;
   text-align: center;
   align-self: center;
+  justify-self: center;
   color: $font-color-dark-light;
   font-weight: 400;
   font-size: calc(1rem + 2.5vmin);
@@ -139,6 +140,13 @@ figure {
       z-index: -1;
     }
   }
+}
+
+.section-content {
+  text-align: center;
+  color: $font-color-dark;
+  // font-size: calc(0.8rem + 0.5vmin);
+  font-weight: 400;
 }
 
 .hr {
