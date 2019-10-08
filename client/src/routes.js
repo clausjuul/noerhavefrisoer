@@ -9,6 +9,10 @@ import Booking from './pages/booking/booking';
 import Treatments from './pages/treatments/treatments';
 import Test from './test';
 
+// const Booking = React.lazy(() => import("./pages/booking/booking"));
+// const Treatments = React.lazy(() => import("./pages/treatments/treatments"));
+// const About = React.lazy(() => import("./pages/about/about"));
+
 const Routes = () => {
   return (
     <Route

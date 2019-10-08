@@ -4,19 +4,24 @@
   @include withSpacingParent();
   
   .highlights {
-    @include withSpacing();
+    @include withSpacingParent();
+    // box-shadow: $box-shadow-dreamy;
+
+    &__content {
+      @include withSpacing();
     display: flex;
     flex-direction: column;
-    margin: 3rem 0;
+    margin: 1rem 0;
 
 
     &__title {
-      grid-column: 1 / -1;
+      // grid-column: 1 / -1;
       text-align: center;
       color: $font-color-dark;
     }
 
     p {
+      // font-weight: 600;
       text-align: center;
       margin-bottom: 0.25rem;
       color: $font-color-dark;
@@ -25,41 +30,62 @@
     .test-img {
       align-self: center;
       justify-self: center;
-      
-      width: 90%;
-      max-width: 500px;
+      width: 100%;
       position: relative;
       object-fit: contain;
-      border-radius: 0.1rem;
-      box-shadow: 0 0.04rem 0.08rem rgba(0, 0, 0, 0.07),
-      0 0.08rem 0.16rem rgba(0, 0, 0, 0.07),
-      0 0.16rem 0.32rem rgba(0, 0, 0, 0.07),
-      0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
-      0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
-      0 1.28rem 2.4rem rgba(0, 0, 0, 0.07);
+      opacity: 0.6;
     }
 
     .testbox {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      position: relative;
+      max-width: 700px;
 
+      .tekst {
+        background: $background;
+        align-self: center;
+        justify-self: center;
+        z-index: +1;
+      }
+    }
+  }
+}
+
+.imageBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 80%;
+  max-width: 900px;
+  align-self: center;
+  margin: 2rem;
+  position: relative;
+  box-shadow: $box-shadow-dreamy;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @include media('>phone') {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  figure {
+    opacity: 0.7;
+    transition: opacity 300ms;
+
+    img {
+      object-fit: cover;
+      min-height: 100%;
+      min-width: 100%;
     }
 
-    // &__content {
-    //   // grid-column: 2 / 4;
-    // }
-
-    // .test-img {
-    //   width: 80%;
-    //   object-fit: cover;
-    //   // padding: 0.5rem 0.5rem 0.5rem 20%;
-    //   border-radius: 1rem;
-    // }
+    &:hover {
+      opacity: 1;
+    }
   }
+}
 
   .instagram-feed {
     @include withSpacing();
-
     @include makeGrid4();
 
     h3 {
@@ -76,12 +102,7 @@
       position: relative;
       object-fit: cover;
       border-radius: 1rem;
-      box-shadow: 0 0.04rem 0.08rem rgba(0, 0, 0, 0.07),
-      0 0.08rem 0.16rem rgba(0, 0, 0, 0.07),
-      0 0.16rem 0.32rem rgba(0, 0, 0, 0.07),
-      0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
-      0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
-      0 1.28rem 2.4rem rgba(0, 0, 0, 0.07);
+      box-shadow: $box-shadow-dreamy;
     }
   }
 }

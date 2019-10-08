@@ -18,6 +18,7 @@ $color-primary: $color-rosa;
 $font-color-darkest: rgba(3, 0, 0, 0.94);
 $font-color-darker: rgba(0, 0, 0, 0.8);
 $font-color-dark: rgba(0, 0, 0, 0.72);
+$font-color-dark-light: rgba(0, 0, 0, 0.6);
 
 $font-color-lightest: rgba(255, 253, 253, 0.94);
 $font-color-lighter: rgba(255, 255, 255, 0.8);
@@ -41,6 +42,20 @@ $font-heading: 'Open Sans', sans-serif;
 $background: #ffffff;
 $background-footer: #f3f3f3;
 $font-color-footer: $font-color-dark;
+
+$box-shadow-dreamy: 0 0.04rem 0.08rem rgba(0, 0, 0, 0.07),
+0 0.08rem 0.16rem rgba(0, 0, 0, 0.07),
+0 0.16rem 0.32rem rgba(0, 0, 0, 0.07),
+0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
+0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
+0 1.28rem 2.4rem rgba(0, 0, 0, 0.07)
+;
+$box-shadow-inset-dreamy: inset 0 0.04rem 0.08rem rgba(0, 0, 0, 0.07),
+inset 0 0.08rem 0.16rem rgba(0, 0, 0, 0.07),
+inset 0 0.16rem 0.32rem rgba(0, 0, 0, 0.07),
+inset 0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
+inset 0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
+inset 0 1.28rem 2.4rem rgba(0, 0, 0, 0.07);
 
 
 $breakpoints: (
