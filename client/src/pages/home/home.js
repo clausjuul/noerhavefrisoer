@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { TweenMax } from "gsap";
+// import CSSRulePlugin from "gsap/CSSRulePlugin";
 
 import Footer from '../../components/Footer/Footer';
 import HeroIn from '../../components/Hero/Hero';
@@ -9,95 +12,156 @@ import './home.scss';
 // insta som slide sideværs galleri på mobil
 // desktop exspand nedad, 3 pr row?
 
+const SectionTitle = ({ title, inView }) => {
+
+  let titleRef = useRef(null);
+
+  useEffect(() => {
+    if (inView) {
+      TweenMax.to(titleRef, 0.8, {
+        autoAlpha: 1,
+        y: 0,
+      });
+    }
+  }, [inView]);
+
+  return (
+    <h2
+      ref={element => (titleRef = element)}
+      className={inView ? "section-title under" : "section-title"}
+    >
+      {title}
+    </h2>
+  );
+};
+
+
+const Highlights = (props) => {
+  const { inView } = props;
+
+  let titleRef = useRef(null)
+  let p1Ref = useRef(null)
+  let p2Ref = useRef(null)
+  let p3Ref = useRef(null)
+  let p4Ref = useRef(null)
+
+  useEffect(() => {
+    if(inView) {
+      TweenMax.staggerFromTo(
+        [p1Ref, p2Ref, p3Ref, p4Ref],
+        0.8,
+        {
+          opacity: 0,
+          y: 7,
+          // cycle: {
+          //   y: [-10, 7, 7, 7, 7]
+          // },
+        },
+        {
+          opacity: 1,
+          y: 0,
+          delay: 0.3,
+          clearProps: "transform, opacity"
+        },
+        0.15
+      );
+    }
+  }, [inView])
+
+  return (
+    <article className="highlights__content">
+      <h2
+        ref={element => (titleRef = element)}
+        className={inView ? "section-title under" : "section-title"}
+      >
+        Hos mig får du
+      </h2>
+      {/* <SectionTitle title={"Hos mig får du"} inView={inView} /> */}
+      <p style={{ opacity: 0 }} ref={element => (p1Ref = element)}>
+        - Afslappet og hyggelig atmosfære
+      </p>
+      <p style={{ opacity: 0 }} ref={element => (p2Ref = element)}>
+        - Professionel og personlig rådgivning
+      </p>
+      <p style={{ opacity: 0 }} ref={element => (p3Ref = element)}>
+        - En behandling som passer til dig og dine ønsker
+      </p>
+      <p style={{ opacity: 0 }} ref={element => (p4Ref = element)}>
+        - Nærvær, grundighed og bliver altid mødt med et smil
+      </p>
+    </article>
+  );
+}
 
 //TODO 
 // en række ned med et billede ind imellem
 // Lave et eller andet lignede på om salonen
-// behandlinger chevron pill dims skal alignes
+
 const Home = () => {
+
+  const [highlightsRef, highlightsInView] = useInView({
+    // threshold: 0.8,
+    rootMargin: "-100px 0px",
+    triggerOnce: true
+  });
+
+  const [imageBoxRef, imageBoxInView] = useInView({
+    rootMargin: "-100px 0px",
+    triggerOnce: true
+  });
+
+  let imgBoxRef = useRef(null);
+
+  useEffect(() => {
+    if (imageBoxInView) {
+      TweenMax.fromTo(
+        "#instabox",
+        0.8,
+        {
+          opacity: 0,
+          y: 10,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          delay: 0.3,
+          clearProps: "transform, opacity"
+        }
+      );
+    }
+  }, [imageBoxInView]);
+
+  
+
   return (
     <>
       <section className="home">
-        <HeroIn height={"65vh"} />
+        <HeroIn height={"60vh"} />
         <h1 className="page-title">Velkommen til NØRHAVE</h1>
         <h3 className="page-sub-title">Beliggende på Gl. Hobrovej i Randers</h3>
 
         <div className="hr" />
 
-        <section className="highlights">
-        <article className="highlights__content">
-          <h2 className="section-title">Hos mig får du</h2>
-          <p>- Afslappet og hyggelig atmosfære</p>
-          <p>- Professionel og personlig rådgivning</p>
-          <p>- En behandling som passer til dig og dine ønsker</p>
-          <p>- Nærvær, grundighed og bliver altid mødt med et smil</p>
-        </article>
+        <section ref={highlightsRef} className="highlights">
+          <Highlights inView={highlightsInView} />
         </section>
 
-        <section className="imageBox">
+        <section
+          id="instabox"
+          ref={imageBoxRef}
+          className="imageBox"
+          style={{opacity: 0}}
+        >
           <figure>
-            <img
-              className="test-img"
-              src={Image}
-              alt="test-test"
-            />
+            <img className="test-img" src={Image} alt="test-test" />
           </figure>
           <figure>
-            <img
-              className="test-img"
-              src={Image1}
-              alt="test-test"
-            />
+            <img className="test-img" src={Image1} alt="test-test" />
           </figure>
           <figure>
-            <img
-              className="test-img"
-              src={Image}
-              alt="test-test"
-            />
+            <img className="test-img" src={Image} alt="test-test" />
           </figure>
         </section>
-
-        {/* <article className="highlights">
-          <div className="testbox">
-            <div className="tekst">
-              <h2 className="section-title">Hos mig får du</h2>
-              <p>- Afslappet og hyggelig atmosfære</p>
-              <p>- Professionel og personlig rådgivning</p>
-              <p>- En behandling som passer til dig og dine ønsker</p>
-              <p>- Nærvær, grundighed og bliver altid mødt med et smil</p>
-            </div>
-
-            <img
-              className="test-img"
-              // style={{ margin: "0 0 1rem 3rem", width: "50%", opacity: "0.8" }}
-              src={Image}
-              alt="test-test"
-            />
-            <img
-              className="test-img"
-              style={{ margin: "0 0 1rem 3rem", width: "50%", opacity: "0.8" }}
-              src={Image}
-              alt="test-test"
-            />
-            <img
-              className="test-img"
-              // style={{ margin: "0 0 1rem 3rem", width: "50%", opacity: "0.8" }}
-              src={Image}
-              alt="test-test"
-            />
-          </div>
-        </article> */}
-
-        {/* <div className="hr" />
-
-        <section className="instagram-feed">
-          <h3>Seneste Instagram billeder</h3>
-          <img className="test-img" src={Image} alt="test-test" />
-          <img className="test-img" src={Image} alt="test-test" />
-          <img className="test-img" src={Image} alt="test-test" />
-          <img className="test-img" src={Image} alt="test-test" />
-        </section> */}
         <Footer />
       </section>
     </>

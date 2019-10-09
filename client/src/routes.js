@@ -9,33 +9,37 @@ import Booking from './pages/booking/booking';
 import Treatments from './pages/treatments/treatments';
 import Test from './test';
 
-// const Booking = React.lazy(() => import("./pages/booking/booking"));
-// const Treatments = React.lazy(() => import("./pages/treatments/treatments"));
-// const About = React.lazy(() => import("./pages/about/about"));
+const Routes = (props) => {
+    const { isMobile } = props;
 
-const Routes = () => {
   return (
     <Route
-      render={({ location, history }) => {
-        const { pathname, key } = location;
+      render={({ location }) => {
 
         return (
-          <TransitionGroup component={"main"}>
+          <TransitionGroup
+            component={"main"}
+            className={!isMobile ? "main" : undefined}
+          >
             <Transition
-              key={key}
+              key={location.key}
               appear={true}
-              onEnter={(node, appears) => play(pathname, node, appears)}
+              onEnter={(node, appears) => play(node, appears)}
               onExit={node => exit(node)}
               timeout={{ enter: 750, exit: 650 }}
             >
               <Switch location={location}>
-                {/* <Switch> */}
                 <Route exact path="/" component={Home} />
-                <Route exact path="/behandlinger" component={Treatments} />
+                <Route
+                  exact
+                  path="/behandlinger"
+                  component={Treatments}
+                  isMobile={isMobile}
+                />
                 <Route exact path="/booking" component={Booking} />
-                <Route exact path="/om-mig" component={About} />
+                <Route exact path="/om-salonen" component={About} />
                 <Route exact path="/test" component={Test} />
-                <Route render={() => history.push("/")} />
+                <Route component={Home} />
               </Switch>
             </Transition>
           </TransitionGroup>

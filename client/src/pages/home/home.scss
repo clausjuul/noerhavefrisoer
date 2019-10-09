@@ -9,15 +9,17 @@
 
     &__content {
       @include withSpacing();
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0;
 
 
     &__title {
       // grid-column: 1 / -1;
       text-align: center;
       color: $font-color-dark;
+      // opacity: 0;
+      // transform: translateY(7px);
     }
 
     p {
@@ -25,6 +27,8 @@
       text-align: center;
       margin-bottom: 0.25rem;
       color: $font-color-dark;
+      // opacity: 0;
+      // transform: translateY(7px);
     }
 
     .test-img {
@@ -63,6 +67,10 @@
   box-shadow: $box-shadow-dreamy;
   border-radius: 0.5rem;
   overflow: hidden;
+
+  // opacity: 0;
+  // transform: scaleY(0.95);
+  // transform: translateY(7px);
 
   @include media('>phone') {
     grid-template-columns: 1fr 1fr 1fr;

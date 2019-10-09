@@ -1,34 +1,17 @@
-// import React, { useState, useEffect } from 'react';
 import { TimelineMax as Timeline, Power1 } from "gsap";
 
 const getDefaultTimeline = (node, delay) => {
   const timeline = new Timeline({ paused: true });
-
-  // timeline.from([node, '.footer-wrapper'], 0.4, {
+console.log('de', delay)
   timeline
     .from(node, 0.4, {
       display: "none",
       autoAlpha: 0,
-      delay,
-      // scaleY: 0.97,
+      delay: delay,
       y: 5,
       ease: Power1.easeInOut,
       clearProps: "opacity, visibility, display, transform"
     });
-    // .from(
-    //   document.getElementById("footer"),
-    //   0.4,
-    //   {
-    //     delay,
-    //     // display: "none",
-    //     autoAlpha: 0,
-    //     delay,
-    //     scaleX: 0.97,
-    //     y: 5,
-    //     ease: Power1.easeInOut
-    //   },
-    //   0
-    // );
 
   return timeline;
 };
@@ -78,13 +61,13 @@ const getDefaultTimeline = (node, delay) => {
 //   return timeline;
 // };
 
-export const play = (pathname, node, appears) => {
+// export const play = (pathname, node, appears) => {
+export const play = (node, appears) => {
   const delay = appears ? 0 : 0.25;
   let timeline = getDefaultTimeline(node, delay);
 
   // if (pathname === "/") timeline = getHomeTimeline(node, delay);
   // else timeline = getDefaultTimeline(node, delay);
-
 
   window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()));
 };
@@ -100,17 +83,5 @@ export const exit = node => {
       ease: Power1.easeIn,
       clearProps: "opacity"
     });
-    // .to(
-    //   document.getElementById("footer"),
-    //   0.55,
-    //   {
-    //     autoAlpha: 0,
-    //     scaleX: 0.97,
-    //     y: 5,
-    //     ease: Power1.easeIn,
-    //     clearProps: "opacity"
-    //   },
-    //   0
-    // );
   timeline.play();
 };

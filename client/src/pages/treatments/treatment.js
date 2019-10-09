@@ -40,12 +40,12 @@ const Treatment = (props) => {
   let contentBoxRef = useRef(null);
 
   useEffect(() => {
-    if(isOpen) {
+    if(isOpen || isMobile) {
       openAni(contentBoxRef, true)
     } else {
       openAni(contentBoxRef, false)
     }
-  }, [isOpen])
+  }, [isOpen, isMobile])
 
   return (
     <>

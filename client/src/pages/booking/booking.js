@@ -45,7 +45,7 @@ const Booking = () => {
           <br></br>
           til at ringe, skrive eller kigge forbi salonen
         </h3>
-        <Link className="booking__link" to="om-mig">
+        <Link className="booking__link" to="om-salonen">
           Kontaktoplysningerne finder du <u>her</u>
         </Link>
         <iframe

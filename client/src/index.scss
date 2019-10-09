@@ -36,6 +36,11 @@ main {
   flex-grow: 100;
 }
 
+// margin-top fix for mobile nav fixed
+.main {
+  margin-top: 4rem;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -81,7 +86,7 @@ figure {
   position: relative;
   text-decoration-line: underline;
   text-decoration-color: $color-primary;
-  
+
   @include media('>phone') {
     text-decoration-line: none;
 
@@ -95,6 +100,13 @@ figure {
       left: -1rem;
       background: $color-primary;
       z-index: -1;
+
+      transform: scaleX(0);
+      animation-name: title;
+      animation-duration: 1000ms;
+      animation-delay: 300ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
     }
   }
 }
@@ -122,6 +134,9 @@ figure {
   color: $font-color-dark-light;
   font-weight: 400;
   font-size: calc(1rem + 2.5vmin);
+}
+
+.under {
   text-decoration-line: underline;
   text-decoration-color: $color-primary;
 
@@ -138,6 +153,13 @@ figure {
       left: -1rem;
       background: $color-primary;
       z-index: -1;
+      transform: scaleX(0);
+
+      animation-name: title;
+      animation-duration: 1000ms;
+      animation-delay: 400ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
     }
   }
 }
@@ -157,8 +179,22 @@ figure {
   background: rgba(0, 0, 0, 0.1);
   max-width: $max-width;
   align-self: center;
+      // animation-name: title;
+      // animation-duration: 1000ms;
+      // animation-delay: 500ms;
+      // animation-timing-function: ease-in-out;
 }
 
 .bold {
   font-weight: 600;
+}
+
+@keyframes title {
+  from {
+    transform: scaleX(0)
+  }
+
+  to {
+    transform: scaleX(1)
+  }
 }

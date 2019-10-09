@@ -7,8 +7,9 @@ import Treatment from './treatment';
 import Hero from "../../components/Hero/Hero";
 import './treatments.scss';
 
-const Treatments = () => {
-  const [isMobile] = useState(() => window.innerWidth > 799 ? true : false)
+const Treatments = (props) => {
+  const { isMobile } = props;
+  // const [isMobile] = useState(() => window.innerWidth > 799 ? true : false)
 
   return (
     <section className="treatments">
