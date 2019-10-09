@@ -92,12 +92,12 @@ figure {
 
     &::after {
       content: '';
-      width: calc(100% + 2rem);
+      width: calc(100% + 1rem);
       height: 0.2rem;
       position: absolute;
       border-radius: 0.25rem;
       bottom: 0.3rem;
-      left: -1rem;
+      left: -0.5rem;
       background: $color-primary;
       z-index: -1;
 
@@ -145,12 +145,12 @@ figure {
 
     &::after {
       content: '';
-      width: calc(100% + 2rem);
+      width: calc(100% + 1rem);
       height: 0.1rem;
       position: absolute;
       border-radius: 0.1rem;
       bottom: 0.25rem;
-      left: -1rem;
+      left: -0.5rem;
       background: $color-primary;
       z-index: -1;
       transform: scaleX(0);
@@ -175,10 +175,11 @@ figure {
   display: block;
   margin: 2rem 1rem;
   height: 1px;
-  width: 100%;
+  width: calc(100% - 2rem);
   background: rgba(0, 0, 0, 0.1);
   max-width: $max-width;
   align-self: center;
+  // @include withSpacing();
       // animation-name: title;
       // animation-duration: 1000ms;
       // animation-delay: 500ms;

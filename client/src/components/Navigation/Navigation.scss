@@ -8,6 +8,7 @@
   width: 100vw;
   z-index: 200;
   background: $background;
+  box-shadow: $box-shadow-dreamy-light;
 
   .topbar {
     background: $color-primary;
@@ -95,6 +96,7 @@
 .mobile-nav {
   // position: fixed;
   // width: 100%;
+  padding: 0 5vw;
 
   &__logo li a {
     padding: 0.5rem 0;
@@ -141,6 +143,7 @@
     }
   }
 }
+
 .active {
   text-decoration-line: underline;
   text-decoration-color: $color-primary;
@@ -169,37 +172,22 @@
     }
   }
 }
-// .active {
-//   // border-radius: 0.5rem;
-  
-//   &::after {
-//     content: '';
-//     width: calc(100% - 1.5rem);
-//     height: 2px;
-//     border-radius: 0.5rem;
-//     position: absolute;
-//     bottom: 0.25rem;
-//     left: 0.75rem;
-//     background: $color-primary;
-//   }
-// }
 
 .mobile-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.05);
-  // padding: 0.8rem 1rem;
   padding: 0.75rem;
-  border-radius: 1rem;
   width: 3rem;
   height: 3rem;
+  cursor: pointer;
 
   .burger-menu {
     display: inline-flex;
     height: 100%;
 
     svg {
+      fill: $font-color-dark;
       width: 100%;
       height: 100%;
       max-width: 100%;

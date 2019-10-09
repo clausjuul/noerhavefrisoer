@@ -8,7 +8,7 @@ import { ChevronIcon } from "../../components/Icons/Icons";
 
 // TODO
 // make cards open on desktop, not on mobile
-// Herre / damer / børn
+
 const openAni = (ref, reverse) => {
   const timeline = new Timeline({
     paused: true,
@@ -36,7 +36,9 @@ const openAni = (ref, reverse) => {
 const Treatment = (props) => {
   const {isMobile, treatment: { title, subtitle, data }} = props;
 
-  const [isOpen, setIsOpen] = useState(isMobile);
+  const [isOpen, setIsOpen] = useState(() => isMobile ? false : true);
+  console.log('gg: ', isMobile)
+  console.log('OPEN: ', isOpen)
   let contentBoxRef = useRef(null);
 
   useEffect(() => {

@@ -10,8 +10,6 @@ import {
 import { MenuIcon } from '../Icons/Icons';
 import './Navigation.scss';
 
-// TODO topbar med nr email mere?
-
 const NavData = [
   {
     to: "/",
@@ -174,24 +172,12 @@ const NavbarMobile = () => {
         ))}
       </ul>
 
-      <ul className="mobile-menu">
-        <li
-          className="burger-menu"
-          onClick={() => {
-            if (isOpen) {
-              setIsOpen(false);
-              TweenMax.to(navbarRef, 0.8, {
-                autoAlpha: 0
-              });
-            } else {
-              setIsOpen(true);
-              TweenMax.to(navbarRef, 0.8, {
-                autoAlpha: 1
-              });
-            }
-          }}
-        >
-          <MenuIcon />
+      <ul
+        className="mobile-menu"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <li className="burger-menu">
+          <MenuIcon isOpen={isOpen} />
         </li>
       </ul>
     </>

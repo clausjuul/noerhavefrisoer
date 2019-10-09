@@ -15,7 +15,6 @@ const Routes = (props) => {
   return (
     <Route
       render={({ location }) => {
-
         return (
           <TransitionGroup
             component={"main"}
@@ -26,7 +25,7 @@ const Routes = (props) => {
               appear={true}
               onEnter={(node, appears) => play(node, appears)}
               onExit={node => exit(node)}
-              timeout={{ enter: 750, exit: 650 }}
+              timeout={{ enter: 650, exit: 250 }}
             >
               <Switch location={location}>
                 <Route exact path="/" component={Home} />
@@ -34,6 +33,7 @@ const Routes = (props) => {
                   exact
                   path="/behandlinger"
                   component={Treatments}
+                  {...props}
                   isMobile={isMobile}
                 />
                 <Route exact path="/booking" component={Booking} />
