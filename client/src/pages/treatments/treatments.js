@@ -7,8 +7,12 @@ import Hero from "../../components/Hero/Hero";
 import './treatments.scss';
 
 const Treatments = () => {
-  // const { isMobile } = props;
 
+  // TODO
+  // lav isMobile context
+  // Hero tekst
+  // favicon
+  // react-helmet
   return (
     <section className="treatments">
       <Hero />
