@@ -20,6 +20,7 @@ const useWindowSize = () => {
 // TODO
 // scroll to top after page change - no animation
 // fix åben behandling glitch
+// burger menu
 // style iframe
 // https / ssl
 // change isMobile, so true is true & so on
