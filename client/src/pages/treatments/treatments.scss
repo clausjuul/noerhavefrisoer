@@ -20,10 +20,11 @@
 .treatment__title {
   @include withSpacing();
   display: flex;
-  // align-items: flex-start;
-  // justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
+  // height: 100px;
 
   &:first-of-type {
     margin-top: 2rem;
@@ -33,8 +34,18 @@
     color: $font-color-dark-light;
     font-size: 1.5rem;
     font-weight: 600;
-    width: calc(100% - 3rem);
+    width: calc(100% - 4rem);
     margin-bottom: 0;
+
+      svg {
+        // align-self: center;
+        display: inline-block;
+        width: 0.75rem;
+        margin-right: 1rem;
+        margin-left: 0.5rem;
+        fill: $font-color-dark-light;
+        // height: 1rem;
+      }
   }
 
   &--sub {
@@ -46,14 +57,7 @@
     margin: 0;
   }
 
-  svg {
-    // align-self: center;
-    width: 0.75rem;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-    fill: $font-color-dark-light;
-    // height: 1rem;
-  }
+
 }
 
 .treatment {

@@ -54,14 +54,13 @@ const Treatment = (props) => {
   return (
     <>
       <div className="treatment__title" onClick={() => setIsOpen(!isOpen)}>
-        <ChevronIcon isOpen={isOpen} />
-        <h2>{title}</h2>
+        <h2>
+          <ChevronIcon isOpen={isOpen} />
+          {title}
+        </h2>
         {subtitle && <p className="treatment__title--sub">{subtitle}</p>}
       </div>
-      <ul
-        className="treatment"
-        ref={element => contentBoxRef = element}
-      >
+      <ul className="treatment" ref={element => (contentBoxRef = element)}>
         {data.map((treatment, i) => (
           <li key={`${title}-${i}`}>
             <span className="treatment__name">{treatment.navn}</span>
