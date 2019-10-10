@@ -38,7 +38,7 @@ const Routes = (props) => {
                 />
                 <Route exact path="/booking" component={Booking} />
                 <Route exact path="/om-salonen" component={About} />
-                <Route exact path="/test" component={Test} />
+                {/* <Route exact path="/test" component={Test} /> */}
                 <Route component={Home} />
               </Switch>
             </Transition>

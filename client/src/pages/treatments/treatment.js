@@ -36,18 +36,16 @@ const openAni = (ref, reverse) => {
 const Treatment = (props) => {
   const {isMobile, treatment: { title, subtitle, data }} = props;
 
-  const [isOpen, setIsOpen] = useState(() => isMobile ? false : true);
-  console.log('gg: ', isMobile)
-  console.log('OPEN: ', isOpen)
+  const [isOpen, setIsOpen] = useState(isMobile);
   let contentBoxRef = useRef(null);
 
   useEffect(() => {
-    if(isOpen || isMobile) {
+    if(isOpen) {
       openAni(contentBoxRef, true)
     } else {
       openAni(contentBoxRef, false)
     }
-  }, [isOpen, isMobile])
+  }, [isOpen])
 
   return (
     <>

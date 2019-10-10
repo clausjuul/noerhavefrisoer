@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Footer from "../../components/Footer/Footer";
 import treatmentData from './treatmentData';
 import Treatment from './treatment';
 import Hero from "../../components/Hero/Hero";
+import Context from '../../context';
 import './treatments.scss';
 
 const Treatments = () => {
+  const isMobile = useContext(Context);
 
   // TODO
   // lav isMobile context
@@ -25,7 +27,7 @@ const Treatments = () => {
       <h1 className="page-title">Behandlinger</h1>
       {Object.values(treatmentData).map((value, i) => (
         <Treatment
-          // isMobile={isMobile}
+          isMobile={isMobile}
           treatment={value}
           key={`treatment-${i}`}
         />

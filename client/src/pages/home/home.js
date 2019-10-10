@@ -5,9 +5,9 @@ import { TweenMax } from "gsap";
 
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
-// import HeroIn from '../../components/Hero/HeroIn';
-import Image from '../../images/image.jpg';
-import Image1 from '../../images/insta1.jpg';
+import Image1 from '../../images/vaeg.jpeg';
+import Image2 from '../../images/image2.jpg';
+import Maria from '../../images/maria.jpg';
 import './home.scss';
 // insta som slide sideværs galleri på mobil
 // desktop exspand nedad, 3 pr row?
@@ -15,7 +15,6 @@ import './home.scss';
 const Highlights = (props) => {
   const { inView } = props;
 
-  // let titleRef = useRef(null)
   let p1Ref = useRef(null)
   let p2Ref = useRef(null)
   let p3Ref = useRef(null)
@@ -26,15 +25,10 @@ const Highlights = (props) => {
       TweenMax.staggerFromTo(
         [p1Ref, p2Ref, p3Ref, p4Ref],
         0.8,
-        {
-          opacity: 0,
-          y: 7,
-          // cycle: {
-          //   y: [-10, 7, 7, 7, 7]
-          // },
+        { opacity: 0,
+          y: 7
         },
-        {
-          opacity: 1,
+        { opacity: 1,
           y: 0,
           delay: 0.3,
           clearProps: "transform, opacity"
@@ -46,13 +40,9 @@ const Highlights = (props) => {
 
   return (
     <article className="highlights__content">
-      <h2
-        // ref={element => (titleRef = element)}
-        className={inView ? "section-title under" : "section-title"}
-      >
+      <h2 className={inView ? "section-title under" : "section-title"}>
         Hos mig får du
       </h2>
-      {/* <SectionTitle title={"Hos mig får du"} inView={inView} /> */}
       <p style={{ opacity: 0 }} ref={element => (p1Ref = element)}>
         - Afslappet og hyggelig atmosfære
       </p>
@@ -63,7 +53,7 @@ const Highlights = (props) => {
         - En behandling som passer til dig og dine ønsker
       </p>
       <p style={{ opacity: 0 }} ref={element => (p4Ref = element)}>
-        - Nærvær, grundighed og bliver altid mødt med et smil
+        - Nærvær, grundighed og gratis parkering lige ved døren
       </p>
     </article>
   );
@@ -74,6 +64,15 @@ const Highlights = (props) => {
 // Lave et eller andet lignede på om salonen
 
 const Home = () => {
+
+  let subTitleRef = useRef(null)
+  let contentRef = useRef(null)
+
+  const [titleRef, titleInView] = useInView({
+    // threshold: 0.8,
+    rootMargin: "100% 0px",
+    triggerOnce: true
+  });
 
   const [highlightsRef, highlightsInView] = useInView({
     // threshold: 0.8,
@@ -88,10 +87,29 @@ const Home = () => {
 
   // let imgBoxRef = useRef(null);
 
+  // useEffect(() => {
+  //   if (imageBoxInView) {
+  //     TweenMax.fromTo(
+  //       "#instabox",
+  //       0.8,
+  //       {
+  //         opacity: 0,
+  //         y: 10,
+  //       },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         delay: 0.3,
+  //         clearProps: "transform, opacity"
+  //       }
+  //     );
+  //   }
+  // }, [imageBoxInView]);
+
   useEffect(() => {
-    if (imageBoxInView) {
-      TweenMax.fromTo(
-        "#instabox",
+    if (titleInView) {
+      TweenMax.staggerFromTo(
+        [subTitleRef, contentRef],
         0.8,
         {
           opacity: 0,
@@ -100,28 +118,42 @@ const Home = () => {
         {
           opacity: 1,
           y: 0,
-          delay: 0.3,
+          delay: 0.5,
           clearProps: "transform, opacity"
-        }
+        }, 0.15
       );
     }
-  }, [imageBoxInView]);
-
-  
+  }, [titleInView]);
 
   return (
     <>
       <section className="home">
-        <Hero 
-          height={"70vh"} 
+        <Hero
+          height={"60vh"}
           position={"80% 80%"}
           title={"Mangler du en tid?"}
           subTitle={"Ring og bestil en tid eller"}
           link={"Book online"}
           to={"/booking"}
         />
-        <h1 className="page-title">Velkommen til NØRHAVE</h1>
-        <h3 className="page-sub-title">Beliggende på Gl. Hobrovej i Randers</h3>
+        <h1 ref={titleRef} className="page-title">
+          Velkommen til NØRHAVE
+        </h1>
+        <h3
+          style={{ opacity: 0 }}
+          ref={element => (subTitleRef = element)}
+          className="page-sub-title"
+        >
+          Beliggende på Gl. Hobrovej i Randers
+        </h3>
+        <p
+          style={{ opacity: 0 }}
+          ref={element => (contentRef = element)}
+          className="page-content"
+        >
+          En hyggelig, kreativ og personlig salon, som altid sætter stor fokus
+          den enkle kunde, og en hyggelig atmosfære.
+        </p>
 
         <div className="hr" />
 
@@ -130,19 +162,28 @@ const Home = () => {
         </section>
 
         <section
-          id="instabox"
-          ref={imageBoxRef}
-          className="imageBox"
-          style={{ opacity: 0 }}
+          className="instagram-feed"
+          // id="instabox"
+          // ref={imageBoxRef}
+          // style={{ opacity: 0 }}
         >
           <figure>
-            <img className="test-img" src={Image} alt="test-test" />
+            <img
+              src={Image1}
+              alt="NØRHAVE-frisør-Randers"
+            />
           </figure>
           <figure>
-            <img className="test-img" src={Image1} alt="test-test" />
+            <img
+              src={Image2}
+              alt="NØRHAVE-frisør-Randers"
+            />
           </figure>
           <figure>
-            <img className="test-img" src={Image} alt="test-test" />
+            <img
+              src={Maria}
+              alt="NØRHAVE-frisør-Randers"
+            />
           </figure>
         </section>
         <Footer />

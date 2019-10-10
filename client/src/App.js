@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import Navigation from './components/Navigation/Navigation';
 import Routes from './routes';
+
+import { ContextProvider } from "./context";
 // import Topbar from './components/Topbar/Topbar';
 
 const useWindowSize = () => {
@@ -34,8 +36,10 @@ const App = () => {
   }, [windowWidth]);
   return (
     <>
-      <Navigation isMobile={isMobile} />
-      <Routes isMobile={isMobile} />
+      <ContextProvider value={isMobile}>
+        <Navigation isMobile={isMobile} />
+        <Routes isMobile={isMobile} />
+      </ContextProvider>
     </>
   );
 }

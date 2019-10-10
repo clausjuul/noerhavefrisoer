@@ -40,21 +40,13 @@ const Booking = () => {
     <>
       <section className="booking">
         <Hero
-          image={Banner3}
-          title={"Har du svært ved at finde en tid?"}
+          // image={Banner3}
+          title={"Svært ved at finde en tid?"}
           subTitle={"Ring, skriv eller kig forbi salonen"}
           link={"Kontakt info"}
           to={"/om-salonen"}
         />
         <h1 className="page-title">Booking</h1>
-        {/* <h3 className="page-content">
-          Har du svært ved at finde en tid, skal du være velkommen
-          <br></br>
-          til at ringe, skrive eller kigge forbi salonen
-        </h3>
-        <Link className="booking__link" to="om-salonen">
-          Kontaktoplysningerne finder du <u>her</u>
-        </Link> */}
         <iframe
           title="booking"
           className="booking__iframe"

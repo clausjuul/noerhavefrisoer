@@ -82,7 +82,7 @@ figure {
   // color: $font-color-dark;
   font-size: calc(1.3rem + 2.5vmin);
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   position: relative;
   text-decoration-line: underline;
   text-decoration-color: $color-primary;
@@ -116,12 +116,16 @@ figure {
   color: $font-color-dark;
   font-size: calc(0.8rem + 1vmin);
   font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 .page-content {
   text-align: center;
-  color: $font-color-dark;
+  color: $font-color-dark-light;
   // font-size: calc(0.8rem + 0.5vmin);
+  font-size: 1rem;
+  max-width: 600px;
+  align-self: center;
   font-weight: 400;
 }
 
@@ -134,8 +138,8 @@ figure {
   color: $font-color-dark-light;
   font-weight: 400;
   font-size: calc(1rem + 2.5vmin);
+  margin-bottom: 1.25rem;
 }
-
 .under {
   text-decoration-line: underline;
   text-decoration-color: $color-primary;
@@ -146,7 +150,7 @@ figure {
     &::after {
       content: '';
       width: calc(100% + 1rem);
-      height: 0.1rem;
+      height: 0.125rem;
       position: absolute;
       border-radius: 0.1rem;
       bottom: 0.25rem;
@@ -163,31 +167,50 @@ figure {
     }
   }
 }
+.section-sub-title {
+  // grid-column: 1 / -1;
+  position: relative;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  color: $font-color-dark;
+  font-weight: 400;
+  font-size: calc(1rem + 1vmin);
+  margin-bottom: 0.5rem;
 
+}
 .section-content {
   text-align: center;
-  color: $font-color-dark;
+  color: $font-color-dark-light;
   // font-size: calc(0.8rem + 0.5vmin);
   font-weight: 400;
+  max-width: 600px;
+  align-self: center;
 }
 
 .hr {
   display: block;
-  margin: 2rem 1rem;
+  margin: 2rem 2rem;
   height: 1px;
-  width: calc(100% - 2rem);
-  background: rgba(0, 0, 0, 0.1);
+  width: calc(100% - 4rem);
+  // background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.075) 10%, rgba(0, 0, 0, 0.075) 90%, rgba(0, 0, 0, 0) 100%);
+  // background: rgba(0, 0, 0, 0.1);
   max-width: $max-width;
   align-self: center;
-  // @include withSpacing();
-      // animation-name: title;
-      // animation-duration: 1000ms;
-      // animation-delay: 500ms;
-      // animation-timing-function: ease-in-out;
 }
 
 .bold {
   font-weight: 600;
+}
+
+.small {
+  font-size: 70%;
+}
+
+.full {
+  grid-column: 1 / -1;
+  display: block;
 }
 
 @keyframes title {

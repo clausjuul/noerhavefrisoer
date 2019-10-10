@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { TweenMax, Power2 } from "gsap";
 import {
@@ -7,6 +7,7 @@ import {
   clearAllBodyScrollLocks
 } from "body-scroll-lock";
 
+import Context from '../../context';
 import { MenuIcon } from '../Icons/Icons';
 import './Navigation.scss';
 
@@ -31,11 +32,11 @@ const NavData = [
     label: "Om salonen",
     exact: false
   },
-  {
-    to: "/test",
-    label: "test",
-    exact: false
-  },
+  // {
+  //   to: "/test",
+  //   label: "test",
+  //   exact: false
+  // },
 ]
 
 const NavLinkItem = (props) => {
@@ -69,7 +70,7 @@ const Navbar = () => {
             to={to}
             label={label}
             exact={exact}
-            isMobile={false}
+            // isMobile={false}
           />
         ))}
       </ul>
@@ -184,8 +185,8 @@ const NavbarMobile = () => {
   );
 }
 
-const Navigation = (props) => {
-  const { isMobile } = props;
+const Navigation = () => {
+  const isMobile = useContext(Context);
 
   return (
     <header className={isMobile ? "nav-wrapper" : "mobile-nav-wrapper"}>

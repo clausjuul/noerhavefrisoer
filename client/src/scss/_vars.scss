@@ -7,7 +7,8 @@ $rem-size: calc(12px + 0.7vmin);
 $line-height: 1.35;
 
 // COLORS //
-$color-rosa: #F2DCD1;
+$color-rosa: hsl(19, 67%, 88%);
+// $color-rosa: rgb(242, 220, 209);
 $color-red: #ff0000;
 $color-grey: #d1d1d1;
 $color-white: #fff;
@@ -70,7 +71,4 @@ $breakpoints: (
 'desktop': 1124px,
 );
 
- /* Calculation */
-// --respaonsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100))) 
-/* Ranges from 421px to 1199px */
 

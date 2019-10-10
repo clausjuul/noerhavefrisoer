@@ -13,104 +13,78 @@
       flex-direction: column;
       margin: 1rem 0;
 
+      &__title {
+        // grid-column: 1 / -1;
+        text-align: center;
+        color: $font-color-dark;
+      }
 
-    &__title {
-      // grid-column: 1 / -1;
-      text-align: center;
-      color: $font-color-dark;
-      // opacity: 0;
-      // transform: translateY(7px);
-    }
+      p {
+        text-align: center;
+        margin-bottom: 0.25rem;
+        color: $font-color-dark;
+      }
 
-    p {
-      // font-weight: 600;
-      text-align: center;
-      margin-bottom: 0.25rem;
-      color: $font-color-dark;
-      // opacity: 0;
-      // transform: translateY(7px);
-    }
-
-    .test-img {
-      align-self: center;
-      justify-self: center;
-      width: 100%;
-      position: relative;
-      object-fit: contain;
-      opacity: 0.6;
-    }
-
-    .testbox {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      max-width: 700px;
-
-      .tekst {
-        background: $background;
+      .test-img {
         align-self: center;
         justify-self: center;
-        z-index: +1;
+        width: 100%;
+        position: relative;
+        object-fit: contain;
+        opacity: 0.6;
+      }
+
+      .testbox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        max-width: 700px;
+
+        .tekst {
+          background: $background;
+          align-self: center;
+          justify-self: center;
+          z-index: +1;
+        }
       }
     }
   }
-}
-
-.imageBox {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 80%;
-  max-width: 900px;
-  align-self: center;
-  margin: 2rem;
-  position: relative;
-  box-shadow: $box-shadow-dreamy;
-  border-radius: 0.5rem;
-  overflow: hidden;
-
-  // opacity: 0;
-  // transform: scaleY(0.95);
-  // transform: translateY(7px);
-
-  @include media('>phone') {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  figure {
-    opacity: 0.7;
-    transition: opacity 300ms;
-
-    img {
-      object-fit: cover;
-      min-height: 100%;
-      min-width: 100%;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
 
   .instagram-feed {
-    @include withSpacing();
-    @include makeGrid4();
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    align-self: center;
+    margin: 2rem;
+    position: relative;
+    box-shadow: $box-shadow-dreamy;
+    border-radius: 0.5rem;
+    overflow: hidden;
 
-    h3 {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: $font-color-dark;
-      margin-bottom: 0;
+    @include media('>phone') {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .test-img {
-      width: 80%;
-      left: 10%;
-      margin: 5% 0;
-      position: relative;
-      object-fit: cover;
-      border-radius: 1rem;
-      box-shadow: $box-shadow-dreamy;
+    figure {
+      opacity: 0.9;
+
+      @include media('>phone') {
+        opacity: 0.7;
+        transition: opacity 300ms;
+      }
+
+      img {
+        object-fit: cover;
+        min-height: 100%;
+        min-width: 100%;
+      }
+
+      @include media('>phone') {
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 }

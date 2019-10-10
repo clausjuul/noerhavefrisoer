@@ -113,7 +113,7 @@ const Footer = () => {
           <li>08:00 - 17:00</li>
           <li>
             Lørdag
-            <div className="footer__small">i ulige uger</div>
+            <div className="small bold">Ulige uger</div>
           </li>
           <li>08:00 - 13:00</li>
           {/* <li className="full">eller efter aftale</li> */}

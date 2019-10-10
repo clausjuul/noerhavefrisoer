@@ -11,7 +11,8 @@
     width: calc(100% - 1.5rem);
     margin: 1rem 0 2rem 0;
     // margin: 1rem $spacing 2rem $spacing;
-    background: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.075) 10%, rgba(0, 0, 0, 0.075) 90%, rgba(0, 0, 0, 0) 100%);
+    // background: rgba(0, 0, 0, 0.1);
     // @include withSpacing();
   }
 }
