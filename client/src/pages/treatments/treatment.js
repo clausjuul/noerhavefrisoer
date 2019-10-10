@@ -20,17 +20,17 @@ const openAni = (ref, reverse) => {
     0.35,
     {
       height: "auto",
-      // autoAlpha: 1,
-      opacity: 1,
+      autoAlpha: 1,
+      // opacity: 1,
       ease: "Power2.easeInOut",
-      clearProps: "opacity"
+      // clearProps: "opacity"
     },
     {
       height: 0,
-      opacity: 0,
-      // autoAlpha: 0,
+      // opacity: 0,
+      autoAlpha: 0,
       ease: "Power2.easeInOut",
-      clearProps: "opacity"
+      // clearProps: "opacity"
     }
   );
     // return timeline
