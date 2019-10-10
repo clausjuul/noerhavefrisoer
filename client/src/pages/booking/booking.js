@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 import Footer from "../../components/Footer/Footer";
 import "./booking.scss";
-import HeroIn from "../../components/Hero/Hero";
+import Hero from "../../components/Hero/Hero";
+import Banner3 from '../../images/banner3.jpg';
 // import HeroIn from "../../components/Hero/HeroIn";
 
 
@@ -38,20 +39,27 @@ const Booking = () => {
   return (
     <>
       <section className="booking">
-        <HeroIn />
+        <Hero
+          image={Banner3}
+          title={"Har du svært ved at finde en tid?"}
+          subTitle={"Ring, skriv eller kig forbi salonen"}
+          link={"Kontakt info"}
+          to={"/om-salonen"}
+        />
         <h1 className="page-title">Booking</h1>
-        <h3 className="page-content">
+        {/* <h3 className="page-content">
           Har du svært ved at finde en tid, skal du være velkommen
           <br></br>
           til at ringe, skrive eller kigge forbi salonen
         </h3>
         <Link className="booking__link" to="om-salonen">
           Kontaktoplysningerne finder du <u>her</u>
-        </Link>
+        </Link> */}
         <iframe
           title="booking"
           className="booking__iframe"
           src="https://noerhave.klikbook.dk"
+          // minheight="1100px"
           // scrolling="no"
           // onLoad={() => onLoad(frameRef.current)}
           // ref={frameRef}

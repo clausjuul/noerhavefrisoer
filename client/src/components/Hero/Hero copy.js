@@ -38,7 +38,7 @@ export const enter = (node, reverse) => {
 };
 
 const Hero = (props) => {
-  const { image, height, position, title, subTitle, link, to } = props;
+  const { image, height, position } = props;
 
   const [show] = useState(true)
 
@@ -60,17 +60,17 @@ const Hero = (props) => {
         style={{
           backgroundImage: `url(${image || HeroImage})`,
           backgroundPosition: position || "50% 50%",
-          height: height || "auto"
+          minHeight: height || "30vh"
         }}
       >
         <h2 className="hero__title" ref={titleRef}>
-          {title}
+          Mangler du en tid?
         </h2>
         <p className="hero__sub-title" ref={subTitleRef}>
-          {subTitle}
+          Ring og bestil en tid eller<br></br>
         </p>
-        <Link className="hero__cta" to={to} ref={ctaRef}>
-          {link}
+        <Link className="hero__cta" to="/booking" ref={ctaRef}>
+          Book Online
         </Link>
       </section>
     </Transition>

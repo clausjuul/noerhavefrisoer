@@ -2,13 +2,19 @@ import React from "react";
 
 import Footer from "../../components/Footer/Footer";
 // import HeroIn from "../../components/Hero/HeroIn";
-import HeroIn from "../../components/Hero/Hero";
+import Hero from "../../components/Hero/Hero";
 import './about.scss';
 
 const About = () => {
   return (
     <section className="about">
-      <HeroIn />
+      <Hero
+        position={"100% 70%"}
+        title={"Mangler du en tid?"}
+        subTitle={"Ring og bestil en tid eller"}
+        link={"Book online"}
+        to={"/booking"}
+      />
       <h1 className="page-title">Om salonen</h1>
 
       <div className="hr" />

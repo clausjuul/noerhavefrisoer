@@ -15,14 +15,22 @@ const Treatments = () => {
   // react-helmet
   return (
     <section className="treatments">
-      <Hero />
+      <Hero
+        position={"80% 80%"}
+        title={"Mangler du en tid?"}
+        subTitle={"Ring og bestil en tid eller"}
+        link={"Book online"}
+        to={"/booking"}
+      />
       <h1 className="page-title">Behandlinger</h1>
       {Object.values(treatmentData).map((value, i) => (
-        <Treatment 
-        // isMobile={isMobile}
-          treatment={value} key={`treatment-${i}`} />
+        <Treatment
+          // isMobile={isMobile}
+          treatment={value}
+          key={`treatment-${i}`}
+        />
       ))}
-    <Footer />
+      <Footer />
     </section>
   );
 };
