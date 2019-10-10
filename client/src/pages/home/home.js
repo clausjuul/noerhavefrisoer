@@ -80,10 +80,10 @@ const Home = () => {
     triggerOnce: true
   });
 
-  const [imageBoxRef, imageBoxInView] = useInView({
-    rootMargin: "-100px 0px",
-    triggerOnce: true
-  });
+  // const [imageBoxRef, imageBoxInView] = useInView({
+  //   rootMargin: "-100px 0px",
+  //   triggerOnce: true
+  // });
 
   // let imgBoxRef = useRef(null);
 
@@ -144,7 +144,7 @@ const Home = () => {
           ref={element => (subTitleRef = element)}
           className="page-sub-title"
         >
-          Beliggende på Gl. Hobrovej i Randers
+          En frisør på Gl. Hobrovej i Randers
         </h3>
         <p
           style={{ opacity: 0 }}

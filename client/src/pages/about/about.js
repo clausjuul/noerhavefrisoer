@@ -1,6 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React
+// , { useRef, useEffect } 
+from "react";
 import { useInView } from "react-intersection-observer";
-import { TweenMax } from "gsap";
+// import { TweenMax } from "gsap";
 
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
@@ -97,7 +99,7 @@ const About = () => {
             <h3 className="section-sub-title">Kontakt</h3>
           </li>
           <li className="bol">Maria Louise Nørhave</li>
-          <li>Gl. hobrovej 59</li>
+          <li>Gl. Hobrovej 59</li>
           <li>8920 Randers NV</li>
           {/* <li>Cvr. 40697156</li> */}
           <li className="bol">+45 4265 5687</li>

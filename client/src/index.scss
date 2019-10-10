@@ -3,7 +3,6 @@
 
 html {
   font-size: $rem-size;
-  // font-size: calc(14px + 0.5vmin);
 }
 
 body {
@@ -12,9 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  // background: #fafafa;
   background: $background;
-  // background: rgba(0, 0, 0, 0.141);
 }
 
 #root {
@@ -77,18 +74,19 @@ figure {
 .page-title {
   text-align: center;
   align-self: center;
-  // color: rgba(0, 0, 0, 0.6);
   color: $font-color-dark-light;
-  // color: $font-color-dark;
-  font-size: calc(1.3rem + 2.5vmin);
+  font-size: calc(1rem + 2vmin);
   font-weight: 600;
   margin-bottom: 1rem;
   position: relative;
   text-decoration-line: underline;
   text-decoration-color: $color-primary;
+  padding: 0 $spacing;
+  max-width: $max-width;
 
   @include media('>phone') {
     text-decoration-line: none;
+    font-size: calc(1.3rem + 2.5vmin);
 
     &::after {
       content: '';
@@ -117,16 +115,19 @@ figure {
   font-size: calc(0.8rem + 1vmin);
   font-weight: 400;
   margin-bottom: 0.5rem;
+  padding: 0 $spacing;
+  align-self: center;
+  max-width: $max-width-small;
 }
 
 .page-content {
   text-align: center;
   color: $font-color-dark-light;
-  // font-size: calc(0.8rem + 0.5vmin);
   font-size: 1rem;
-  max-width: 600px;
+  max-width: $max-width-small;
   align-self: center;
   font-weight: 400;
+  padding: 0 $spacing;
 }
 
 .section-title {
@@ -177,14 +178,13 @@ figure {
   font-weight: 400;
   font-size: calc(1rem + 1vmin);
   margin-bottom: 0.5rem;
-
 }
 .section-content {
   text-align: center;
   color: $font-color-dark-light;
   // font-size: calc(0.8rem + 0.5vmin);
   font-weight: 400;
-  max-width: 600px;
+  max-width: $max-width-small;
   align-self: center;
 }
 
@@ -205,7 +205,7 @@ figure {
 }
 
 .small {
-  font-size: 70%;
+  font-size: 75%;
 }
 
 .full {

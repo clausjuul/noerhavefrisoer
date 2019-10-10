@@ -31,52 +31,43 @@ const NavData = [
     to: "/om-salonen",
     label: "Om salonen",
     exact: false
-  },
-  // {
-  //   to: "/test",
-  //   label: "test",
-  //   exact: false
-  // },
+  }
 ]
 
-const NavLinkItem = (props) => {
-  const { to, label, exact } = props;
-  return (
-    <li className="navbar__item">
-      <NavLink to={to} exact={exact ? true : false} >
-        {label}
-      </NavLink>
-    </li>
-  )
-}
+const NavLinkItem = ({ to, label, exact }) => (
+  <li className="navbar__item">
+    <NavLink to={to} exact={exact ? true : false}>
+      {label}
+    </NavLink>
+  </li>
+);
 
-const Navbar = () => {
-  return (
-    <>
-      <ul className="nav__logo">
-        <li>
-          <Link to="/">
-            <h1>
-              NØRHAVE
-              <span>frisør</span>
-            </h1>
-          </Link>
-        </li>
-      </ul>
-      <ul className="navbar">
-        {NavData.map(({ to, label, exact }) => (
-          <NavLinkItem
-            key={`link-${label}`}
-            to={to}
-            label={label}
-            exact={exact}
-            // isMobile={false}
-          />
-        ))}
-      </ul>
-    </>
-  );
-}
+
+const Navbar = () => (
+  <>
+    <ul className="nav__logo">
+      <li>
+        <Link to="/">
+          <h1>
+            NØRHAVE
+            <span>frisør</span>
+          </h1>
+        </Link>
+      </li>
+    </ul>
+    <ul className="navbar">
+      {NavData.map(({ to, label, exact }) => (
+        <NavLinkItem
+          key={`link-${label}`}
+          to={to}
+          label={label}
+          exact={exact}
+        />
+      ))}
+    </ul>
+  </>
+);
+
 
 const MobileNavLinkItem = (props) => {
   const { to, label, exact, isOpen, setIsOpen, i } = props;
@@ -94,13 +85,13 @@ const MobileNavLinkItem = (props) => {
         });
       } else {
         TweenMax.to(linkRef, 0.3, {
-          // delay: 0.3 + 0.15 * i,
           autoAlpha: 0,
           y: 5,
           ease: Power2.easeInOut
         });
       }
     }
+    // eslint-disable-next-line
   }, [isOpen, linkRef]);
 
   return (

@@ -54,7 +54,6 @@ const Hero = (props) => {
       onExit={node => enter(node, true)}
       timeout={{ enter: 1000, exit: 1000 }}
     >
-
       <section
         className="hero"
         style={{

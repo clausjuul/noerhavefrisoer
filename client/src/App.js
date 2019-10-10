@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import Navigation from './components/Navigation/Navigation';
-import Routes from './routes';
 
 import { ContextProvider } from "./context";
-// import Topbar from './components/Topbar/Topbar';
+import Navigation from './components/Navigation/Navigation';
+import Routes from './routes';
 
 const useWindowSize = () => {
   let [size, setSize] = useState([0, 0]);
@@ -19,28 +18,29 @@ const useWindowSize = () => {
 }
 
 const App = () => {
+  const breakpoint = 799;
 
-  const [isMobile, setIsMobile] = useState(() => (window.innerWidth > 799 ? true : false));
+  const [isMobile, setIsMobile] = useState(() =>
+    window.innerWidth > breakpoint ? true : false
+  );
   let windowWidth = useWindowSize();
 
   useEffect(() => {
-    if (windowWidth < 799) {
-      // setIsMobile(false);
+    if (windowWidth < breakpoint) {
       isMobile && setIsMobile(false);
-      console.log("NOOOOOOOOOT");
+      // console.log("NOOOOOOOOOT");
     } else {
-      // setIsMobile(true);
       !isMobile && setIsMobile(true);
-      console.log("MOBILE");
+      // console.log("MOBILE");
     }
+    // eslint-disable-next-line
   }, [windowWidth]);
+
   return (
-    <>
-      <ContextProvider value={isMobile}>
-        <Navigation isMobile={isMobile} />
-        <Routes isMobile={isMobile} />
-      </ContextProvider>
-    </>
+    <ContextProvider value={isMobile}>
+      <Navigation />
+      <Routes />
+    </ContextProvider>
   );
 }
 export default App;

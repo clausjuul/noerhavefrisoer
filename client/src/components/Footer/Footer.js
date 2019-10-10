@@ -154,7 +154,7 @@ const Footer = () => {
             <h3>Kontakt</h3>
           </li> */}
           <li className="bold">Maria Louise Nørhave</li>
-          <li>Gl. hobrovej 59</li>
+          <li>Gl. Hobrovej 59</li>
           <li>8920 Randers NV</li>
           <li>Cvr. 40697156</li>
           <br></br>
