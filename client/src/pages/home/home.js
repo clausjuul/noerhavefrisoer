@@ -144,7 +144,7 @@ const Home = () => {
           ref={element => (subTitleRef = element)}
           className="page-sub-title"
         >
-          En frisør på Gl. Hobrovej i Randers
+          frisør på Gl. Hobrovej i Randers
         </h3>
         <p
           style={{ opacity: 0 }}

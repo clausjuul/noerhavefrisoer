@@ -17,21 +17,29 @@ const useWindowSize = () => {
   return size;
 }
 
+// TODO
+// scroll to top after page change - no animation
+// fix åben behandling glitch
+// style iframe
+// https / ssl
+// change isMobile, so true is true & so on
+// openGraph
+
+
 const App = () => {
   const breakpoint = 799;
 
-  const [isMobile, setIsMobile] = useState(() =>
+  const [isMobile, setIsMobile] = useState(() => 
     window.innerWidth > breakpoint ? true : false
   );
+
   let windowWidth = useWindowSize();
 
   useEffect(() => {
     if (windowWidth < breakpoint) {
       isMobile && setIsMobile(false);
-      // console.log("NOOOOOOOOOT");
     } else {
       !isMobile && setIsMobile(true);
-      // console.log("MOBILE");
     }
     // eslint-disable-next-line
   }, [windowWidth]);
