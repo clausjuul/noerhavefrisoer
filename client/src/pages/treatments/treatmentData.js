@@ -45,7 +45,8 @@ const TreatmentData = {
 
   reflekserUdenKlip: {
     title: "Reflekser/striber uden klip",
-    subtitle: "(Bliv klippet samtidig og spar penge)",
+    subtitle: "(Spar penge ved at blive klippet samtidig)",
+    // subtitle: "(Bliv klippet samtidig og spar penge)",
     // subtitle: "(Klip samtidig er forholdsmæssigt billigere)",
 
     data: [
@@ -125,7 +126,8 @@ const TreatmentData = {
 
   helfarveUdenKlip: {
     title: "Helfarve/toning uden klip",
-    subtitle: "(Bliv klippet samtidig og spar penge)",
+    subtitle: "(Spar penge ved at blive klippet samtidig)",
+    // subtitle: "(Bliv klippet samtidig og spar penge)",
     // subtitle: "(Klip samtidig er forholdsmæssigt billigere)",
 
     data: [
@@ -179,7 +181,8 @@ const TreatmentData = {
 
   specialfarveUdenKlip: {
     title: "Specialfarve uden klip",
-    subtitle: "(Bliv klippet samtidig og spar penge)",
+    subtitle: "(Spar penge ved at blive klippet samtidig)",
+    // subtitle: "(Bliv klippet samtidig og spar penge)",
     // subtitle: "(Klip samtidig er forholdsmæssigt billigere)",
 
     data: [
