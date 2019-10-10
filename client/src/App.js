@@ -26,7 +26,6 @@ const useWindowSize = () => {
 // change isMobile, so true is true & so on
 // openGraph
 
-
 const App = () => {
   const breakpoint = 799;
 
