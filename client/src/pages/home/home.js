@@ -1,13 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { TweenMax } from "gsap";
-// import CSSRulePlugin from "gsap/CSSRulePlugin";
 
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
-import Image1 from '../../images/vaeg.jpeg';
-import Image2 from '../../images/image2.jpg';
-import Maria from '../../images/maria.jpg';
+import Image1 from "../../images/vaeg.webp";
+import Image2 from "../../images/image2.webp";
+import Maria from '../../images/maria.webp';
 import './home.scss';
 // insta som slide sideværs galleri på mobil
 // desktop exspand nedad, 3 pr row?
@@ -59,11 +58,13 @@ const Highlights = (props) => {
   );
 }
 
-//TODO 
-// en række ned med et billede ind imellem
-// Lave et eller andet lignede på om salonen
+const Home = (props) => {
+  const { location: { pathname }, history } = props;
 
-const Home = () => {
+  useEffect(() => {
+    if (pathname !== "/") history.push("/");
+    // eslint-disable-next-line
+  }, [])
 
   let subTitleRef = useRef(null)
   let contentRef = useRef(null)
@@ -151,8 +152,8 @@ const Home = () => {
           ref={element => (contentRef = element)}
           className="page-content"
         >
-          En hyggelig, kreativ og personlig salon, som altid sætter stor fokus
-          den enkle kunde, og en hyggelig atmosfære.
+          En hyggelig, kreativ og personlig salon, som altid sætter stor på fokus
+          den enkle kunde, og har en hyggelig atmosfære.
         </p>
 
         <div className="hr" />

@@ -24,6 +24,7 @@ const useWindowSize = () => {
 // style iframe
 // https / ssl
 // change isMobile, so true is true & so on
+// slide page transition på phone, tablet?
 // openGraph
 
 const App = () => {

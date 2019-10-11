@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Transition } from "react-transition-group";
 import { TimelineMax as Timeline, Power2 } from "gsap";
 
-import HeroImage from '../../images/banner1.jpg';
+import HeroImage from "../../images/banner1.webp";
 import './Hero.scss';
 
 export const enter = (node, reverse) => {

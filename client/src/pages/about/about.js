@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
-import Maria from '../../images/maria.jpg';
+import Maria from '../../images/maria.webp';
 import './about.scss';
 
 const About = () => {
