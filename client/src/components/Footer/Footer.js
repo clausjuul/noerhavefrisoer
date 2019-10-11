@@ -18,7 +18,7 @@ const Footer = () => {
           <li>08:00 - 17:00</li>
           <li>
             Lørdag
-            <div className="small bold">Ulige uger</div>
+            <div className="small bolder">Ulige uger</div>
           </li>
           <li>08:00 - 13:00</li>
         </ul>
@@ -28,6 +28,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="footer__social--icon"
+            aria-label="Facebook"
           >
             <FacebookIcon />
           </a>
@@ -36,6 +37,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="footer__social--icon"
+            aria-label="Instagram"
           >
             <InstagramIcon />
           </a>
@@ -45,7 +47,6 @@ const Footer = () => {
           <li>Gl. Hobrovej 59</li>
           <li>8920 Randers NV</li>
           <li>Cvr. 40697156</li>
-          <br></br>
           <li className="bold">+45 4265 5687</li>
           <li className="bold">Maria@noerhavefrisoer.dk</li>
         </ul>

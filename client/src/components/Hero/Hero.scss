@@ -24,7 +24,7 @@
   &__title {
     color: $font-color-lightest;
     font-size: calc(1.25rem + 2vmin);
-    font-weight: 400;
+    font-weight: 500;
     margin: 0;
     z-index: 1;
     text-align: center;
@@ -49,7 +49,7 @@
   &__cta {
     background: rgba(255, 255, 255, 0.05);
     // background: rgba(242, 220, 209, 0.05);
-    font-weight: 400;
+    font-weight: 500;
     font-size: calc(1rem + 0.5vmin);
     color: $font-color-lightest;
     border: 1px solid $font-color-lightest;

@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
-import Maria from '../../images/maria.webp';
+import Maria from "../../images/maria.jpg";
 import './about.scss';
 
 const About = () => {
@@ -82,12 +82,12 @@ const About = () => {
           <li>08:00 - 17:00</li>
           <li>
             Lørdag
-            <div className="small bold">Ulige uger</div>
+            <div className="small bolder">Ulige uger</div>
           </li>
           <li>08:00 - 13:00</li>
           <li>
             Lørdag
-            <div className="small bold">Lige uger</div>
+            <div className="small bolder">Lige uger</div>
           </li>
           <li>lukket</li>
           <li>Søndag</li>
@@ -98,12 +98,12 @@ const About = () => {
           <li className="full">
             <h3 className="section-sub-title">Kontakt</h3>
           </li>
-          <li className="bol">Maria Louise Nørhave</li>
+          <li className="bold">Maria Louise Nørhave</li>
           <li>Gl. Hobrovej 59</li>
           <li>8920 Randers NV</li>
           {/* <li>Cvr. 40697156</li> */}
-          <li className="bol">+45 4265 5687</li>
-          <li className="bol">Maria@noerhavefrisoer.dk</li>
+          <li className="bold">+45 4265 5687</li>
+          <li className="bold">Maria@noerhavefrisoer.dk</li>
         </ul>
       </section>
 

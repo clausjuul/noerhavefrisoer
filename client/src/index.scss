@@ -1,5 +1,5 @@
 @import './scss/init';
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
 
 html {
   font-size: $rem-size;
@@ -111,9 +111,9 @@ figure {
 
 .page-sub-title {
   text-align: center;
-  color: $font-color-dark;
+  color: $font-color-dark-light;
   font-size: calc(0.8rem + 1vmin);
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0.5rem;
   padding: 0 $spacing;
   align-self: center;
@@ -137,7 +137,7 @@ figure {
   align-self: center;
   justify-self: center;
   color: $font-color-dark-light;
-  font-weight: 400;
+  font-weight: 500;
   font-size: calc(1rem + 2.5vmin);
   margin-bottom: 1.25rem;
 }
@@ -201,11 +201,14 @@ figure {
 }
 
 .bold {
+  font-weight: 500;
+}
+.bolder {
   font-weight: 600;
 }
 
 .small {
-  font-size: 75%;
+  font-size: 80%;
 }
 
 .full {

@@ -1,62 +1,19 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { TweenMax } from "gsap";
+// import axios from "axios";
+import { fetchInstafeed } from './fetchInstafeed';
 
+import Highlights from './highlights';
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
-import Image1 from "../../images/vaeg.webp";
-import Image2 from "../../images/image2.webp";
-import Maria from '../../images/maria.webp';
+// import Image1 from "../../images/1.jpg";
+// import Image2 from "../../images/2.jpg";
+// import Maria from '../../images/maria.jpg';
 import './home.scss';
-// insta som slide sideværs galleri på mobil
+// TODO 
+// insta som slide sideværs galleri på mobil?
 // desktop exspand nedad, 3 pr row?
-
-const Highlights = (props) => {
-  const { inView } = props;
-
-  let p1Ref = useRef(null)
-  let p2Ref = useRef(null)
-  let p3Ref = useRef(null)
-  let p4Ref = useRef(null)
-
-  useEffect(() => {
-    if(inView) {
-      TweenMax.staggerFromTo(
-        [p1Ref, p2Ref, p3Ref, p4Ref],
-        0.8,
-        { opacity: 0,
-          y: 7
-        },
-        { opacity: 1,
-          y: 0,
-          delay: 0.3,
-          clearProps: "transform, opacity"
-        },
-        0.15
-      );
-    }
-  }, [inView])
-
-  return (
-    <article className="highlights__content">
-      <h2 className={inView ? "section-title under" : "section-title"}>
-        Hos mig får du
-      </h2>
-      <p style={{ opacity: 0 }} ref={element => (p1Ref = element)}>
-        - Afslappet og hyggelig atmosfære
-      </p>
-      <p style={{ opacity: 0 }} ref={element => (p2Ref = element)}>
-        - Professionel og personlig rådgivning
-      </p>
-      <p style={{ opacity: 0 }} ref={element => (p3Ref = element)}>
-        - En behandling som passer til dig og dine ønsker
-      </p>
-      <p style={{ opacity: 0 }} ref={element => (p4Ref = element)}>
-        - Nærvær, grundighed og gratis parkering lige ved døren
-      </p>
-    </article>
-  );
-}
 
 const Home = (props) => {
   const { location: { pathname }, history } = props;
@@ -81,32 +38,6 @@ const Home = (props) => {
     triggerOnce: true
   });
 
-  // const [imageBoxRef, imageBoxInView] = useInView({
-  //   rootMargin: "-100px 0px",
-  //   triggerOnce: true
-  // });
-
-  // let imgBoxRef = useRef(null);
-
-  // useEffect(() => {
-  //   if (imageBoxInView) {
-  //     TweenMax.fromTo(
-  //       "#instabox",
-  //       0.8,
-  //       {
-  //         opacity: 0,
-  //         y: 10,
-  //       },
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         delay: 0.3,
-  //         clearProps: "transform, opacity"
-  //       }
-  //     );
-  //   }
-  // }, [imageBoxInView]);
-
   useEffect(() => {
     if (titleInView) {
       TweenMax.staggerFromTo(
@@ -125,6 +56,12 @@ const Home = (props) => {
       );
     }
   }, [titleInView]);
+
+  const [images, setImages] = useState(null);
+  
+  useEffect(() => {
+    fetchInstafeed(setImages);
+  }, []);
 
   return (
     <>
@@ -152,8 +89,8 @@ const Home = (props) => {
           ref={element => (contentRef = element)}
           className="page-content"
         >
-          En hyggelig, kreativ og personlig salon, som altid sætter stor på fokus
-          den enkle kunde, og har en hyggelig atmosfære.
+          En hyggelig, kreativ og personlig salon, som altid sætter stor fokus
+          på den enkelte kunde, og der er altid en hyggelig atmosfære.
         </p>
 
         <div className="hr" />
@@ -168,24 +105,13 @@ const Home = (props) => {
           // ref={imageBoxRef}
           // style={{ opacity: 0 }}
         >
-          <figure>
-            <img
-              src={Image1}
-              alt="NØRHAVE-frisør-Randers"
-            />
-          </figure>
-          <figure>
-            <img
-              src={Image2}
-              alt="NØRHAVE-frisør-Randers"
-            />
-          </figure>
-          <figure>
-            <img
-              src={Maria}
-              alt="NØRHAVE-frisør-Randers"
-            />
-          </figure>
+          {images &&
+            images.map(image => (
+              <figure key={image.id}>
+                <img src={image.thumbnail} alt="NØRHAVE-frisør-Randers" />
+                {/* <figcaption>{image.caption}</figcaption> */}
+              </figure>
+            ))}
         </section>
         <Footer />
       </section>
