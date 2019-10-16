@@ -11,9 +11,6 @@ const Treatments = () => {
   const isMobile = useContext(Context);
 
   // TODO
-  // lav isMobile context
-  // Hero tekst
-  // favicon
   // react-helmet
   return (
     <section className="treatments">

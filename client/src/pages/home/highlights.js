@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 // import { useInView } from "react-intersection-observer";
-import { TweenMax } from "gsap";
+// import { TweenMax } from "gsap";
+import { revealStaggerAnimation } from "../../animations/revealStagger";
 
 // import "./home.scss";
 // insta som slide sideværs galleri på mobil
@@ -16,13 +17,14 @@ const Highlights = props => {
 
   useEffect(() => {
     if (inView) {
-      TweenMax.staggerFromTo(
-        [p1Ref, p2Ref, p3Ref, p4Ref],
-        0.8,
-        { opacity: 0, y: 7 },
-        { opacity: 1, y: 0, delay: 0.3, clearProps: "transform, opacity" },
-        0.15
-      );
+      revealStaggerAnimation([p1Ref, p2Ref, p3Ref, p4Ref], 0.5);
+      // TweenMax.staggerFromTo(
+      //   [p1Ref, p2Ref, p3Ref, p4Ref],
+      //   0.8,
+      //   { opacity: 0, y: 7 },
+      //   { opacity: 1, y: 0, delay: 0.3, clearProps: "transform, opacity" },
+      //   0.15
+      // );
     }
   }, [inView]);
 

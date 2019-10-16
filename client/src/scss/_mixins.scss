@@ -1,7 +1,28 @@
 @import './vendor/include-media';
 
 @mixin spacing ($top:0, $bottom:0) {
+  
+  /* Fallback */
   padding: $top $spacing $bottom;
+  // padding: 0 10px;
+
+  // /* iOS 11 */
+  // padding-top: calc(constant(safe-area-inset-top) + $top);
+  // padding-right: calc(constant(safe-area-inset-right) + $spacing);
+  // padding-bottom: calc(constant(safe-area-inset-bottom) + $bottom);
+  // padding-left: calc(constant(safe-area-inset-left) + $spacing);
+
+  /* iOS 11.2+ */
+  // padding: calc(#{env(safe-area-inset-top)} + #{$top})
+  // calc(#{env(safe-area-inset-right)} + #{$spacing})
+  // calc(#{env(safe-area-inset-bottom)} + #{$bottom})
+  // calc(#{env(safe-area-inset-left)} + #{$spacing});
+
+  // padding-top: calc(env(safe-area-inset-top) + #{$top});
+  // padding-right: calc(env(safe-area-inset-right) + #{$spacing});
+  // padding-bottom: calc(env(safe-area-inset-bottom) + #{$bottom});
+  // padding-left: calc(env(safe-area-inset-left) + #{$spacing});
+  
   // padding: $top $smallSpacing $bottom;
   // max-width: 1000px;
   // justify-self: center;

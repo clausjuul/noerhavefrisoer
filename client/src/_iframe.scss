@@ -1,0 +1,112 @@
+.panel-default>.panel-heading {
+  background-color: #f3f3f3;
+}
+
+.panel-default {
+  border-color: #f3f3f3;
+}
+
+.panel {
+  box-shadow: none;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-family: 'Montserrat', 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+#findminebooking, #rediger-persondata {
+  color: #333;
+  background-color: #F5D9CC;
+  border-color: #F5D9CC;
+  border-radius: 0.5rem;
+}
+#findminebooking:hover,
+#rediger-persondata:hover {
+  color: #333;
+  background-color: rgb(216, 191, 180);
+  border-color: rgb(216, 191, 180);
+  border-radius: 0.5rem;
+}
+
+.kontaktinfo {
+  border-radius: 0.5rem;
+}
+
+.step1 {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.step4 {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.alert {
+  border-radius: 0.5rem;
+}
+
+iframe {
+  display: none;
+}
+
+
+// EAArpmNV5duABAJf0zXwZBnO1FktyEN7llQbRb8M82mFsyxwi9J6rY8FOY1MR6IkLdbIQMpdYZAafZBi3JGYRoULXUusIJ5OrJZC04yJGAevRz4honFB1kxkAWylZCNMVHrOpoZCX4cvOSWLvgrTfygZAyHxumm3TurUTcVy2XX3lAUH0kFbSVqV6XN1hIej7PRK6t3znkoZBuQZDZD
+
+
+// https://graph.facebook.com/v2.10/oauth/access_token?grant_type=fb_exchange_token&client_id=402579050359703&client_secret=f4ea72fe4294b22998823c055bfe5131&fb_exchange_token=EAArpmNV5duABAJf0zXwZBnO1FktyEN7llQbRb8M82mFsyxwi9J6rY8FOY1MR6IkLdbIQMpdYZAafZBi3JGYRoULXUusIJ5OrJZC04yJGAevRz4honFB1kxkAWylZCNMVHrOpoZCX4cvOSWLvgrTfygZAyHxumm3TurUTcVy2XX3lAUH0kFbSVqV6XN1hIej7PRK6t3znkoZBuQZDZD
+
+// //working//
+// https://www.instagram.com/oauth/authorize?app_id=402579050359703&redirect_uri=https://www.noerhavefrisoer.dk/auth/&scope=user_profile,user_media&response_type=code
+
+// // access: IGQVJXaGxiREpjTTVxWkpObUhaMHVURVcxU29RNnpnckVPSWhKRlJqb0xqXzFHYW0zalJtWnhjSXJNeEpudHJLbngyRTJleHVTRTBGd01pUGF1VFNoRjYwM2xiSEg1ZAWViTy1GYlBZASGVKNFZAtUWxLemQtOElvOF91NUhv
+
+// // code: AQD4arxdO7kuRDTGSNhVWrOFZGg6Wwf1hGtVgRbA6zzarCsVJKMdaXC4vMN4TfyNFIAKe_DmBgerT8bfemAovUAWebinpmRt7ejE4PHot_XnH0UcoQ0LXWmMeE8RE9tGIHHGpvnv48T3u5pTySWzNX8Ifcej5jdw_-NJkAFLSJbtq-RXGRHgGcS4bdrjDQsKoesV5Zh0o-W4abWc4NtfkSAlUFSQasltODXKorH7BkwLCg
+
+
+
+
+// // https: //api.instagram.com/oauth/access_token?app_id=402579050359703&app_secret=f4ea72fe4294b22998823c055bfe5131&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.noerhavefrisoer.dk%2F auth%2F&code=AQCCtXffpZTZF4sP4JqpG68mEgAqre6JG6jOLWhmv1ujbeBsXia6H9Pz1vQbX3bkdzvVxPA54mh89l_2mP2GaN-DrH3Vdou5JWrKKOjDg7I3IFg-EAUYl9oG6hY56q8kfIgG93YpIaINWhmcZfuFv7vckrLOGGEDEx3YwtzIJWoTPPBGYGpOLSN4rG0M0E85DBK6E06IvKUNJTimJCrda9_PzglBX3Y-JNPvUxPrdg5_dQ
+
+// https://api.instagram.com/oauth/authorize?app_id=402579050359703&redirect_uri=https%3A%2F%2Fnoerhavefrisoer.dk%2F auth%2F &scope=user_profile,user_media&response_type=code
+
+// // https: //www.instagram.com/oauth/authorize?app_id=402579050359703&redirect_uri=https://www.noerhavefrisoer.dk/auth/&scope=user_profile,user_media&response_type=code
+// // 402579050359703
+
+// // https://noerhavefrisoer.dk/auth/
+
+// // https://api.instagram.com/oauth/authorize
+// // ?app_id=3071592392914656 &redirect_uri=https%3A%2F%2Fwww.noerhavefrisoer.dk%2Fauth%2F &scope=user_profile,
+// // user_media &response_type=code
+
+// // https: //api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=https://noerhavefrisoer.dk/auth/&response_type=token
+
+// curl -X POST \
+// https://api.instagram.com/oauth/access_token \
+// -F app_id=402579050359703 \
+// -F app_secret=f4ea72fe4294b22998823c055bfe5131 \
+// -F grant_type=authorization_code \
+// -F redirect_uri=https://www.noerhavefrisoer.dk/auth/ \
+// -F code=AQD4arxdO7kuRDTGSNhVWrOFZGg6Wwf1hGtVgRbA6zzarCsVJKMdaXC4vMN4TfyNFIAKe_DmBgerT8bfemAovUAWebinpmRt7ejE4PHot_XnH0UcoQ0LXWmMeE8RE9tGIHHGpvnv48T3u5pTySWzNX8Ifcej5jdw_-NJkAFLSJbtq-RXGRHgGcS4bdrjDQsKoesV5Zh0o-W4abWc4NtfkSAlUFSQasltODXKorH7BkwLCg
+
+
+
+// // "access_token": "IGQVJVR0k3NWE4MUlycnJYY1lyOXdGQjh5RXkyaWY3OTZAEZAnk5QUp1ejlSWUVpNjFSTFNjTUZAYTTIySXVNYUFPQzVLZAmprR1ZAacHE0UG1yZA0F2OHNLU2U5TENacUR0WGN5YWQ1Wi03dU5MUEstcEtDQnA2OVNiajFkb1Jz",
+// // "user_id": 17841422108543807
+
+// // {
+// //   "id": "17841422108543807",
+// //     "username": "testtest2284"
+// // }
+
+
+// /17841422108543807/media
+
+// curl -X GET \
+//  'https://graph.instagram.com/17841405793187218/media?fields=id,username&access_token=IGQVJ...'
+
+// https: //graph.instagram.com/17841422108543807/media?fields=thumbnail_src&access_token=IGQVJXaGxiREpjTTVxWkpObUhaMHVURVcxU29RNnpnckVPSWhKRlJqb0xqXzFHYW0zalJtWnhjSXJNeEpudHJLbngyRTJleHVTRTBGd01pUGF1VFNoRjYwM2xiSEg1ZAWViTy1GYlBZASGVKNFZAtUWxLemQtOElvOF91NUhv
+// https: //graph.instagram.com/17841422108543807/media?fields=thumbnail_src&access_token=IGQVJXaGxiREpjTTVxWkpObUhaMHVURVcxU29RNnpnckVPSWhKRlJqb0xqXzFHYW0zalJtWnhjSXJNeEpudHJLbngyRTJleHVTRTBGd01pUGF1VFNoRjYwM2xiSEg1ZAWViTy1GYlBZASGVKNFZAtUWxLemQtOElvOF91NUhv
+
+
+

@@ -1,19 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { TweenMax } from "gsap";
-// import axios from "axios";
-import { fetchInstafeed } from './fetchInstafeed';
 
+import { fetchInstafeed } from './fetchInstafeed';
 import Highlights from './highlights';
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
 // import Image1 from "../../images/1.jpg";
 // import Image2 from "../../images/2.jpg";
 // import Maria from '../../images/maria.jpg';
+import { revealStaggerAnimation } from '../../animations/revealStagger';
 import './home.scss';
-// TODO 
-// insta som slide sideværs galleri på mobil?
-// desktop exspand nedad, 3 pr row?
 
 const Home = (props) => {
   const { location: { pathname }, history } = props;
@@ -40,20 +36,7 @@ const Home = (props) => {
 
   useEffect(() => {
     if (titleInView) {
-      TweenMax.staggerFromTo(
-        [subTitleRef, contentRef],
-        0.8,
-        {
-          opacity: 0,
-          y: 10,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          delay: 0.5,
-          clearProps: "transform, opacity"
-        }, 0.15
-      );
+      revealStaggerAnimation([subTitleRef, contentRef], 1);
     }
   }, [titleInView]);
 
@@ -79,14 +62,14 @@ const Home = (props) => {
         </h1>
         <h3
           style={{ opacity: 0 }}
-          ref={element => (subTitleRef = element)}
+          ref={el => (subTitleRef = el)}
           className="page-sub-title"
         >
           frisør på Gl. Hobrovej i Randers
         </h3>
         <p
           style={{ opacity: 0 }}
-          ref={element => (contentRef = element)}
+          ref={el => (contentRef = el)}
           className="page-content"
         >
           En hyggelig, kreativ og personlig salon, som altid sætter stor fokus
@@ -99,19 +82,12 @@ const Home = (props) => {
           <Highlights inView={highlightsInView} />
         </section>
 
-        <section
-          className="instagram-feed"
-          // id="instabox"
-          // ref={imageBoxRef}
-          // style={{ opacity: 0 }}
-        >
-          {images &&
-            images.map(image => (
-              <figure key={image.id}>
-                <img src={image.thumbnail} alt="NØRHAVE-frisør-Randers" />
-                {/* <figcaption>{image.caption}</figcaption> */}
-              </figure>
-            ))}
+        <section className="instagram-feed">
+          {images && images.map(image => (
+            <figure key={image.id}>
+              <img src={image.thumbnail} alt="NØRHAVE-frisør-Randers" />
+            </figure>
+          ))}
         </section>
         <Footer />
       </section>

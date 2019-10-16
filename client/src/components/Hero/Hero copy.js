@@ -1,13 +1,14 @@
 import React, { useState, useRef } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Transition } from "react-transition-group";
 import { TimelineMax as Timeline, Power2 } from "gsap";
 
-import HeroImage from '../../images/banner1.jpg';
-import './Hero.scss';
+import HeroImage from "../../images/banner1.jpg";
+import { revealStaggerAnimation } from "../../animations/revealStagger";
+import "./Hero.scss";
 
 export const enter = (node, reverse) => {
-  const timeline = new Timeline({ 
+  const timeline = new Timeline({
     paused: true,
     reversed: reverse ? true : false
   });
@@ -34,17 +35,17 @@ export const enter = (node, reverse) => {
       },
       0.1
     );
-  reverse ? timeline.reverse() : timeline.play()
+  reverse ? timeline.reverse() : timeline.play();
 };
 
-const Hero = (props) => {
-  const { image, height, position } = props;
+const Hero = props => {
+  const { image, height, position, title, subTitle, link, to } = props;
 
-  const [show] = useState(true)
+  const [show] = useState(true);
 
-  const titleRef = useRef(null)
-  const subTitleRef = useRef(null)
-  const ctaRef = useRef(null)
+  const titleRef = useRef(null);
+  const subTitleRef = useRef(null);
+  const ctaRef = useRef(null);
 
   return (
     <Transition
@@ -54,23 +55,22 @@ const Hero = (props) => {
       onExit={node => enter(node, true)}
       timeout={{ enter: 1000, exit: 1000 }}
     >
-
       <section
         className="hero"
         style={{
           backgroundImage: `url(${image || HeroImage})`,
           backgroundPosition: position || "50% 50%",
-          minHeight: height || "30vh"
+          height: height || "auto"
         }}
       >
         <h2 className="hero__title" ref={titleRef}>
-          Mangler du en tid?
+          {title}
         </h2>
         <p className="hero__sub-title" ref={subTitleRef}>
-          Ring og bestil en tid eller<br></br>
+          {subTitle}
         </p>
-        <Link className="hero__cta" to="/booking" ref={ctaRef}>
-          Book Online
+        <Link className="hero__cta" to={to} ref={ctaRef}>
+          {link}
         </Link>
       </section>
     </Transition>

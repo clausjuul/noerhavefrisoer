@@ -27,7 +27,7 @@ export const fetchInstafeed = async setResponse => {
 
     for (let media of mediaArray) {
       const node = media.node;
-      console.log('', node)
+      // console.log('', node)
       // Process only if
       // if (node.__typename && node.__typename !== ("GraphImage")) {
       //   continue;

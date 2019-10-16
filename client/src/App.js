@@ -30,6 +30,7 @@ const useWindowSize = () => {
 const App = () => {
   const breakpoint = 799;
 
+  // const [isMobile, setIsMobile] = useState(true);
   const [isMobile, setIsMobile] = useState(() => 
     window.innerWidth > breakpoint ? true : false
   );

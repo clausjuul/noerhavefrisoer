@@ -39,7 +39,7 @@
     border-radius: 0.5rem;
     overflow: hidden;
 
-    @include media('>tablet') {
+    @include media('>1100px') {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       max-width: 900px;

@@ -1,0 +1,25 @@
+// @import '../../scss/init';
+
+.burger-icon {
+  cursor: pointer;
+  // -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  width: 60px;
+
+  .top,
+  .middle,
+  .bottom {
+    fill: none;
+    stroke: #666;
+    stroke-width: 4;
+    stroke-linecap: round;
+  }
+
+  .top {
+    stroke-dasharray: 40 139;
+  }
+
+  .bottom {
+    stroke-dasharray: 40 180;
+  }
+}

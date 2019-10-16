@@ -1,5 +1,5 @@
 @import './scss/init';
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap');
 
 html {
   font-size: $rem-size;
@@ -7,7 +7,8 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font;
+  // font-size: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -162,7 +163,7 @@ figure {
 
       animation-name: title;
       animation-duration: 1000ms;
-      animation-delay: 400ms;
+      animation-delay: 100ms;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
     }
@@ -194,7 +195,7 @@ figure {
   height: 1px;
   width: calc(100% - 4rem);
   // background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
-  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.075) 10%, rgba(0, 0, 0, 0.075) 90%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.035) 10%, rgba(0, 0, 0, 0.055) 50%, rgba(0, 0, 0, 0.035) 90%, rgba(0, 0, 0, 0) 100%);
   // background: rgba(0, 0, 0, 0.1);
   max-width: $max-width;
   align-self: center;
