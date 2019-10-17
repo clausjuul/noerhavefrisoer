@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
 import navData from './navData';
-import NavbarDesktop from "./NavbarDesktop/NavbarDesktop";
-import NavbarMobile from './NavbarMobile/NavbarMobile';
 import Context from '../../context';
 import './Navigation.scss';
+
+const NavbarDesktop = React.lazy(() => import('./NavbarDesktop/NavbarDesktop'));
+const NavbarMobile = React.lazy(() => import('./NavbarMobile/NavbarMobile'));
 
 const Navigation = () => {
   const isMobile = useContext(Context);
