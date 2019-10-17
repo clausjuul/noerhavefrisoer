@@ -160,7 +160,6 @@ figure {
       background: $color-primary;
       z-index: -1;
       transform: scaleX(0);
-
       animation-name: title;
       animation-duration: 1000ms;
       animation-delay: 100ms;
@@ -169,6 +168,12 @@ figure {
     }
   }
 }
+
+@keyframes title {
+  from {transform: scaleX(0)}
+  to {transform: scaleX(1)}
+}
+
 .section-sub-title {
   // grid-column: 1 / -1;
   position: relative;
@@ -176,14 +181,14 @@ figure {
   align-self: center;
   justify-self: center;
   color: $font-color-dark;
-  font-weight: 400;
+  font-weight: 500;
   font-size: calc(1rem + 1vmin);
   margin-bottom: 0.5rem;
 }
+
 .section-content {
   text-align: center;
   color: $font-color-dark-light;
-  // font-size: calc(0.8rem + 0.5vmin);
   font-weight: 400;
   max-width: $max-width-small;
   align-self: center;
@@ -196,7 +201,6 @@ figure {
   width: calc(100% - 4rem);
   // background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
   background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.035) 10%, rgba(0, 0, 0, 0.055) 50%, rgba(0, 0, 0, 0.035) 90%, rgba(0, 0, 0, 0) 100%);
-  // background: rgba(0, 0, 0, 0.1);
   max-width: $max-width;
   align-self: center;
 }
@@ -217,12 +221,16 @@ figure {
   display: block;
 }
 
-@keyframes title {
-  from {
-    transform: scaleX(0)
-  }
+button {
+  -webkit-appearance: button;
+  text-transform: none;
+}
 
-  to {
-    transform: scaleX(1)
-  }
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  outline: steelblue dotted 1px;
 }

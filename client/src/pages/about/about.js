@@ -97,6 +97,7 @@ const About = () => {
         <ul className="contacts">
           <li className="full">
             <h3 className="section-sub-title">Kontakt</h3>
+            {/* <h3 className="section-sub-title">Kontakt</h3> */}
           </li>
           <li className="bold">Maria Louise Nørhave</li>
           <li>Gl. Hobrovej 59</li>

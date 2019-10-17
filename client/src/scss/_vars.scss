@@ -8,12 +8,10 @@ $rem-size: calc(12px + 0.7vmin);
 $line-height: 1.35;
 
 // COLORS //
-$color-rosa: hsl(19, 67%, 88%);
+$color-rosa: rgb(244, 216, 203);
 // $color-rosa: rgb(242, 220, 209);
-$color-red: #ff0000;
 $color-grey: #d1d1d1;
 $color-white: #fff;
-$color-black: #000;
 
 $color-primary: $color-rosa;
 
@@ -33,10 +31,6 @@ $font-weight-bold: 600;
 $smallSpacing: 1rem;
 $spacing: 1rem;
 $largeSpacing: 10vw;
-
-$nav-height: 5rem;
-$nav-background: $color-black;
-$nav-font-size: 0.8rem;
 
 $font: 'Montserrat', sans-serif;
 // $font-heading: 'Open Sans', sans-serif;

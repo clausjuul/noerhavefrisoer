@@ -16,6 +16,7 @@ const Highlights = props => {
   let p4Ref = useRef(null);
 
   useEffect(() => {
+    console.log('from home')
     if (inView) {
       revealStaggerAnimation([p1Ref, p2Ref, p3Ref, p4Ref], 0.5);
       // TweenMax.staggerFromTo(

@@ -64,11 +64,18 @@ const getDefaultTimeline = (node, delay) => {
 export const play = (node, appears) => {
   const delay = appears ? 0 : 0.25;
   let timeline = getDefaultTimeline(node, delay);
-
+  timeline.play();
   // if (pathname === "/") timeline = getHomeTimeline(node, delay);
   // else timeline = getDefaultTimeline(node, delay);
 
-  window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()));
+
+  // <script>
+  //     window.loadPromise = new Promise(function (resolve) {
+  //       window.addEventListener('load', resolve);
+  //     });
+  //   </script>
+
+  // window.loadPromise.then(() => requestAnimationFrame(() => timeline.play()));
 };
 
 export const exit = node => {

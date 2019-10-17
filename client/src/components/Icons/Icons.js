@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { TweenMax, TimelineMax as Timeline } from "gsap";
-
-import "./Icons.scss";
+import { TweenMax } from "gsap";
 
 export const FacebookIcon = () => {
   return (
@@ -73,63 +71,62 @@ export const ChevronIcon = ({isOpen}) => {
   );
 }
 
-const menuIconTimeline = (top, middle, bottom) => {
-  const timeline = new Timeline({ paused: true });
-  timeline
-    .fromTo(middle, 0.25, {  opacity: 1 }, {  opacity: 0 }, 0)
-    .fromTo(top, 0.25, { top: "0%" }, { top: "0.55rem" }, 0)
-    .fromTo(bottom, 0.25, { bottom: "0%" }, { bottom: "0.55rem" }, 0)
-    // .fromTo(top, 0.25, { top: "0%" }, { top: "50%" }, 0)
-    // .fromTo(bottom, 0.25, { bottom: "0%" }, { bottom: "50%" }, 0)
-    .fromTo(top, 0.25, { rotation: 0 }, { rotation: 45 }, 0.2)
-    .fromTo(bottom, 0.25, { rotation: 0 }, { rotation: -45 }, 0.2);
-  return timeline;
-};
+// const menuIconTimeline = (top, middle, bottom) => {
+//   const timeline = new Timeline({ paused: true });
+//   timeline
+//     .fromTo(middle, 0.25, {  opacity: 1 }, {  opacity: 0 }, 0)
+//     .fromTo(top, 0.25, { top: "0%" }, { top: "0.55rem" }, 0)
+//     .fromTo(bottom, 0.25, { bottom: "0%" }, { bottom: "0.55rem" }, 0)
+//     // .fromTo(top, 0.25, { top: "0%" }, { top: "50%" }, 0)
+//     // .fromTo(bottom, 0.25, { bottom: "0%" }, { bottom: "50%" }, 0)
+//     .fromTo(top, 0.25, { rotation: 0 }, { rotation: 45 }, 0.2)
+//     .fromTo(bottom, 0.25, { rotation: 0 }, { rotation: -45 }, 0.2);
+//   return timeline;
+// };
 
-export const MenuIcon = ({isOpen}) => {
-  let top = useRef(null);
-  let middle = useRef(null);
-  let bottom = useRef(null);
+// export const MenuIcon = ({isOpen}) => {
+//   let top = useRef(null);
+//   let middle = useRef(null);
+//   let bottom = useRef(null);
 
-  
-  useEffect(() => {
-    const timeline = menuIconTimeline(top, middle, bottom);
-    if(isOpen) {
-      timeline.play()
-    } else {
-      timeline.reverse()
-    }
-  }, [isOpen]);
+//   useEffect(() => {
+//     const timeline = menuIconTimeline(top, middle, bottom);
+//     if(isOpen) {
+//       timeline.play()
+//     } else {
+//       timeline.reverse()
+//     }
+//   }, [isOpen]);
 
-  return (
-    <>
-      <svg
-        viewBox="0 0 448 62"
-        ref={el => (top = el)}
-        aria-hidden="true"
-        // className="burger-icon"
-      >
-        <path d="M418.23,62H29.77A29.86,29.86,0,0,1,0,32.23V29.77A29.86,29.86,0,0,1,29.77,0H418.23A29.86,29.86,0,0,1,448,29.77v2.46A29.86,29.86,0,0,1,418.23,62Z" />
-      </svg>
-      <svg
-        viewBox="0 0 448 62"
-        ref={el => (middle = el)}
-        aria-hidden="true"
-        // className="burger-icon"
-      >
-        <path d="M418.23,62H29.77A29.86,29.86,0,0,1,0,32.23V29.77A29.86,29.86,0,0,1,29.77,0H418.23A29.86,29.86,0,0,1,448,29.77v2.46A29.86,29.86,0,0,1,418.23,62Z" />
-      </svg>
-      <svg
-        viewBox="0 0 448 62"
-        ref={el => (bottom = el)}
-        aria-hidden="true"
-        // className="burger-icon"
-      >
-        <path d="M418.23,62H29.77A29.86,29.86,0,0,1,0,32.23V29.77A29.86,29.86,0,0,1,29.77,0H418.23A29.86,29.86,0,0,1,448,29.77v2.46A29.86,29.86,0,0,1,418.23,62Z" />
-      </svg>
-    </>
-  );
-}
+//   return (
+//     <>
+//       <svg
+//         viewBox="0 0 448 62"
+//         ref={el => (top = el)}
+//         aria-hidden="true"
+//         // className="burger-icon"
+//       >
+//         <path d="M418.23,62H29.77A29.86,29.86,0,0,1,0,32.23V29.77A29.86,29.86,0,0,1,29.77,0H418.23A29.86,29.86,0,0,1,448,29.77v2.46A29.86,29.86,0,0,1,418.23,62Z" />
+//       </svg>
+//       <svg
+//         viewBox="0 0 448 62"
+//         ref={el => (middle = el)}
+//         aria-hidden="true"
+//         // className="burger-icon"
+//       >
+//         <path d="M418.23,62H29.77A29.86,29.86,0,0,1,0,32.23V29.77A29.86,29.86,0,0,1,29.77,0H418.23A29.86,29.86,0,0,1,448,29.77v2.46A29.86,29.86,0,0,1,418.23,62Z" />
+//       </svg>
+//       <svg
+//         viewBox="0 0 448 62"
+//         ref={el => (bottom = el)}
+//         aria-hidden="true"
+//         // className="burger-icon"
+//       >
+//         <path d="M418.23,62H29.77A29.86,29.86,0,0,1,0,32.23V29.77A29.86,29.86,0,0,1,29.77,0H418.23A29.86,29.86,0,0,1,448,29.77v2.46A29.86,29.86,0,0,1,418.23,62Z" />
+//       </svg>
+//     </>
+//   );
+// }
 
     //   <path d="M418.23 62H29.77A29.86 29.86 0 010 32.23v-2.46A29.86 29.86 0 0129.77 0h388.46A29.86 29.86 0 01448 29.77v2.46A29.86 29.86 0 01418.23 62zM418.23 222H29.77A29.86 29.86 0 010 192.23v-2.46A29.86 29.86 0 0129.77 160h388.46A29.86 29.86 0 01448 189.77v2.46A29.86 29.86 0 01418.23 222zM418.23 382H29.77A29.86 29.86 0 010 352.23v-2.46A29.86 29.86 0 0129.77 320h388.46A29.86 29.86 0 01448 349.77v2.46A29.86 29.86 0 01418.23 382z" />
     // </svg>

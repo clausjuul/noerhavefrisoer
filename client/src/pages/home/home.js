@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { fetchInstafeed } from './fetchInstafeed';
 import Highlights from './highlights';
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
+import Image1 from "../../images/1.jpg";
+import Image2 from "../../images/2.jpg";
+import Image3 from "../../images/vaeg.jpg";
 import { revealStaggerAnimation } from '../../animations/revealStagger';
 import './home.scss';
 
@@ -37,11 +39,11 @@ const Home = (props) => {
     }
   }, [titleInView]);
 
-  const [images, setImages] = useState(null);
+  // const [images, setImages] = useState(null);
   
-  useEffect(() => {
-    fetchInstafeed(setImages);
-  }, []);
+  // useEffect(() => {
+  //   fetchInstafeed(setImages);
+  // }, []);
 
   return (
     <>
@@ -80,12 +82,17 @@ const Home = (props) => {
         </section>
 
         <section className="instagram-feed">
-          {images && images.map(image => (
-            <figure key={image.id}>
-              <img src={image.thumbnail} alt="NØRHAVE-frisør-Randers" />
-            </figure>
-          ))}
+          <figure>
+            <img src={Image1} alt="NØRHAVE-frisør-Randers" />
+          </figure>
+          <figure>
+            <img src={Image2} alt="NØRHAVE-frisør-Randers" />
+          </figure>
+          <figure>
+            <img src={Image3} alt="NØRHAVE-frisør-Randers" />
+          </figure>
         </section>
+
         <Footer />
       </section>
     </>
