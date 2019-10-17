@@ -5,9 +5,6 @@ import { fetchInstafeed } from './fetchInstafeed';
 import Highlights from './highlights';
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
-// import Image1 from "../../images/1.jpg";
-// import Image2 from "../../images/2.jpg";
-// import Maria from '../../images/maria.jpg';
 import { revealStaggerAnimation } from '../../animations/revealStagger';
 import './home.scss';
 

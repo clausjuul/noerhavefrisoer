@@ -103,7 +103,11 @@ const About = () => {
           <li>8920 Randers NV</li>
           {/* <li>Cvr. 40697156</li> */}
           <li className="bold">+45 4265 5687</li>
-          <li className="bold">Maria@noerhavefrisoer.dk</li>
+          <li className="bold">
+            <a href="mailto:maria@noerhavefrisoer.dk">
+              Maria@noerhavefrisoer.dk
+            </a>
+          </li>
         </ul>
       </section>
 

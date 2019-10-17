@@ -2,6 +2,10 @@
 
 .home {
   @include withSpacingParent();
+
+  .page-sub-title {
+    margin-top: -0.75rem;
+  }
   
   .highlights {
     @include withSpacingParent();
