@@ -11,8 +11,10 @@ import { ChevronIcon } from "../../components/Icons/Icons";
 
 const openAnimation = (node, reverse, appear = false) => {
   // console.log("appear", appear);
-  // let duration = reverse ? 0.35 : 0.25;
-  let duration = appear ? 0.1 : reverse ? 0.35 : 0.25;
+  console.log('node: ', node)
+  console.log('animated', )
+  let duration = reverse ? 0.3 : 0.2;
+  // let duration = appear ? 0.1 : reverse ? 0.35 : 0.25;
   const timeline = new Timeline({
     paused: true,
     reversed: reverse ? true : false
@@ -23,15 +25,15 @@ const openAnimation = (node, reverse, appear = false) => {
     duration,
     {
       height: "auto",
-      autoAlpha: 1,
-      // opacity: 1,
+      // autoAlpha: 1,
+      opacity: 1,
       ease: "Power2.easeInOut"
       // clearProps: "opacity"
     },
     {
       height: 0,
-      // opacity: 0,
-      autoAlpha: 0,
+      opacity: 0,
+      // autoAlpha: 0,
       ease: "Power2.easeInOut"
       // clearProps: "opacity"
     }
@@ -42,12 +44,12 @@ const openAnimation = (node, reverse, appear = false) => {
 const Treatment = (props) => {
   const {isDesktop, treatment: { title, subtitle, data }} = props;
   let treatmentRef = useRef(null);
-
+  console.log(treatmentRef);
   // const [isOpen, setIsOpen] = useState(() => isDesktop ? true : false);
   // const [isOpen, setIsOpen] = useState(isDesktop);
   const [isOpen, setIsOpen] = useState(null);
-  console.log('isOpen', isOpen)
-  console.log('isDesktop: ', isDesktop )
+  // console.log('isOpen', isOpen)
+  // console.log('isDesktop: ', isDesktop )
 
   useEffect(() => {
     if (isDesktop) setIsOpen(false);
@@ -55,16 +57,18 @@ const Treatment = (props) => {
   }, [isDesktop]);
 
   useEffect(() => {
-    if(!isOpen && isOpen !== null) {
-      // openAni(contentBoxRef, true)
-      openAnimation(treatmentRef, true);
-    } else {
-      openAnimation(treatmentRef, false);
-      // openAni(contentBoxRef, false)
+    if (treatmentRef && treatmentRef.current) {
+      if (!isOpen && isOpen !== null) {
+        // openAni(contentBoxRef, true)
+        openAnimation(treatmentRef.current, true);
+      } else {
+        openAnimation(treatmentRef.current, false);
+        // openAni(contentBoxRef, false)
+      }
     }
-  }, [isOpen])
+  }, [isOpen, treatmentRef]);
 
-  let initStyle = {height: 0, opacity: 0}
+  // let initStyle = {height: 0, opacity: 0}
 
   return (
     <>
@@ -84,8 +88,9 @@ const Treatment = (props) => {
       > */}
       <ul
         className="treatment"
-        style={initStyle}
-        ref={el => (treatmentRef = el)}
+        // style={initStyle}
+        ref={treatmentRef}
+        // ref={el => (treatmentRef = el)}
       >
         {data.map((treatment, i) => (
           <li key={`${title}-${i}`}>
