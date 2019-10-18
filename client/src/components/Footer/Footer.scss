@@ -80,9 +80,10 @@
         fill: $font-color-dark;
         padding: 0.25rem;
         transition: 200ms;
-        
-        &:hover {
-          padding: 0.1rem;
+        @include media('>tablet') {
+          &:hover {
+            padding: 1px;
+          }
         }
       }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { Tween } from "react-gsap";
 import { TimelineMax as Timeline } from "gsap";
+import { Transition } from "react-transition-group";
 
 import './treatments.scss';
 import { ChevronIcon } from "../../components/Icons/Icons";
@@ -9,47 +9,62 @@ import { ChevronIcon } from "../../components/Icons/Icons";
 // TODO
 // make cards open on desktop, not on mobile
 
-const openAni = (ref, reverse) => {
+const openAnimation = (node, reverse, appear = false) => {
+  // console.log("appear", appear);
+  // let duration = reverse ? 0.35 : 0.25;
+  let duration = appear ? 0.1 : reverse ? 0.35 : 0.25;
   const timeline = new Timeline({
     paused: true,
     reversed: reverse ? true : false
   });
 
   timeline.fromTo(
-    ref,
-    0.35,
+    node,
+    duration,
     {
       height: "auto",
       autoAlpha: 1,
       // opacity: 1,
-      ease: "Power2.easeInOut",
+      ease: "Power2.easeInOut"
       // clearProps: "opacity"
     },
     {
       height: 0,
       // opacity: 0,
       autoAlpha: 0,
-      ease: "Power2.easeInOut",
+      ease: "Power2.easeInOut"
       // clearProps: "opacity"
     }
   );
-    // return timeline
   reverse ? timeline.reverse() : timeline.play();
 };
 
 const Treatment = (props) => {
-  const {isMobile, treatment: { title, subtitle, data }} = props;
+  const {isDesktop, treatment: { title, subtitle, data }} = props;
+  let treatmentRef = useRef(null);
 
-  const [isOpen, setIsOpen] = useState(isMobile);
-  let contentBoxRef = useRef(null);
+  // const [isOpen, setIsOpen] = useState(() => isDesktop ? true : false);
+  // const [isOpen, setIsOpen] = useState(isDesktop);
+  const [isOpen, setIsOpen] = useState(null);
+  console.log('isOpen', isOpen)
+  console.log('isDesktop: ', isDesktop )
 
   useEffect(() => {
-    if(isOpen) {
-      openAni(contentBoxRef, true)
+    if (isDesktop) setIsOpen(false);
+    else setIsOpen(true);
+  }, [isDesktop]);
+
+  useEffect(() => {
+    if(!isOpen && isOpen !== null) {
+      // openAni(contentBoxRef, true)
+      openAnimation(treatmentRef, true);
     } else {
-      openAni(contentBoxRef, false)
+      openAnimation(treatmentRef, false);
+      // openAni(contentBoxRef, false)
     }
   }, [isOpen])
+
+  let initStyle = {height: 0, opacity: 0}
 
   return (
     <>
@@ -60,7 +75,18 @@ const Treatment = (props) => {
         </h2>
         {subtitle && <p className="treatment__title--sub">{subtitle}</p>}
       </div>
-      <ul className="treatment" ref={element => (contentBoxRef = element)}>
+      {/* <Transition
+        appear={true}
+        in={isOpen}
+        onEnter={(node, appear) => openAnimation(node, false, appear)}
+        onExit={(node, appear) => openAnimation(node, true, appear)}
+        timeout={{ enter: 350, exit: 250 }}
+      > */}
+      <ul
+        className="treatment"
+        style={initStyle}
+        ref={el => (treatmentRef = el)}
+      >
         {data.map((treatment, i) => (
           <li key={`${title}-${i}`}>
             <span className="treatment__name">{treatment.navn}</span>
@@ -70,7 +96,7 @@ const Treatment = (props) => {
             )}
             {treatment.tekst &&
               treatment.tekst.length > 1 &&
-              treatment.tekst.map((t, i) => (
+              treatment.tekst.map((_, i) => (
                 <span key={`tekst-${i}`} className="treatment__content">
                   {treatment.tekst[i]}
                 </span>
@@ -78,6 +104,7 @@ const Treatment = (props) => {
           </li>
         ))}
       </ul>
+      {/* </Transition> */}
       <div className="hr" />
     </>
   );

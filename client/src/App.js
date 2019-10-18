@@ -1,21 +1,21 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 
-import { ContextProvider } from "./context";
+// import { ContextProvider } from "./context";
 import Navigation from './components/Navigation/Navigation';
 import Routes from './routes';
 
-const useWindowSize = () => {
-  let [size, setSize] = useState([0, 0]);
-  useLayoutEffect(() => {
-    const updateSize = () => setSize(window.innerWidth);
+// const useWindowSize = () => {
+//   let [size, setSize] = useState(null);
+//   useLayoutEffect(() => {
+//     const updateSize = () => setSize(window.innerWidth);
     
-    window.addEventListener("resize", updateSize);
-    updateSize();
+//     window.addEventListener("resize", updateSize);
+//     updateSize();
     
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-  return size;
-}
+//     return () => window.removeEventListener("resize", updateSize);
+//   }, []);
+//   return size;
+// }
 
 // TODO
 // scroll to top after page change - no animation
@@ -26,29 +26,36 @@ const useWindowSize = () => {
 // openGraph
 
 const App = () => {
-  const breakpoint = 799;
+  // const breakpoint = 799;
 
-  // const [isMobile, setIsMobile] = useState(true);
-  const [isMobile, setIsMobile] = useState(() => 
-    window.innerWidth > breakpoint ? true : false
-  );
+  // const [isDesktop, setIsDesktop] = useState(null);
+  // // const [isDesktop, setIsDesktop] = useState(() => 
+  // //   window.innerWidth > breakpoint ? true : false
+  // // );
 
-  let windowWidth = useWindowSize();
+  // let windowWidth = useWindowSize();
 
-  useEffect(() => {
-    if (windowWidth < breakpoint) {
-      isMobile && setIsMobile(false);
-    } else {
-      !isMobile && setIsMobile(true);
-    }
-    // eslint-disable-next-line
-  }, [windowWidth]);
+  // useEffect(() => {
+  //   console.log("windowWidth", windowWidth);
+  //   if (windowWidth !== null) {
+  //     if (windowWidth < breakpoint) {
+  //       // isDesktop && 
+  //       setIsDesktop(false);
+  //     } else {
+  //       // !isDesktop && 
+  //       setIsDesktop(true);
+  //     }
+  //   }
+  //   // eslint-disable-next-line
+  // }, [windowWidth]);
 
   return (
-    <ContextProvider value={isMobile}>
-      <Navigation />
-      <Routes />
-    </ContextProvider>
+    <>
+      {/* <ContextProvider value={isDesktop}> */}
+        <Navigation />
+        <Routes />
+      {/* </ContextProvider> */}
+    </>
   );
 }
 export default App;

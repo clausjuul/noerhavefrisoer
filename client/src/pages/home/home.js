@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Highlights from './highlights';
-import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
+import Footer from '../../components/Footer/Footer';
+import Highlights from './highlights';
 import Image1 from "../../images/1.jpg";
 import Image2 from "../../images/2.jpg";
 import Image3 from "../../images/vaeg.jpg";

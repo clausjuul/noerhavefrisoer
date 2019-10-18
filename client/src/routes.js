@@ -10,7 +10,7 @@ import Booking from './pages/booking/booking';
 import Treatments from './pages/treatments/treatments';
 
 const Routes = () => {
-  const isMobile = useContext(Context);
+  const isDesktop = useContext(Context);
 
   return (
     <Route
@@ -18,7 +18,7 @@ const Routes = () => {
         return (
           <TransitionGroup
             component={"main"}
-            className={!isMobile ? "main" : undefined}
+            className={!isDesktop ? "main" : undefined}
           >
             <Transition
               key={location.key}

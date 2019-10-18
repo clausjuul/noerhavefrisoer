@@ -11,11 +11,11 @@ const NavbarDesktop = React.lazy(() => import('./NavbarDesktop/NavbarDesktop'));
 const NavbarMobile = React.lazy(() => import('./NavbarMobile/NavbarMobile'));
 
 const Navigation = () => {
-  const isMobile = useContext(Context);
+  const isDesktop = useContext(Context);
 
   return (
     <>
-      {isMobile ? <NavbarDesktop navData={navData} /> : <NavbarMobile navData={navData} />}
+      {isDesktop ? <NavbarDesktop navData={navData} /> : <NavbarMobile navData={navData} />}
     </>
   );
 };

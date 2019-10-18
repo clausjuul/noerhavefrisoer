@@ -1,11 +1,6 @@
 import React, { useRef, useEffect } from "react";
-// import { useInView } from "react-intersection-observer";
-// import { TweenMax } from "gsap";
-import { revealStaggerAnimation } from "../../animations/revealStagger";
 
-// import "./home.scss";
-// insta som slide sideværs galleri på mobil
-// desktop exspand nedad, 3 pr row?
+import { revealStaggerAnimation } from "../../animations/revealStagger";
 
 const Highlights = props => {
   const { inView } = props;
@@ -16,34 +11,26 @@ const Highlights = props => {
   let p4Ref = useRef(null);
 
   useEffect(() => {
-    console.log('from home')
     if (inView) {
       revealStaggerAnimation([p1Ref, p2Ref, p3Ref, p4Ref], 0.5);
-      // TweenMax.staggerFromTo(
-      //   [p1Ref, p2Ref, p3Ref, p4Ref],
-      //   0.8,
-      //   { opacity: 0, y: 7 },
-      //   { opacity: 1, y: 0, delay: 0.3, clearProps: "transform, opacity" },
-      //   0.15
-      // );
     }
   }, [inView]);
 
   return (
     <article className="highlights__content">
-      <h2 className={inView ? "section-title under" : "section-title"}>
+      <h2 className={inView ? "section-title underline" : "section-title"}>
         Hos mig får du
       </h2>
-      <p style={{ opacity: 0 }} ref={element => (p1Ref = element)}>
+      <p style={{ opacity: 0 }} ref={el => (p1Ref = el)}>
         - Afslappet og hyggelig atmosfære
       </p>
-      <p style={{ opacity: 0 }} ref={element => (p2Ref = element)}>
+      <p style={{ opacity: 0 }} ref={el => (p2Ref = el)}>
         - Professionel og personlig rådgivning
       </p>
-      <p style={{ opacity: 0 }} ref={element => (p3Ref = element)}>
+      <p style={{ opacity: 0 }} ref={el => (p3Ref = el)}>
         - En behandling som passer til dig og dine ønsker
       </p>
-      <p style={{ opacity: 0 }} ref={element => (p4Ref = element)}>
+      <p style={{ opacity: 0 }} ref={el => (p4Ref = el)}>
         - Nærvær, grundighed og gratis parkering lige ved døren
       </p>
     </article>

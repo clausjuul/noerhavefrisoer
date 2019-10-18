@@ -1,8 +1,5 @@
-import React
-// , { useRef, useEffect } 
-from "react";
+import React from "react";
 import { useInView } from "react-intersection-observer";
-// import { TweenMax } from "gsap";
 
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
@@ -11,41 +8,10 @@ import './about.scss';
 
 const About = () => {
 
-  // let profileTitleRef = useRef(null);
-  // let imageRef = useRef(null);
-  
   const [profileTitleRef, profileTitleInView] = useInView({
-    // rootMargin: "-100px 0px",
     threshold: 1,
     triggerOnce: true
   });
-
-  // const [imageBoxRef, imageBoxInView] = useInView({
-  //   rootMargin: "-100px 0px",
-  //   triggerOnce: true
-  // });
-
-  // useEffect(() => {
-  //   if (profileBoxInView) {
-  //     TweenMax.fromTo(
-  //       profileRef,
-  //       0.8,
-  //       { opacity: 0, y: 10 },
-  //       { opacity: 1, y: 0, delay: 0.3, clearProps: "transform, opacity" }
-  //     );
-  //   }
-  // }, [profileBoxInView]);
-
-  // useEffect(() => {
-  //   if (imageBoxInView) {
-  //     TweenMax.fromTo(
-  //       "#profile-image",
-  //       0.8,
-  //       { opacity: 0, y: 10 },
-  //       { opacity: 1, y: 0, delay: 0.4, clearProps: "transform, opacity" }
-  //     );
-  //   }
-  // }, [imageBoxInView]);
 
   return (
     <section className="about">
@@ -115,21 +81,16 @@ const About = () => {
       <div className="hr" />
 
       <article className="profile">
-        {/* <div> */}
           <h3
             ref={profileTitleRef}
             className={
-              profileTitleInView ? "section-title under" : "section-title"
+              profileTitleInView ? "section-title underline" : "section-title"
             }
           >
             Hvem er jeg?
           </h3>
-          <p
-            // style={{ opacity: 0 }}
-            // ref={element => (profileRef = element)}
-            className="section-content"
-          >
-            <span className="bold full">Maria Louise Nørhave (1993)</span>{" "}
+          <p className="section-content">
+            <span className="bold full">Maria Louise Nørhave (1993)</span>
             Færdiguddannet som frisør i 2016. Har under frisøruddanelsen
             deltaget i diverse konkurrencer, som både DM, fotokonkurrencer og
             randersmesterskabet for frisør, og fået rigtig flotte placeringer.
@@ -138,14 +99,8 @@ const About = () => {
             personlige tilgang til faget, som kommer til udtryk i mit arbejde
             som selvstændig frisør i dag.
           </p>
-        {/* </div> */}
 
-        <figure
-        // style={{ opacity: 0 }}
-        // id="profile-image"
-        // ref={imageBoxRef}
-        // ref={element => (imageRef = element)}
-        >
+        <figure>
           <img src={Maria} alt="NØRHAVE-frisør-Randers-Maria-Louise-Nørhave" />
         </figure>
       </article>
