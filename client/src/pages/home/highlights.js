@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-import { revealStaggerAnimation } from "../../animations/revealStagger";
+import { revealStaggerAnimation } from "animations";
 
 const Highlights = props => {
   const { inView } = props;

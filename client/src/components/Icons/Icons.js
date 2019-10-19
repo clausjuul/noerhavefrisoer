@@ -12,7 +12,6 @@ export const FacebookIcon = () => (
   </svg>
 );
 
-
 export const InstagramIcon = () => (
   <svg
     aria-hidden="true"

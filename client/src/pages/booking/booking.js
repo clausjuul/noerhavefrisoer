@@ -1,11 +1,8 @@
-import React
-// , { useState, useEffect, useRef }
- from "react";
-// import { Link } from 'react-router-dom';
+import React from "react";
 
-import Footer from "../../components/Footer/Footer";
+import Hero from "components/Hero/Hero";
+import Footer from "components/Footer/Footer";
 import "./booking.scss";
-import Hero from "../../components/Hero/Hero";
 // import Banner3 from '../../images/banner3.jpg';
 // import HeroIn from "../../components/Hero/HeroIn";
 

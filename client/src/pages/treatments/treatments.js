@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 
-import Context from '../../context';
-import Hero from "../../components/Hero/Hero";
-import Footer from "../../components/Footer/Footer";
-import treatmentData from './treatmentData';
+import Context from 'context';
+import Hero from "components/Hero/Hero";
+import Footer from "components/Footer/Footer";
+import treatmentData from 'data/treatmentData';
 import Treatment from './treatment';
+import BannerSalon from 'images/IMG_0241.JPG';
 import './treatments.scss';
 
 const Treatments = () => {
   const isDesktop = useContext(Context);
 
-  // TODO
-  // react-helmet
   return (
     <section className="treatments">
       <Hero
-        position={"80% 80%"}
+        image={BannerSalon}
+        height={'17vh'}
         title={"Mangler du en tid?"}
         subTitle={"Ring og bestil en tid eller"}
         link={"Book online"}

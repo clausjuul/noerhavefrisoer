@@ -4,7 +4,7 @@ import { TimelineMax as Timeline } from "gsap";
 
 import styles from './burger.module.scss';
 
-const burgerIconTimeline = (node, top, bottom, duration, reverse) => {
+const burgerIconAnimation = (node, top, bottom, duration, reverse) => {
   const timeline = new Timeline({
     paused: true,
     reversed: reverse ? false : true
@@ -44,11 +44,11 @@ const BurgerIcon = ({ isOpen, setIsOpen }) => {
         <Transition
           // appear={true}
           in={isOpen}
-          onEnter={node => burgerIconTimeline(node, top, bottom, 0.5, true)}
-          onExit={node => burgerIconTimeline(node, top, bottom, 0.35, false)}
+          onEnter={node => burgerIconAnimation(node, top, bottom, 0.5, true)}
+          onExit={node => burgerIconAnimation(node, top, bottom, 0.35, false)}
           timeout={{ enter: 500, exit: 350 }}
         >
-          <svg viewBox="0 0 100 100" className={ styles.icon }>
+          <svg viewBox="0 0 100 100" className={styles.icon}>
             <path
               ref={el => (top = el)}
               d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"

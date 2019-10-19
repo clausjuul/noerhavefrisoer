@@ -1,18 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { TimelineMax as Timeline } from "gsap";
-import { Transition } from "react-transition-group";
+// import { Transition } from "react-transition-group";
 
+import { ChevronIcon } from "components/Icons/Icons";
 import './treatments.scss';
-import { ChevronIcon } from "../../components/Icons/Icons";
-// import HeroIn from "../../components/Hero/HeroIn";
 
 // TODO
 // make cards open on desktop, not on mobile
 
 const openAnimation = (node, reverse, appear = false) => {
   // console.log("appear", appear);
-  console.log('node: ', node)
-  console.log('animated', )
+  // console.log('node: ', node)
+  // console.log('animated', )
   let duration = reverse ? 0.3 : 0.2;
   // let duration = appear ? 0.1 : reverse ? 0.35 : 0.25;
   const timeline = new Timeline({
@@ -44,7 +43,7 @@ const openAnimation = (node, reverse, appear = false) => {
 const Treatment = (props) => {
   const {isDesktop, treatment: { title, subtitle, data }} = props;
   let treatmentRef = useRef(null);
-  console.log(treatmentRef);
+  // console.log(treatmentRef);
   // const [isOpen, setIsOpen] = useState(() => isDesktop ? true : false);
   // const [isOpen, setIsOpen] = useState(isDesktop);
   const [isOpen, setIsOpen] = useState(null);

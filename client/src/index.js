@@ -2,12 +2,12 @@ import React, { Suspense, useState, useLayoutEffect, useEffect } from "react";
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 
-import * as serviceWorker from './serviceWorker';
-import Loading from './components/Loading/Loading';
+import * as serviceWorker from 'serviceWorker';
+import Loading from 'components/Loading/Loading';
+import { ContextProvider } from "context";
 import './index.scss';
-import { ContextProvider } from "./context";
 
-const App = React.lazy(() => import('./App'));
+const App = React.lazy(() => import('App'));
 
 const useWindowSize = () => {
   let [size, setSize] = useState(null);
@@ -22,11 +22,6 @@ const useWindowSize = () => {
   return size;
 };
 
-// TODO
-// react-helmet-async
-
-// hvis det ikke virker, installere 'npm' & 'install'
-
 const RenderApp = () => {
   const breakpoint = 799;
 
@@ -38,7 +33,7 @@ const RenderApp = () => {
   let windowWidth = useWindowSize();
 
   useEffect(() => {
-    console.log("windowWidth", windowWidth);
+    // console.log("windowWidth", windowWidth);
     if (windowWidth !== null) {
       if (windowWidth < breakpoint) {
         // isDesktop &&

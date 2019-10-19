@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { TransitionGroup, Transition } from "react-transition-group";
 
-import Context from './context';
-import { play, exit } from "./timelines";
-import Home from './pages/home/home';
-import About from './pages/about/about';
-import Booking from './pages/booking/booking';
-import Treatments from './pages/treatments/treatments';
+import Context from 'context';
+import { enterPageTransition, exitPageTransition } from "animations";
+import Home from 'pages/home/home';
+import About from 'pages/about/about';
+import Booking from 'pages/booking/booking';
+import Treatments from 'pages/treatments/treatments';
 
 const Routes = () => {
   const isDesktop = useContext(Context);
@@ -23,8 +23,8 @@ const Routes = () => {
             <Transition
               key={location.key}
               appear={true}
-              onEnter={(node, appears) => play(node, appears)}
-              onExit={node => exit(node)}
+              onEnter={(node, appears) => enterPageTransition(node, appears)}
+              onExit={node => exitPageTransition(node)}
               timeout={{ enter: 650, exit: 250 }}
             >
               <Switch location={location}>

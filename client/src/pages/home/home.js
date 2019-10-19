@@ -1,13 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Hero from '../../components/Hero/Hero';
-import Footer from '../../components/Footer/Footer';
+import Hero from 'components/Hero/Hero';
+import Footer from 'components/Footer/Footer';
 import Highlights from './highlights';
-import Image1 from "../../images/1.jpg";
-import Image2 from "../../images/2.jpg";
-import Image3 from "../../images/vaeg.jpg";
-import { revealStaggerAnimation } from '../../animations/revealStagger';
+import Image1 from "images/1.jpg";
+import Image2 from "images/2.jpg";
+import Image3 from "images/vaeg.jpg";
+import { revealStaggerAnimation } from 'animations';
 import './home.scss';
 
 const Home = (props) => {
@@ -49,7 +49,7 @@ const Home = (props) => {
     <>
       <section className="home">
         <Hero
-          height={"60vh"}
+          height={"18.5vh"}
           position={"80% 80%"}
           title={"Mangler du en tid?"}
           subTitle={"Ring og bestil en tid eller"}
