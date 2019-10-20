@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 
 import Context from "context";
 import Hero from "components/Hero/Hero";
@@ -6,12 +7,16 @@ import Footer from "components/Footer/Footer";
 import "./booking.scss";
 
 const Booking = () => {
-
   const isDesktop = useContext(Context);
-  const height = isDesktop ? "615px" : "1110px";
+  const height = isDesktop ? "745px" : "1155px";
 
   return (
     <>
+      <Helmet>
+        <title>NØRHAVE frisør - Booking online - Frisør salon i Randers</title>
+        <meta name="description" content="NØRHAVE frisør - En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde." />
+        <link rel="canonical" href="https://www.noerhavefrisoer.dk/booking" />
+      </Helmet>
       <section className="booking">
         <Hero
           title={"Svært ved at finde en tid?"}

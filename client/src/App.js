@@ -5,8 +5,7 @@ import Navigation from 'components/Navigation/Navigation';
 import Routes from 'routes';
 
 // TODO
-// react som wordpress theme/child theme
-// margin i bunden?
+// margin i bunden på android chrome?
 // react-helmet-async
 
 const App = ({ isDesktop }) => {

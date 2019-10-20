@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { slideOpenAnimation } from 'animations';
+import { slideOpenTimeline } from 'animations';
 import { ChevronIcon } from "components/Icons/Icons";
 import './treatments.scss';
 
@@ -19,7 +19,7 @@ const Treatment = (props) => {
         onMount.current = false;
       }, delay);
     } else {
-      slideOpenAnimation(
+      slideOpenTimeline(
         treatmentRef.current,
         isOpen ? true : false,
         isDesktop

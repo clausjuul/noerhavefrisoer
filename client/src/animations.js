@@ -46,8 +46,9 @@ export const revealStaggerAnimation = (nodes, delay) => {
     0.15
   );
 };
-export const slideOpenAnimation = (node, reverse, isDesktop) => {
+export const slideOpenTimeline = (node, reverse, isDesktop) => {
   let duration = isDesktop ? (reverse ? 0.4 : 0.3) : reverse ? 0.2 : 0.15;
+
   const timeline = new Timeline({
     paused: true,
     reversed: reverse ? true : false

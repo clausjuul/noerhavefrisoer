@@ -12,24 +12,14 @@
 
   .topbar {
     background: $color-primary;
-    // height: 1rem;
+    height: 0.2rem;
     display: block;
     width: 100%;
-  }
-}
-.nav-wrapper {
-  // @include spacing();
-  .topbar {
-    height: 0.5rem;
   }
 }
 
 .mobile-nav-wrapper {
   position: fixed;
-
-  .topbar {
-    height: 0.25rem;
-  }
 }
 
 .nav, .mobile-nav {

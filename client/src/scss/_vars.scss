@@ -1,5 +1,11 @@
 @import './vendor/include-media';
 
+$breakpoints: (
+  'phone': 480px,
+  'tablet': 801px,
+  'desktop': 1124px,
+);
+
 $max-width: 1000px;
 $max-width-small: 600px;
 
@@ -59,11 +65,5 @@ inset 0 0.32rem 0.64rem rgba(0, 0, 0, 0.07),
 inset 0 0.64rem 1.28rem rgba(0, 0, 0, 0.07),
 inset 0 1.28rem 2.4rem rgba(0, 0, 0, 0.07);
 
-
-$breakpoints: (
-'phone': 480px,
-'tablet': 800px,
-'desktop': 1124px,
-);
 
 

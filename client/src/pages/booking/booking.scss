@@ -11,7 +11,6 @@
   &__iframe {
     @include withSpacing();
     display: block;
-    min-height: 80vh;
     border: none;
   }
 }

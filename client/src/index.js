@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useLayoutEffect } from "react";
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 import * as serviceWorker from 'serviceWorker';
 import Loading from 'components/Loading/Loading';
@@ -23,9 +24,11 @@ const useWindowSize = () => {
 };
 
 const RenderApp = () => {
-  const breakpoint = 799;
+
+  const fontSize = window.getComputedStyle(document.body, null).getPropertyValue("font-size")
+  const breakpoint = 768 + parseFloat(fontSize) * 2;
+  const windowWidth = useWindowSize();
   const [isDesktop, setIsDesktop] = useState(null);
-  let windowWidth = useWindowSize();
 
   useLayoutEffect(() => {
     if (windowWidth < breakpoint) {
@@ -33,14 +36,16 @@ const RenderApp = () => {
     } else {
       !isDesktop && setIsDesktop(true);
     }
-  }, [windowWidth, isDesktop]);
+  }, [windowWidth, isDesktop, breakpoint]);
 
   return (
-    <BrowserRouter>
-      <ContextProvider value={isDesktop}>
-        <App isDesktop={isDesktop} />
-      </ContextProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ContextProvider value={isDesktop}>
+          <App isDesktop={isDesktop} />
+        </ContextProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   ); 
 }
 
