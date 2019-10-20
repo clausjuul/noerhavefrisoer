@@ -11,9 +11,7 @@
   &__iframe {
     @include withSpacing();
     display: block;
-    height: auto;
     min-height: 80vh;
     border: none;
-    // margin-top: 2rem;
   }
 }

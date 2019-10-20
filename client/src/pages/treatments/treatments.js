@@ -21,7 +21,11 @@ const Treatments = () => {
         link={"Book online"}
         to={"/booking"}
       />
-      <h1 className="page-title">Behandlinger</h1>
+
+      <h1 className="page-title">
+        Behandlinger
+      </h1>
+
       {Object.values(treatmentData).map((value, i) => (
         <Treatment
           isDesktop={isDesktop}
@@ -29,6 +33,7 @@ const Treatments = () => {
           key={`treatment-${i}`}
         />
       ))}
+      
       <Footer />
     </section>
   );

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Hero from 'components/Hero/Hero';
@@ -13,37 +13,26 @@ import './home.scss';
 const Home = (props) => {
   const { location: { pathname }, history } = props;
 
-  useEffect(() => {
-    if (pathname !== "/") history.push("/");
-    // eslint-disable-next-line
-  }, [])
+  useLayoutEffect(() => {pathname !== "/" && history.push("/")});
 
-  let subTitleRef = useRef(null)
-  let contentRef = useRef(null)
+  const subTitleRef = useRef(null);
+  const contentRef = useRef(null);
 
-  const [titleRef, titleInView] = useInView({
-    // threshold: 0.8,
-    rootMargin: "100% 0px",
+  const [titleTrigger, titleInView] = useInView({
+    threshold: 1,
     triggerOnce: true
   });
 
-  const [highlightsRef, highlightsInView] = useInView({
-    // threshold: 0.8,
+  const [highlightsTrigger, highlightsInView] = useInView({
     rootMargin: "-100px 0px",
     triggerOnce: true
   });
 
   useEffect(() => {
     if (titleInView) {
-      revealStaggerAnimation([subTitleRef, contentRef], 1);
+      revealStaggerAnimation([subTitleRef.current, contentRef.current], 1);
     }
   }, [titleInView]);
-
-  // const [images, setImages] = useState(null);
-  
-  // useEffect(() => {
-  //   fetchInstafeed(setImages);
-  // }, []);
 
   return (
     <>
@@ -56,20 +45,20 @@ const Home = (props) => {
           link={"Book online"}
           to={"/booking"}
         />
-        <h1 ref={titleRef} className="page-title">
+        <h1 ref={titleTrigger} className="page-title">
           Velkommen til NØRHAVE
         </h1>
         <h3
-          style={{ opacity: 0 }}
-          ref={el => (subTitleRef = el)}
           className="page-sub-title"
+          ref={subTitleRef}
+          style={{ opacity: 0 }}
         >
           frisør på Gl. Hobrovej i Randers
         </h3>
         <p
-          style={{ opacity: 0 }}
-          ref={el => (contentRef = el)}
           className="page-content"
+          ref={contentRef}
+          style={{ opacity: 0 }}
         >
           En hyggelig, kreativ og personlig salon, som altid sætter stor fokus
           på den enkelte kunde, og der er altid en hyggelig atmosfære.
@@ -77,7 +66,7 @@ const Home = (props) => {
 
         <div className="hr" />
 
-        <section ref={highlightsRef} className="highlights">
+        <section ref={highlightsTrigger} className="highlights">
           <Highlights inView={highlightsInView} />
         </section>
 

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { TweenMax } from "gsap";
+import { TweenMax as Tween } from "gsap";
 
 export const FacebookIcon = () => (
   <svg
@@ -22,41 +22,46 @@ export const InstagramIcon = () => (
 );
 
 // React.forwardRef((props, ref) =>
-export const ChevronIcon = ({ isOpen }) => {
-  let chevronRef = useRef(null);
+export const ChevronIcon = ({ isOpen, isDesktop, delay }) => {
+  const chevronRef = useRef(null);
+  const onMount = useRef(true);
+  let duration = isDesktop ? (isOpen ? 0.4 : 0.3) : isOpen ? 0.2 : 0.15;
 
   useEffect(() => {
-    if(!isOpen) {
-      TweenMax.fromTo(
-        chevronRef,
-        0.35,
-        {
-          rotation: 0
-        },
-        {
-          rotation: 90,
-          ease: "Power2.easeInOut",
-        }
-      );
+    if (!onMount.current) {
+      if (!isOpen) {
+        Tween.fromTo(
+          chevronRef.current,
+          duration,
+          {
+            rotation: 90
+          },
+          {
+            rotation: 0,
+            ease: "Power2.easeInOut"
+          }
+        );
+      } else {
+        Tween.fromTo(
+          chevronRef.current,
+          duration,
+          {
+            rotation: 0
+          },
+          {
+            rotation: 90,
+            ease: "Power2.easeInOut"
+          }
+        );
+      }
     } else {
-      TweenMax.fromTo(
-        chevronRef,
-        0.25,
-        {
-          rotation: 90
-        },
-        {
-          rotation: 0,
-          ease: "Power2.easeInOut",
-          clearProps: "transform"
-        }
-      );
+      setTimeout(() => (onMount.current = false), delay);
     }
-  }, [isOpen]);
-
+  }, [isOpen, duration, delay]);
+  
   return (
     <svg
-      ref={el => (chevronRef = el)}
+      ref={chevronRef}
       aria-hidden="true"
       viewBox="0 0 320 512"
     >

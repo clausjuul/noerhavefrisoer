@@ -10,9 +10,13 @@ const Highlights = props => {
   let p3Ref = useRef(null);
   let p4Ref = useRef(null);
 
+  console.log('highlight effect', )
   useEffect(() => {
     if (inView) {
-      revealStaggerAnimation([p1Ref, p2Ref, p3Ref, p4Ref], 0.5);
+      revealStaggerAnimation(
+        [p1Ref.current, p2Ref.current, p3Ref.current, p4Ref.current],
+        0.5
+      );
     }
   }, [inView]);
 
@@ -21,16 +25,16 @@ const Highlights = props => {
       <h2 className={inView ? "section-title underline" : "section-title"}>
         Hos mig får du
       </h2>
-      <p style={{ opacity: 0 }} ref={el => (p1Ref = el)}>
+      <p ref={p1Ref} style={{ opacity: 0 }}>
         - Afslappet og hyggelig atmosfære
       </p>
-      <p style={{ opacity: 0 }} ref={el => (p2Ref = el)}>
+      <p ref={p2Ref} style={{ opacity: 0 }}>
         - Professionel og personlig rådgivning
       </p>
-      <p style={{ opacity: 0 }} ref={el => (p3Ref = el)}>
+      <p ref={p3Ref} style={{ opacity: 0 }}>
         - En behandling som passer til dig og dine ønsker
       </p>
-      <p style={{ opacity: 0 }} ref={el => (p4Ref = el)}>
+      <p ref={p4Ref} style={{ opacity: 0 }}>
         - Nærvær, grundighed og gratis parkering lige ved døren
       </p>
     </article>

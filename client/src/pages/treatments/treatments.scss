@@ -21,6 +21,9 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
 
   &:first-of-type {
     margin-top: 2rem;
@@ -35,7 +38,6 @@
 
     @include media('>phone') {
       font-size: 1.5rem;
-      // width: calc(100% - 4rem);
     }
 
     svg {

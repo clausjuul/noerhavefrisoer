@@ -34,7 +34,9 @@ const About = () => {
       <section className="contact">
         <ul className="opening-hours">
           <li className="full">
-            <h3 className="section-sub-title">Åbningstider</h3>
+            <h2 className="section-sub-title">
+              Åbningstider
+            </h2>
           </li>
           <li>Mandag</li>
           <li>lukket</li>
@@ -48,12 +50,16 @@ const About = () => {
           <li>08:00 - 17:00</li>
           <li>
             Lørdag
-            <div className="small bolder">Ulige uger</div>
+            <div className="small bolder">
+              Ulige uger
+            </div>
           </li>
           <li>08:00 - 13:00</li>
           <li>
             Lørdag
-            <div className="small bolder">Lige uger</div>
+            <div className="small bolder">
+              Lige uger
+            </div>
           </li>
           <li>lukket</li>
           <li>Søndag</li>
@@ -62,13 +68,13 @@ const About = () => {
 
         <ul className="contacts">
           <li className="full">
-            <h3 className="section-sub-title">Kontakt</h3>
-            {/* <h3 className="section-sub-title">Kontakt</h3> */}
+            <h2 className="section-sub-title">
+              Kontakt
+            </h2>
           </li>
           <li className="bold">Maria Louise Nørhave</li>
           <li>Gl. Hobrovej 59</li>
           <li>8920 Randers NV</li>
-          {/* <li>Cvr. 40697156</li> */}
           <li className="bold">+45 4265 5687</li>
           <li className="bold">
             <a href="mailto:maria@noerhavefrisoer.dk">
@@ -81,24 +87,22 @@ const About = () => {
       <div className="hr" />
 
       <article className="profile">
-          <h3
-            ref={profileTitleRef}
-            className={
-              profileTitleInView ? "section-title underline" : "section-title"
-            }
-          >
-            Hvem er jeg?
-          </h3>
-          <p className="section-content">
-            <span className="bold full">Maria Louise Nørhave (1993)</span>
-            Færdiguddannet som frisør i 2016. Har under frisøruddanelsen
-            deltaget i diverse konkurrencer, som både DM, fotokonkurrencer og
-            randersmesterskabet for frisør, og fået rigtig flotte placeringer.
-            Har også medvirket på modeuge, fotoshoots og andre kreative jobs.
-            Her igennem har jeg opnået en stor erfaring og udviklet den
-            personlige tilgang til faget, som kommer til udtryk i mit arbejde
-            som selvstændig frisør i dag.
-          </p>
+        <h3
+          className={profileTitleInView ? "section-title underline" : "section-title"}
+          ref={profileTitleRef}
+        >
+          Hvem er jeg?
+        </h3>
+        <p className="section-content">
+          <span className="bold full">Maria Louise Nørhave (1993)</span>
+          Færdiguddannet som frisør i 2016. Har under frisøruddanelsen
+          deltaget i diverse konkurrencer, som både DM, fotokonkurrencer og
+          randersmesterskabet for frisør, og fået rigtig flotte placeringer.
+          Har også medvirket på modeuge, fotoshoots og andre kreative jobs.
+          Her igennem har jeg opnået en stor erfaring og udviklet den
+          personlige tilgang til faget, som kommer til udtryk i mit arbejde
+          som selvstændig frisør i dag.
+        </p>
 
         <figure>
           <img src={Maria} alt="NØRHAVE-frisør-Randers-Maria-Louise-Nørhave" />
