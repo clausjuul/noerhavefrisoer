@@ -8,6 +8,13 @@ import Loading from 'components/Loading/Loading';
 import { ContextProvider } from "context";
 import './index.scss';
 
+// import "fonts/Montserrat-Bold.ttf";
+// import "fonts/Montserrat-Light.ttf";
+// import "fonts/Montserrat-Regular.ttf";
+// import "fonts/Montserrat-SemiBold.ttf";
+// import "fonts/Montserrat-Medium.ttf";
+// import "fonts/Montserrat-Thin.ttf";
+
 const App = React.lazy(() => import('App'));
 
 const useWindowSize = () => {
