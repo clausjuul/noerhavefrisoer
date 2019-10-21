@@ -6,7 +6,7 @@ import Hero from "components/Hero/Hero";
 import Footer from "components/Footer/Footer";
 import treatmentData from 'data/treatmentData';
 import Treatment from './treatment';
-import BannerSalon from 'images/IMG_0241.JPG';
+import BannerSalon from 'images/bannerSalon.jpg';
 import './treatments.scss';
 
 const Treatments = () => {

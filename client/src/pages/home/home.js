@@ -7,7 +7,8 @@ import Footer from 'components/Footer/Footer';
 import Highlights from './highlights';
 import Image1 from "images/1.jpg";
 import Image2 from "images/2.jpg";
-import Image3 from "images/vaeg.jpg";
+import Image3 from "images/bannerSalon.jpg";
+
 import { revealStaggerAnimation } from 'animations';
 import './home.scss';
 
