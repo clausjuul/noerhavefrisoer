@@ -55,15 +55,13 @@ const About = () => {
             <li>12:00 - 20:00</li>
             <li>Fredag</li>
             <li>08:00 - 17:00</li>
-            <li>
-              Lørdag
+            <li>Lørdag
               <div className="small bolder">
                 Ulige uger
               </div>
             </li>
             <li>08:00 - 13:00</li>
-            <li>
-              Lørdag
+            <li>Lørdag
               <div className="small bolder">
                 Lige uger
               </div>

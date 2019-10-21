@@ -6,7 +6,6 @@ import Routes from 'routes';
 
 // TODO
 // margin i bunden på android chrome?
-// react-helmet-async
 
 const App = ({ isDesktop }) => {
   const { pathname } = useLocation();

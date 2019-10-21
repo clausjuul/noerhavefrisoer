@@ -9,7 +9,7 @@ const NavDesktopLinkItem = ({ to, label, exact }) => (
   </li>
 );
 
-const NavbarDesktop = ({navData}) => (
+const NavbarDesktop = ({ navData }) => (
   <header className="nav-wrapper">
     <div className="topbar" />
     <nav className="nav">

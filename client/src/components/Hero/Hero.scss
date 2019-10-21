@@ -9,7 +9,6 @@
   position: relative;
   background-size: cover;
   margin-bottom: 3rem;
-  // @include spacing();
 
   &::after {
     content: '';
@@ -18,7 +17,6 @@
     left: 0%;
     width: 100%;
     height: 100%;
-    // background: rgba(255, 255, 255, 0.25);
     background: rgba(0, 0, 0, 0.25);
   }
 
@@ -37,9 +35,7 @@
   
   &__sub-title {
     color: $font-color-lightest;
-    // color: white;
     font-size: calc(1rem + 0.5vmin);
-    // font-size: calc(0.75rem + 0.75vmin);
     margin: 0;
     font-weight: 300;
     text-align: center;
@@ -52,7 +48,6 @@
   
   &__cta {
     background: rgba(255, 255, 255, 0.1);
-    // background: rgba(242, 220, 209, 0.05);
     font-weight: 400;
     font-size: calc(1rem + 0.5vmin);
     color: $font-color-lightest;
@@ -63,11 +58,10 @@
     cursor: pointer;
     z-index: +1;
     margin-top: 1rem;
+    box-shadow: $box-shadow-dreamy;
     text-shadow: 0 1px 0.2rem rgba(0, 0, 0, 0.35),
     0 1px 0.4rem rgba(0, 0, 0, 0.55),
     0 1px 0.9rem rgba(0, 0, 0, 0.55);
-
-    box-shadow: $box-shadow-dreamy;
 
     @include media('>tablet') {
       text-decoration-line: none;
@@ -78,69 +72,6 @@
         background: rgba(255, 255, 255, 0.4);
         transition: background-color 150ms;
       }
-    }
-  }
-}
-
-
-.button {
-  background: #333;
-  color: #ccc;
-  width: 200px;
-  height: 60px;
-  border: 0;
-  font-size: 18px;
-  border-radius: 4px;
-  font-family: 'Raleway', sans-serif;
-  transition: .6s;
-  overflow: hidden;
-
-  &:focus {
-    outline: 0;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.5);
-    width: 60px;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: .5;
-    filter: blur(30px);
-    transform: translateX(-100px) skewX(-15deg);
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    width: 30px;
-    height: 100%;
-    left: 30px;
-    top: 0;
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100px) skewX(-15deg);
-  }
-
-  &:hover {
-    background: #338033;
-    cursor: pointer;
-
-    &:before {
-      transform: translateX(300px) skewX(-15deg);
-      opacity: 0.6;
-      transition: .7s;
-    }
-
-    &:after {
-      transform: translateX(300px) skewX(-15deg);
-      opacity: 1;
-      transition: .7s;
     }
   }
 }

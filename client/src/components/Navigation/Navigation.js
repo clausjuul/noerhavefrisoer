@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import Context from 'context';
 import navData from 'data/navData';
 import './Navigation.scss';
+
 const NavbarDesktop = React.lazy(() => import('./NavbarDesktop/NavbarDesktop'));
 const NavbarMobile = React.lazy(() => import('./NavbarMobile/NavbarMobile'));
 

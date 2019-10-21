@@ -7,9 +7,9 @@ import './treatments.scss';
 const Treatment = (props) => {
   const {isDesktop, treatment: { title, subtitle, data }} = props;
 
-  const delay = 650;
+  let delay = 1250;
   const treatmentRef = useRef(null);
-  const onMount = useRef(true)
+  const onMount = useRef(true);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -59,10 +59,8 @@ const Treatment = (props) => {
           )
         })}
       </ul>
-
       <div className="hr" />
     </>
   );
 }
-
 export default Treatment;

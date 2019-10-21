@@ -14,30 +14,27 @@ const Hero = (props) => {
     padding: height ? `${height} 10vw` : "12vh 10vw"
   };
 
-  let titleRef = useRef(null)
-  let subTitleRef = useRef(null)
-  let ctaRef = useRef(null)
+  const titleRef = useRef(null)
+  const subTitleRef = useRef(null)
+  const ctaRef = useRef(null)
 
   useEffect(() => {
     revealStaggerAnimation(
-      [titleRef, subTitleRef, ctaRef],
+      [titleRef.current, subTitleRef.current, ctaRef.current],
       0.6
     );
     // eslint-disable-next-line
   }, []);
 
   return (
-    <section
-      className="hero"
-      style={heroStyling}
-    >
-      <h2 className="hero__title" ref={el => (titleRef = el)}>
+    <section className="hero" style={heroStyling}>
+      <h2 className="hero__title" ref={titleRef}>
         {title}
       </h2>
-      <p className="hero__sub-title" ref={el => (subTitleRef = el)}>
+      <p className="hero__sub-title" ref={subTitleRef}>
         {subTitle}
       </p>
-      <Link className="hero__cta" to={to} ref={el => (ctaRef = el)}>
+      <Link className="hero__cta" to={to} ref={ctaRef}>
         {link}
       </Link>
     </section>

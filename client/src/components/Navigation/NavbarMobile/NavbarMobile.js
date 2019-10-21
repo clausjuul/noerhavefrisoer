@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { TweenMax, Power2 } from "gsap";
+import { TweenLite as Tween, Power2 } from "gsap";
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -12,12 +12,12 @@ import BurgerIcon from './BurgerIcon/BurgerIcon';
 const MobileNavLinkItem = props => {
   const { to, label, exact, isOpen, setIsOpen, i } = props;
 
-  let linkRef = useRef(null);
+  const linkRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
-      TweenMax.fromTo(
-        linkRef,
+      Tween.fromTo(
+        linkRef.current,
         0.6,
         {
           opacity: 0,
@@ -36,11 +36,7 @@ const MobileNavLinkItem = props => {
   }, [isOpen]);
 
   return (
-    <li
-      ref={el => (linkRef = el)}
-      className="mobile-navbar__item"
-      // style={{ opacity: 0 }}
-    >
+    <li ref={linkRef} className="mobile-navbar__item">
       <NavLink
         onClick={() => setIsOpen(false)}
         to={to}
@@ -52,21 +48,21 @@ const MobileNavLinkItem = props => {
   );
 };
 
-const NavbarMobile = ({navData}) => {
+const NavbarMobile = ({ navData }) => {
 
   const [isOpen, setIsOpen] = useState(false);
-  let navbarRef = useRef(null);
+  const navbarRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
-      TweenMax.to(navbarRef, 0.35, {
+      Tween.to(navbarRef.current, 0.35, {
         autoAlpha: 1,
         ease: Power2.easeInOut,
         clearProps: "opacity, visibility"
       });
       disableBodyScroll(document.body);
     } else {
-      TweenMax.to(navbarRef, 0.2, {
+      Tween.to(navbarRef.current, 0.2, {
         autoAlpha: 0,
         ease: Power2.easeInOut
       });
@@ -92,11 +88,7 @@ const NavbarMobile = ({navData}) => {
             </Link>
           </li>
         </ul>
-        <ul
-          className="mobile-navbar"
-          ref={el => (navbarRef = el)}
-          style={{ opacity: 0 }}
-        >
+        <ul className="mobile-navbar" ref={navbarRef} style={{ opacity: 0 }}>
           {navData.map(({ to, label, exact }, i) => (
             <MobileNavLinkItem
               key={`link-${label}`}
