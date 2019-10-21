@@ -5,12 +5,11 @@ import { revealStaggerAnimation } from "animations";
 const Highlights = props => {
   const { inView } = props;
 
-  let p1Ref = useRef(null);
-  let p2Ref = useRef(null);
-  let p3Ref = useRef(null);
-  let p4Ref = useRef(null);
+  const p1Ref = useRef(null);
+  const p2Ref = useRef(null);
+  const p3Ref = useRef(null);
+  const p4Ref = useRef(null);
 
-  console.log('highlight effect', )
   useEffect(() => {
     if (inView) {
       revealStaggerAnimation(

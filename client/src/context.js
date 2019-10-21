@@ -9,34 +9,60 @@ export default Context;
 
 
 // import React, { createContext, useContext, useReducer } from "react";
-// // import PropTypes from "prop-types";
 
-// export const StateContext = createContext();
+// export const Context = createContext();
 
-// export const StateProvider = ({ reducer, initialState, children }) => (
-//   <StateContext.Provider value={useReducer(reducer, initialState)}>
+// export const ContextProvider = ({ reducer, initialState, children }) => (
+//   <Context.Provider value={useReducer(reducer, initialState)}>
 //     {children}
-//   </StateContext.Provider>
+//   </Context.Provider>
 // );
 
-// StateProvider.propTypes = {
-//   /**
-//    * @return {React.Node}
-//    */
-//   children: PropTypes.node.isRequired,
+// export const GetContext = () => useContext(Context);
 
-//   /**
-//    * Object containing initial state value.
-//    */
-//   initialState: PropTypes.shape({}).isRequired,
 
-//   /**
-//    *
-//    * @param {object} state
-//    * @param {object} action
-//    */
-//   reducer: PropTypes.func.isRequired
+// import { StateProvider } from "../state";
+
+// const App = () => {
+//   const initialState = {
+//     theme: { primary: "green" }
+//   };
+
+//   const reducer = (state, action) => {
+//     switch (action.type) {
+//       case "changeTheme":
+//         return {
+//           ...state,
+//           theme: action.newTheme
+//         };
+
+//       default:
+//         return state;
+//     }
+//   };
+
+//   return (
+//     <StateProvider initialState={initialState} reducer={reducer}>
+//       // App content ...
+//     </StateProvider>
+//   );
 // };
 
-// export const getState = () => useContext(StateContext);
+// import { useStateValue } from "./state";
 
+// const ThemedButton = () => {
+//   const [{ theme }, dispatch] = useStateValue();
+//   return (
+//     <Button
+//       primaryColor={theme.primary}
+//       onClick={() =>
+//         dispatch({
+//           type: "changeTheme",
+//           newTheme: { primary: "blue" }
+//         })
+//       }
+//     >
+//       Make me blue!
+//     </Button>
+//   );
+// };

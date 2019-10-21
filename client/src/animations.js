@@ -1,4 +1,4 @@
-import { TimelineLite as Timeline, TweenLite as Tween, Power1, Power2 } from "gsap";
+import { TimelineMax as Timeline, TweenMax as Tween, Power1, Power2 } from "gsap";
 
 export const enterPageTransition = (node, appears) => {
     const delay = appears ? 0 : 0.25;
