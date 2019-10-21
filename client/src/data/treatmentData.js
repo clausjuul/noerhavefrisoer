@@ -165,7 +165,9 @@ const TreatmentData = {
       {
         navn: "Helfarve/toning, mellem længde, med klip (105 min)",
         pris: "900,-",
-        tekst: ["Mellem længde er til skuldrene"]
+        tekst: [
+          "Mellem længde er til skuldrene"
+        ]
       },
       {
         navn: "Helfarve/toning i langt hår, med klip (120 min)",
@@ -189,15 +191,15 @@ const TreatmentData = {
     //NYYYYYYYYY TEKST!!!
     data: [
       {
-        navn: "Specialfarve, kort, uden klip (135 min)",
+        navn: "Specialfarve, Kort, uden klip (135 min)",
         pris: "750,-",
         tekst: [
           "Er en behandling til dig der ønsker mere end én farvebehandling",
-          "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i hår maks til skuldrene"
+          "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i kort hår"
         ]
       },
       {
-        navn: "Specialfarve, mellem, uden klip (135 min)",
+        navn: "Specialfarve, Mellem, uden klip (135 min)",
         pris: "995,-",
         tekst: [
           "Er en behandling til dig der ønsker mere end én farvebehandling",
@@ -205,10 +207,10 @@ const TreatmentData = {
         ]
       },
       {
-        navn: "Specialfarve, langt, uden klip (135 min)",
+        navn: "Specialfarve, Langt, uden klip (135 min)",
         pris: "1200,-",
         tekst: [
-          "Er en behandling til dig der ønsker mere en én farvebehandling",
+          "Er en behandling til dig der ønsker mere end én farvebehandling",
           "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i langt hår"
         ]
       }
@@ -225,26 +227,26 @@ const TreatmentData = {
 
     data: [
       {
-        navn: "Specialfarve, kort længde, med klip (150 min)",
+        navn: "Specialfarve, Kort, med klip (150 min)",
         pris: "1025,-",
         tekst: [
-          "Er en behandling til dig der ønsker mere en én farvebehandling",
-          "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i hår maks til skuldrene"
+          "Er en behandling til dig der ønsker mere end én farvebehandling",
+          "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i kort hår"
         ]
       },
       {
-        navn: "Specialfarve, Mellem længde, med klip (150 min)",
+        navn: "Specialfarve, Mellem, med klip (150 min)",
         pris: "1250,-",
         tekst: [
-          "Er en behandling til dig der ønsker mere en én farvebehandling",
+          "Er en behandling til dig der ønsker mere end én farvebehandling",
           "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i hår maks til skuldrene"
         ]
       },
       {
-        navn: "Specialfarve, i langt hår, med klip (150 min)",
+        navn: "Specialfarve, Langt, med klip (150 min)",
         pris: "1450,-",
         tekst: [
-          "Er en behandling til dig der ønsker mere en én farvebehandling",
+          "Er en behandling til dig der ønsker mere end én farvebehandling",
           "F.eks hvis der ønskes en eftertoning efter lysning/refleksbehandling i langt hår"
         ]
       }
