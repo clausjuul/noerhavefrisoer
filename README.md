@@ -1,4 +1,4 @@
-# Frisør salon nørhave' hjemmeside
+# Frisør salon NØRHAVE's hjemmeside
 En frisør salon side lavet i react, og smidt op på en apache server.
 https://www.noerhavefrisoer.dk
 
