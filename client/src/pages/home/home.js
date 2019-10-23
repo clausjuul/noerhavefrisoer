@@ -2,14 +2,13 @@ import React, { useRef, useEffect, useLayoutEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet-async";
 
+import { revealStaggerAnimation } from 'animations';
 import Hero from 'components/Hero/Hero';
-import Footer from 'components/Footer/Footer';
 import Highlights from './highlights';
+import Footer from 'components/Footer/Footer';
 import Image1 from "images/1.jpg";
 import Image2 from "images/2.jpg";
 import Image3 from "images/bannerSalon.jpg";
-
-import { revealStaggerAnimation } from 'animations';
 import './home.scss';
 
 const Home = (props) => {
@@ -92,10 +91,9 @@ const Home = (props) => {
             />
           </figure>
         </section>
-
         <Footer />
       </section>
     </>
-  );
-};
+  )
+}
 export default Home;

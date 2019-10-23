@@ -4,7 +4,7 @@ import { slideOpenTimeline } from 'animations';
 import { ChevronIcon } from "components/Icons/Icons";
 import './treatments.scss';
 
-const Treatment = (props) => {
+const Treatment = React.memo(props => {
   const {isDesktop, treatment: { title, subtitle, data }} = props;
 
   let delay = 1250;
@@ -21,8 +21,7 @@ const Treatment = (props) => {
     } else {
       slideOpenTimeline(
         treatmentRef.current,
-        isOpen ? true : false,
-        isDesktop
+        isOpen ? true : false
       );
     }
     // eslint-disable-next-line
@@ -62,5 +61,5 @@ const Treatment = (props) => {
       <div className="hr" />
     </>
   );
-}
+})
 export default Treatment;

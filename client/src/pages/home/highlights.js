@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 import { revealStaggerAnimation } from "animations";
 
-const Highlights = props => {
+const Highlights = React.memo(props => {
   const { inView } = props;
 
   const p1Ref = useRef(null);
@@ -38,5 +38,5 @@ const Highlights = props => {
       </p>
     </article>
   );
-};
+})
 export default Highlights;

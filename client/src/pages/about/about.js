@@ -7,13 +7,13 @@ import Hero from "components/Hero/Hero";
 import Maria from "images/maria.jpg";
 import './about.scss';
 
-const About = () => {
+const About = React.memo(props => {
 
   const [profileTitleRef, profileTitleInView] = useInView({
     threshold: 1,
     triggerOnce: true
   });
-
+console.log('about', )
   return (
     <>
       <Helmet>
@@ -118,5 +118,5 @@ const About = () => {
       </section>
     </>
   );
-};
+})
 export default About;
