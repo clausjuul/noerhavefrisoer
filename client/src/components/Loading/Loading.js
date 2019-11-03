@@ -2,8 +2,8 @@ import React from "react";
 
 import './Loading.scss';
 
-const Loading = () => (
-  <div className="loading">
+const Loading = ({size}) => (
+  <div className="loading" style={{ height: size, width: size }}>
     <div className="spinner" />
   </div>
 );

@@ -92,12 +92,12 @@ console.log('about', )
         <div className="hr" />
 
         <article className="profile">
-          <h3
+          <h2
             className={profileTitleInView ? "section-title underline" : "section-title"}
             ref={profileTitleRef}
           >
             Hvem er jeg?
-          </h3>
+          </h2>
           <p className="section-content">
             <span className="bold full">Maria Louise Nørhave (1993)</span>
             Færdiguddannet som frisør i 2016. Har under frisøruddanelsen

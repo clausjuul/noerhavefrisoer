@@ -6,10 +6,11 @@ import { revealStaggerAnimation } from 'animations';
 import Hero from 'components/Hero/Hero';
 import Highlights from './highlights';
 import Footer from 'components/Footer/Footer';
-import Image1 from "images/1.jpg";
-import Image2 from "images/2.jpg";
-import Image3 from "images/bannerSalon.jpg";
+// import Image1 from "images/1.jpg";
+// import Image2 from "images/2.jpg";
+// import Image3 from "images/bannerSalon.jpg";
 import './home.scss';
+import Instafeed from "components/Instafeed/Instafeed";
 
 const Home = (props) => {
   const { location: { pathname }, history } = props;
@@ -70,8 +71,8 @@ const Home = (props) => {
         <section ref={highlightsTrigger} className="highlights">
           <Highlights inView={highlightsInView} />
         </section>
-
-        <section className="instagram-feed">
+        <Instafeed />
+        {/* <section className="instagram-feed">
           <figure>
             <img
               src={Image1}
@@ -90,7 +91,7 @@ const Home = (props) => {
               alt="NØRHAVE-frisør_instagram-kunde-billede-fra-NØRHAVE-frisør-salon-i-Randers"
             />
           </figure>
-        </section>
+        </section> */}
         <Footer />
       </section>
     </>

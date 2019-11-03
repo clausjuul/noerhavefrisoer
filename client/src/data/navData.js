@@ -18,6 +18,11 @@ const navData = [
     to: "/om-salonen",
     label: "Om salonen",
     exact: false
+  },
+  {
+    to: "/insta",
+    label: "insta",
+    exact: false
   }
 ];
 export default navData;
