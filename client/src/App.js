@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
+import Loading from 'components/Loading/Loading';
 import Navigation from 'components/Navigation/Navigation';
 import Routes from 'routes';
 
@@ -57,7 +58,9 @@ const App = React.memo(props => {
   return (
     <>
       <Navigation />
-      <Routes />
+      <Suspense fallback={<Loading />}>
+        <Routes />
+      </Suspense>
     </>
   );
 })

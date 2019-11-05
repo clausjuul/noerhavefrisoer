@@ -13,11 +13,11 @@ const About = React.memo(props => {
     threshold: 1,
     triggerOnce: true
   });
-console.log('about', )
+  
   return (
     <>
       <Helmet>
-        <title>NØRHAVE frisør - Om salonen - Frisør salon i Randers</title>
+        <title>NØRHAVE frisør • Om salonen • Frisør salon i Randers</title>
         <meta name="description" content="NØRHAVE frisør - En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde." />
         <link rel="canonical" href="https://www.noerhavefrisoer.dk/om-salonen" />
       </Helmet>

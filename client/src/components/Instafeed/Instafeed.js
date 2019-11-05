@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
-import { TweenLite as Tween, Power1, ScrollToPlugin } from "gsap/all";
+import React, { useEffect, useState, useRef, useContext } from "react";
+import { TweenLite as Tween, Power3, ScrollToPlugin } from "gsap/all";
 // import ScrollToPlugin from "gsap/umd/ScrollToPlugin";
 // import LazyLoad from "react-lazyload";
 import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
+// import ReactImageAppear from "react-image-appear";
 import { ArrowIcon } from "../Icons/Icons";
-import Loading from '../Loading/Loading';
+import Context from 'context';
 import './Instafeed.scss';
 import axios from "axios";
 import cheerio from "cheerio";
@@ -42,7 +43,6 @@ const getFeeds = username => {
             }
           }
         );
-        console.log('', photos)
         return photos;
       })
       .catch(err => {
@@ -52,100 +52,83 @@ const getFeeds = username => {
   );
 };
 
-//TODO find antal billeder og længden af container
-//dividere det ud, så scroll passer
-const scrollOnClick = (target, scrollRight) => {
-  Tween.to(target, 0.75, {
-    scrollTo: { x: scrollRight ? "-=590" : "+=590", autoKill: true },
-    ease: Power1.easeOut
+const scrollOnClick = (target, amount, scrollRight) => {
+  Tween.to(target, 0.65, {
+    scrollTo: { x: scrollRight ? `-=${amount}` : `+=${amount}`, autoKill: true },
+    ease: Power3.easeOut
   });
 };
 
-const MyImage = ({ image }) => (
-  <LazyLoadImage
-    alt={image.alt}
-    height={image.height}
-    src={image.src} // use normal <img> attributes as props
-    width={image.width}
-  />
-);
-
 const Instafeed = ({ scrollPosition }) => {
+  const isDesktop = useContext(Context);
+
   const [feed, setFeed] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [scrollAmount, setScrollAmount] = useState(null);
+  const [error, setError] = useState(false);
   const innerRef = useRef(false);
 
   useEffect(() => {
+    if(isDesktop) setScrollAmount('580')
+    else setScrollAmount(window.innerWidth * 0.7)
+
+    return () => null
+    // eslint-disable-next-line
+  }, [isDesktop, scrollAmount, window.innerWidth])
+
+  useEffect(() => {
     getFeeds("noerhave_frisoer")
-      // .then(res => sortIt(res, "id", "desc"))
-      .then(res => {
-        setFeed(res);
-      })
-      .catch(err => setError(err));
+    .then(res => setFeed(res))
+    .catch(err => setError(err));
 
     return () => null;
   }, []);
 
-  console.log("feed: ", feed);
   return (
     <section className="instafeed">
       <div className="instafeed-inner" ref={innerRef}>
-        {/* {error && <div className="error">{error}</div>} */}
-        {feed &&
+        {feed && !error &&
           feed.length > 0 &&
           feed.map((feed, i) => (
-            // <LazyLoad
-            //   key={`instafeed-${i}`}
-            //   height={290}
-            //   width={290}
-            //   overflow={true}
-            //   once
-            // >
             <figure key={`instafeed-${i}`}>
               <LazyLoadImage
                 src={feed.thumbnail_resources[2].src}
-                // height={image.height}
-                // width={image.width}
-                // placeholder={<Loading size="10px" />}
                 scrollPosition={scrollPosition}
+                threshold={1000}
+                // onLoad={(e) => {
+                //   Tween.fromTo(e.currentTarget, 0.75, {
+                //     opacity: 0,
+                //   },
+                //   {
+                //     opacity: 1,
+                //   })
+                // }}
                 alt={
                   feed.edge_media_to_caption.edges.length > 0
                     ? feed.edge_media_to_caption.edges[0].node.text
                     : "NØRHAVE-frisør_instagram-kunde-billede-fra-NØRHAVE-frisør-salon-i-Randers"
                 }
               />
-              {/* <img
-                src={feed.thumbnail_resources[2].src}
-                alt={
-                  feed.edge_media_to_caption.edges.length > 0
-                    ? feed.edge_media_to_caption.edges[0].node.text
-                    : "NØRHAVE-frisør_instagram-kunde-billede-fra-NØRHAVE-frisør-salon-i-Randers"
-                }
-              /> */}
             </figure>
-            // </LazyLoad>
-          ))}
-        {!error && (
-          <>
-            <button
-              className="arrow-left"
-              onClick={() => scrollOnClick(innerRef.current, true)}
-            >
-              <ArrowIcon />
-            </button>
-            <button
-              className="arrow-right"
-              onClick={() => scrollOnClick(innerRef.current, false)}
-            >
-              <ArrowIcon />
-            </button>
-          </>
-        )}
+          ))
+        }
       </div>
+      {!error && (
+        <>
+          <button
+            className="arrow-left"
+            onClick={() => scrollOnClick(innerRef.current, scrollAmount, true)}
+          >
+            <ArrowIcon />
+          </button>
+          <button
+            className="arrow-right"
+            onClick={() => scrollOnClick(innerRef.current, scrollAmount, false)}
+          >
+            <ArrowIcon />
+          </button>
+        </>
+      )}
     </section>
   );
 };
 export default trackWindowScroll(Instafeed);
-
-// export default Instafeed;

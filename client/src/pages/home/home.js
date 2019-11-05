@@ -10,10 +10,12 @@ import Footer from 'components/Footer/Footer';
 // import Image2 from "images/2.jpg";
 // import Image3 from "images/bannerSalon.jpg";
 import './home.scss';
-import Instafeed from "components/Instafeed/Instafeed";
+// import Instafeed from "components/Instafeed/Instafeed";
+
+const Instafeed = React.lazy(() => import('components/Instafeed/Instafeed'));
 
 const Home = (props) => {
-  const { location: { pathname }, history } = props;
+  const { history, location: { pathname }} = props;
 
   useLayoutEffect(() => {pathname !== "/" && history.push("/")});
 
@@ -39,7 +41,7 @@ const Home = (props) => {
   return (
     <>
       <Helmet>
-        <title>NØRHAVE frisør - Velkommen - Frisør salon i Randers</title>
+        <title>NØRHAVE frisørsalon i Randers</title>
         <meta
           name="description"
           content="NØRHAVE frisør - En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde."
@@ -71,27 +73,9 @@ const Home = (props) => {
         <section ref={highlightsTrigger} className="highlights">
           <Highlights inView={highlightsInView} />
         </section>
+
         <Instafeed />
-        {/* <section className="instagram-feed">
-          <figure>
-            <img
-              src={Image1}
-              alt="NØRHAVE-frisør_instagram-kunde-billede-fra-NØRHAVE-frisør-salon-i-Randers"
-            />
-          </figure>
-          <figure>
-            <img
-              src={Image2}
-              alt="NØRHAVE-frisør_instagram-kunde-billede-fra-NØRHAVE-frisør-salon-i-Randers"
-            />
-          </figure>
-          <figure>
-            <img
-              src={Image3}
-              alt="NØRHAVE-frisør_instagram-kunde-billede-fra-NØRHAVE-frisør-salon-i-Randers"
-            />
-          </figure>
-        </section> */}
+
         <Footer />
       </section>
     </>
