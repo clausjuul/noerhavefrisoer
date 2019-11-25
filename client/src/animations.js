@@ -1,17 +1,17 @@
 import { TimelineMax as Timeline, TweenMax as Tween, Power1, Power2 } from "gsap";
 
 export const enterPageTransition = (node, appears) => {
-    const delay = appears ? 0 : 0.25;
-    const timeline = new Timeline({ paused: true });
+  const delay = appears ? 0 : 0.25;
+  const timeline = new Timeline({ paused: true });
 
-    timeline.from(node, 0.4, {
-      display: "none",
-      autoAlpha: 0,
-      delay: delay,
-      y: 5,
-      ease: Power1.easeOut,
-      clearProps: "opacity, visibility, display, transform"
-    });
+  timeline.from(node, 0.4, {
+    display: "none",
+    autoAlpha: 0,
+    delay: delay,
+    y: 5,
+    ease: Power1.easeOut,
+    clearProps: "opacity, visibility, display, transform"
+  });
 
   timeline.play();
 }

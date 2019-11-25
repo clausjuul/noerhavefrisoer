@@ -10,10 +10,10 @@ import './index.scss';
 
 // extra imports needed for building
 import "images/NØRHAVE-frisør_salon-i-Randers.jpg";
-import "fonts/Montserrat-Light.ttf";
-import "fonts/Montserrat-Regular.ttf";
-import "fonts/Montserrat-Medium.ttf";
-import "fonts/Montserrat-SemiBold.ttf";
+// import "fonts/Montserrat-Light.ttf";
+// import "fonts/Montserrat-Regular.ttf";
+// import "fonts/Montserrat-Medium.ttf";
+// import "fonts/Montserrat-SemiBold.ttf";
 
 const App = React.lazy(() => import('App'));
 
@@ -49,18 +49,15 @@ const RenderApp = () => {
     <HelmetProvider>
       <BrowserRouter>
         <ContextProvider value={isDesktop}>
-          <App isDesktop={isDesktop} />
+          <Suspense fallback={<Loading />}>
+            <App isDesktop={isDesktop} />
+          </Suspense>
         </ContextProvider>
       </BrowserRouter>
     </HelmetProvider>
   ); 
 }
 
-ReactDOM.render(
-  <Suspense fallback={<Loading />}>
-    <RenderApp />
-  </Suspense>,
-  document.getElementById("root")
-);
+ReactDOM.render( <RenderApp />, document.getElementById("root"));
 
 serviceWorker.register();

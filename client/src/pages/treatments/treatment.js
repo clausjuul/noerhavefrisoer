@@ -24,6 +24,8 @@ const Treatment = React.memo(props => {
         isOpen ? true : false
       );
     }
+    
+    return () => null
     // eslint-disable-next-line
   }, [isOpen]);
 

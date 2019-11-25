@@ -16,7 +16,7 @@ const Treatments = () => {
     <>
       <Helmet>
         <title>NØRHAVE frisør • Behandlinger • Frisør salon i Randers</title>
-        <meta name="description" content="NØRHAVE frisør - En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde." />
+        <meta name="description" content="NØRHAVE frisør • En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde." />
         <link rel="canonical" href="https://www.noerhavefrisoer.dk/behandlinger" />
       </Helmet>
       

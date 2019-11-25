@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 import { revealStaggerAnimation } from 'animations';
 import Hero from 'components/Hero/Hero';
-import Highlights from './highlights';
+// import Highlights from './highlights';
 import Footer from 'components/Footer/Footer';
 // import Image1 from "images/1.jpg";
 // import Image2 from "images/2.jpg";
@@ -12,6 +12,7 @@ import Footer from 'components/Footer/Footer';
 import './home.scss';
 // import Instafeed from "components/Instafeed/Instafeed";
 
+const Highlights = React.lazy(() => import('./highlights'));
 const Instafeed = React.lazy(() => import('components/Instafeed/Instafeed'));
 
 const Home = (props) => {
@@ -44,7 +45,7 @@ const Home = (props) => {
         <title>NØRHAVE frisørsalon i Randers</title>
         <meta
           name="description"
-          content="NØRHAVE frisør - En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde."
+          content="NØRHAVE frisør • En hyggelig, kreativ og personlig frisør salon i Randers, som altid sætter stor fokus på den enkelte kunde."
         />
         <link rel="canonical" href="https://www.noerhavefrisoer.dk" />
       </Helmet>

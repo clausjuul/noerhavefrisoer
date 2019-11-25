@@ -116,12 +116,14 @@ const Instafeed = ({ scrollPosition }) => {
         <>
           <button
             className="arrow-left"
+            aria-label="scroll left"
             onClick={() => scrollOnClick(innerRef.current, scrollAmount, true)}
           >
             <ArrowIcon />
           </button>
           <button
             className="arrow-right"
+            aria-label="scroll right"
             onClick={() => scrollOnClick(innerRef.current, scrollAmount, false)}
           >
             <ArrowIcon />

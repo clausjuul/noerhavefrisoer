@@ -1,5 +1,9 @@
 @import './scss/init';
 
+#svgload {
+  height: 80vh;
+}
+
 html {
   font-size: $rem-size;
     @include media('>tablet') {
